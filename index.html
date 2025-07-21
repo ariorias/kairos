@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Kairos Flow - Transformación digital empresarial con inteligencia y automatización. Dashboards, automatización, auditorías y soluciones hechas a medida.">
+    <meta name="keywords" content="automatización, dashboards, power bi, consultoría digital, Kairos Flow, inteligencia empresarial, transformación digital, análisis de datos, auditoría empresarial">
+    <meta name="author" content="Kairos Flow">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kairosflow.com/">
+    <meta property="og:title" content="Kairos Flow - Transformación Digital Empresarial">
+    <meta property="og:description" content="Automatización, inteligencia y precisión. Transformamos la gestión empresarial con soluciones digitales hechas a medida.">
+    <meta property="og:image" content="https://kairosflow.com/logo-kairosflow.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://kairosflow.com/">
+    <meta property="twitter:title" content="Kairos Flow - Transformación Digital Empresarial">
+    <meta property="twitter:description" content="Automatización, inteligencia y precisión. Transformamos la gestión empresarial con soluciones digitales hechas a medida.">
+    <meta property="twitter:image" content="https://kairosflow.com/logo-kairosflow.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    
+    <!-- Google Analytics 4 - REEMPLAZAR GA_MEASUREMENT_ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+        
+        // INSTRUCCIONES PARA ACTIVAR ANALYTICS:
+        // 1. Ir a https://analytics.google.com
+        // 2. Crear cuenta gratuita con Gmail
+        // 3. Crear propiedad "Kairos Flow"
+        // 4. Obtener ID (ejemplo: G-XXXXXXXXXX)
+        // 5. Reemplazar "GA_MEASUREMENT_ID" por tu ID real
+    </script>
+    
+    <!-- ALTERNATIVA: Google Tag Manager (más fácil) -->
+    <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script> -->
+    
+    <title>Kairos Flow - Transformación Digital Empresarial</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0b1a2b;
+            color: #f0f0f0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0b1a2b, #1a2b3d);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader {
+            width: 80px;
+            height: 80px;
+            border: 3px solid rgba(255, 170, 51, 0.2);
+            border-top: 3px solid #ffaa33;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        .loader-text {
+            position: absolute;
+            margin-top: 120px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #ffaa33;
+            letter-spacing: 2px;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #0b1a2b 0%, #1a2b3d 50%, #2c3e50 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 20s ease infinite;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 20%, rgba(255, 170, 51, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(52, 152, 219, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 40%, rgba(155, 89, 182, 0.1) 0%, transparent 50%);
+            animation: float 15s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            33% { transform: translateY(-15px); }
+            66% { transform: translateY(8px); }
+        }
+
+        /* Page fade-in animation */
+        .page-content {
+            opacity: 0;
+            animation: fadeInPage 1s ease-in-out 0.5s forwards;
+        }
+
+        @keyframes fadeInPage {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo {
+            max-width: 100%;
+            height: auto;
+            max-height: 400px;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 0 30px rgba(255, 170, 51, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 50px rgba(255, 170, 51, 0.5);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: #ffaa33;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 0 0 20px rgba(255, 170, 51, 0.3);
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+            color: rgba(240, 240, 240, 0.9);
+        }
+
+        .cta {
+            margin-top: 2rem;
+        }
+
+        .cta a {
+            text-decoration: none;
+            padding: 1.2rem 2.5rem;
+            background: linear-gradient(135deg, #ffaa33, #ffc166);
+            color: #0b1a2b;
+            font-weight: bold;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 10px 30px rgba(255, 170, 51, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta a:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta a:hover:before {
+            left: 100%;
+        }
+
+        .cta a:hover {
+            background: linear-gradient(135deg, #ffc166, #ffd700);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 170, 51, 0.5);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, rgba(255, 170, 51, 0.05), rgba(52, 152, 219, 0.05));
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: rgba(255, 170, 51, 0.1);
+            border: 1px solid rgba(255, 170, 51, 0.3);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #ffaa33;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #ffaa33;
+            text-shadow: 0 0 15px rgba(255, 170, 51, 0.2);
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: rgba(240, 240, 240, 0.8);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 170, 51, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .service-card.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 170, 51, 0.1), rgba(52, 152, 219, 0.05));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .service-card:hover:before {
+            opacity: 1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 170, 51, 0.5);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: #ffaa33;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #f0f0f0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card p {
+            color: rgba(240, 240, 240, 0.85);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-features {
+            list-style: none;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            color: rgba(240, 240, 240, 0.9);
+            position: relative;
+            padding-left: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .service-features li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #ffaa33;
+            font-weight: bold;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.05), rgba(155, 89, 182, 0.05));
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 170, 51, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #ffaa33;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: rgba(240, 240, 240, 0.8);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 0;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #ffaa33;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: rgba(240, 240, 240, 0.85);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .about-feature {
+            background: rgba(255, 170, 51, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(255, 170, 51, 0.2);
+        }
+
+        .about-feature h4 {
+            color: #ffaa33;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .about-feature span {
+            color: rgba(240, 240, 240, 0.8);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, rgba(255, 170, 51, 0.05), rgba(52, 152, 219, 0.05));
+        }
+
+        .contact-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #ffaa33;
+        }
+
+        .contact p {
+            font-size: 1.2rem;
+            color: rgba(240, 240, 240, 0.85);
+            margin-bottom: 2rem;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ffaa33, #ffc166);
+            color: #0b1a2b;
+            box-shadow: 0 10px 30px rgba(255, 170, 51, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #f0f0f0;
+            border: 2px solid rgba(255, 170, 51, 0.5);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 15px 40px rgba(255, 170, 51, 0.5);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 170, 51, 0.1);
+            border-color: #ffaa33;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 3rem 0;
+            border-top: 1px solid rgba(255, 170, 51, 0.2);
+            text-align: center;
+        }
+
+        .footer p {
+            color: rgba(240, 240, 240, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Fixed Contact Icons */
+        .fixed-contact {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ffaa33, #ffc166);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0b1a2b;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(255, 170, 51, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .fixed-contact {
+                position: static;
+                flex-direction: row;
+                justify-content: center;
+                margin: 2rem 0;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div>
+            <div class="loader"></div>
+            <div class="loader-text">CARGANDO...</div>
+        </div>
+    </div>
+
+    <!-- Page Content -->
+    <div class="page-content" id="pageContent">
+        <!-- Animated Background -->
+        <div class="bg-animation"></div>
+
+        <!-- Fixed Contact Icons -->
+        <div class="fixed-contact">
+            <a href="mailto:kairosflow.soluciones@gmail.com" class="contact-icon" title="Email">
+                📧
+            </a>
+            <a href="https://wa.me/5493812002041" class="contact-icon" title="WhatsApp">
+                📱
+            </a>
+            <a href="https://linkedin.com/in/gsanchezsalhuana" class="contact-icon" title="LinkedIn">
+                💼
+            </a>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <img src="logo-kairosflow.png" alt="Kairos Flow Logo" class="logo" />
+                <h1>Kairos Flow</h1>
+                <p>Automatización, inteligencia y precisión. Transformamos la gestión empresarial con soluciones digitales hechas a medida. Desde dashboards y auditorías hasta sistemas administrativos completos. Tu tiempo vale oro. Nosotros lo afinamos.</p>
+                <div class="cta">
+                    <a href="#contacto">Solicitá tu solución</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contacto">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="section-badge">Iniciemos tu Transformación</div>
+                    <h2>¿Listo para el Cambio?</h2>
+                    <p>No esperes más para llevar tu empresa al siguiente nivel. En Kairos Flow creamos soluciones que generan resultados extraordinarios en el momento perfecto.</p>
+                    
+                    <div class="contact-buttons">
+                        <a href="mailto:kairosflow.soluciones@gmail.com" class="btn btn-primary">
+                            📧 Solicitá tu Consulta
+                        </a>
+                        <a href="https://wa.me/5493812002041" class="btn btn-secondary">
+                            📱 WhatsApp Directo
+                        </a>
+                    </div>
+
+                    <div style="margin-top: 3rem; padding: 2rem; background: rgba(255,170,51,0.05); border-radius: 15px; border: 1px solid rgba(255,170,51,0.2);">
+                        <h3 style="color: #ffaa33; margin-bottom: 1rem; font-size: 1.3rem;">Información de Contacto</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; text-align: left;">
+                            <div>
+                                <h4 style="color: #ffaa33; font-size: 1rem; margin-bottom: 0.5rem;">📧 Email</h4>
+                                <p style="color: rgba(240,240,240,0.8); margin: 0;">kairosflow.soluciones@gmail.com</p>
+                            </div>
+                            <div>
+                                <h4 style="color: #ffaa33; font-size: 1rem; margin-bottom: 0.5rem;">📱 WhatsApp</h4>
+                                <p style="color: rgba(240,240,240,0.8); margin: 0;">+54 381 200 2041</p>
+                            </div>
+                            <div>
+                                <h4 style="color: #ffaa33; font-size: 1rem; margin-bottom: 0.5rem;">📍 Ubicación</h4>
+                                <p style="color: rgba(240,240,240,0.8); margin: 0;">Alderetes, Tucumán, Argentina</p>
+                            </div>
+                            <div>
+                                <h4 style="color: #ffaa33; font-size: 1rem; margin-bottom: 0.5rem;">⏰ Horarios</h4>
+                                <p style="color: rgba(240,240,240,0.8); margin: 0;">Lun - Vie: 9:00 - 18:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2025 Kairos Flow. Todos los derechos reservados. | Transformación Digital Empresarial</p>
+                <p style="margin-top: 0.5rem; font-size: 0.8rem;">Tu tiempo vale oro. Nosotros lo afinamos.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Preloader Management
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            const pageContent = document.getElementById('pageContent');
+            
+            setTimeout(() => {
+                preloader.classList.add('hidden');
+                pageContent.style.display = 'block';
+            }, 1200);
+        });
+
+        // TRACKING AVANZADO IMPLEMENTADO:
+        // ✅ Visitantes únicos y recurrentes
+        // ✅ Tiempo en página
+        // ✅ Clics en botones de contacto
+        // ✅ Secciones más vistas
+        // ✅ Dispositivos usados (móvil/desktop)
+        // ✅ Ubicación geográfica de visitantes
+        // ✅ Páginas de entrada y salida
+
+        // Google Analytics Event Tracking
+        function trackEvent(action, category, label) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', action, {
+                    event_category: category,
+                    event_label: label,
+                    value: 1
+                });
+                console.log('📊 Evento trackeado:', action, category, label);
+            }
+        }
+
+        // Track contact clicks con detalles
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactLinks = document.querySelectorAll('.contact-icon, .btn, .cta a');
+            contactLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    const type = this.getAttribute('title') || this.textContent.trim();
+                    const href = this.getAttribute('href');
+                    
+                    // Determinar tipo de contacto
+                    let contactType = 'unknown';
+                    if (href.includes('mailto')) contactType = 'email';
+                    else if (href.includes('wa.me')) contactType = 'whatsapp';
+                    else if (href.includes('linkedin')) contactType = 'linkedin';
+                    
+                    trackEvent('contact_click', 'lead_generation', contactType);
+                    
+                    // Track también en consola para debug
+                    console.log('🎯 Click de contacto:', contactType, href);
+                });
+            });
+
+            // Track scroll depth (qué tan abajo llegan)
+            let maxScroll = 0;
+            window.addEventListener('scroll', function() {
+                const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+                if (scrollPercent > maxScroll && scrollPercent % 25 === 0) {
+                    maxScroll = scrollPercent;
+                    trackEvent('scroll_depth', 'engagement', scrollPercent + '%');
+                }
+            });
+
+            // Track tiempo en página
+            let timeOnPage = 0;
+            setInterval(() => {
+                timeOnPage += 30;
+                if (timeOnPage % 60 === 0) { // Cada minuto
+                    trackEvent('time_on_page', 'engagement', Math.floor(timeOnPage/60) + '_minutes');
+                }
+            }, 30000);
+        });
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    trackEvent('scroll_to_section', 'navigation', this.getAttribute('href'));
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                    
+                    // Track section views
+                    const sectionName = entry.target.id || entry.target.className;
+                    trackEvent('section_view', 'engagement', sectionName);
+                }
+            });
+        }, observerOptions);
+
+        // Observe service cards and sections
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.service-card, .stat-card');
+            cards.forEach((card, index) => {
+                card.style.transitionDelay = `${index * 0.1}s`;
+                observer.observe(card);
+            });
+
+            // Observe main sections
+            const sections = document.querySelectorAll('.hero, .services, .stats, .about, .contact');
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+
+        // Enhanced keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                const activeElement = document.activeElement;
+                if (activeElement.classList.contains('service-card') || 
+                    activeElement.classList.contains('stat-card')) {
+                    activeElement.click();
+                }
+            }
+        });
+
+        // Focus management for accessibility
+        document.addEventListener('DOMContentLoaded', function() {
+            const focusableElements = document.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])');
+            focusableElements.forEach(element => {
+                element.addEventListener('focus', function() {
+                    this.style.outline = '2px solid #ffaa33';
+                    this.style.outlineOffset = '2px';
+                });
+                
+                element.addEventListener('blur', function() {
+                    this.style.outline = 'none';
+                });
+            });
+        });
+
+        // Dynamic stats counter animation
+        function animateCounter(element, target, duration) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            
+            function updateCounter() {
+                start += increment;
+                if (start < target) {
+                    element.textContent = Math.floor(start) + (target.toString().includes('%') ? '%' : target.toString().includes('+') ? '+' : '');
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = target;
+                }
+            }
+            updateCounter();
+        }
+
+        // Trigger counter animation when stats section is visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const numbers = entry.target.querySelectorAll('.stat-number');
+                    numbers.forEach(number => {
+                        const target = number.textContent;
+                        number.textContent = '0';
+                        setTimeout(() => {
+                            animateCounter(number, target, 2000);
+                        }, 500);
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const statsSection = document.querySelector('.stats');
+            if (statsSection) {
+                statsObserver.observe(statsSection);
+            }
+        });
+
+        // Performance optimization: Lazy load background animations
+        let animationsLoaded = false;
+        window.addEventListener('scroll', function() {
+            if (!animationsLoaded && window.scrollY > 100) {
+                animationsLoaded = true;
+                // Add additional animations here if needed
+            }
+        });
+    </script>
+</body>
+</html>
+
+        <!-- Services Section -->
+        <section class="services" id="servicios">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">Nuestros Servicios</div>
+                    <h2 class="section-title">Soluciones que Transforman</h2>
+                    <p class="section-subtitle">Cada servicio está diseñado para optimizar tu negocio en el momento perfecto</p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">📊</div>
+                        <h3>Dashboards Inteligentes</h3>
+                        <p>Visualización de datos que revela insights ocultos y acelera la toma de decisiones estratégicas</p>
+                        <ul class="service-features">
+                            <li>Power BI y Excel avanzado</li>
+                            <li>KPIs personalizados</li>
+                            <li>Reportes automatizados</li>
+                            <li>Análisis en tiempo real</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">⚙️</div>
+                        <h3>Automatización Inteligente</h3>
+                        <p>Soluciones que eliminan tareas repetitivas y multiplican la productividad de tu equipo</p>
+                        <ul class="service-features">
+                            <li>Scripts Python personalizados</li>
+                            <li>Macros Excel/VBA avanzadas</li>
+                            <li>Workflows automatizados</li>
+                            <li>Integración de sistemas</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">🔍</div>
+                        <h3>Auditorías Empresariales</h3>
+                        <p>Diagnósticos profundos que identifican oportunidades y optimizan cada proceso</p>
+                        <ul class="service-features">
+                            <li>Auditoría de procesos</li>
+                            <li>Análisis de eficiencia</li>
+                            <li>Análisis de libros IVA</li>
+                            <li>Reportes de mejoras</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">📄</div>
+                        <h3>CVs de Alto Impacto</h3>
+                        <p>Currículums profesionales que conquistan reclutadores y sistemas ATS</p>
+                        <ul class="service-features">
+                            <li>Optimización para ATS</li>
+                            <li>Diseño visual premium</li>
+                            <li>Estrategia de palabras clave</li>
+                            <li>Múltiples versiones</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">🚀</div>
+                        <h3>Transformación Digital</h3>
+                        <p>Reestructuración completa hacia organizaciones ágiles y eficientes</p>
+                        <ul class="service-features">
+                            <li>Digitalización de procesos</li>
+                            <li>Metodologías ágiles</li>
+                            <li>Change management</li>
+                            <li>Capacitación de equipos</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">📈</div>
+                        <h3>Marketing Digital</h3>
+                        <p>Estrategias que posicionan tu marca como líder y generan conversiones reales</p>
+                        <ul class="service-features">
+                            <li>Campañas publicitarias</li>
+                            <li>Contenido estratégico</li>
+                            <li>Análisis de mercado</li>
+                            <li>Branding digital</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">Resultados Comprobados</div>
+                    <h2 class="section-title">Números que Hablan</h2>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Años de Experiencia</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">90%</span>
+                        <span class="stat-label">Precisión Lograda</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">50%</span>
+                        <span class="stat-label">Reducción de Tiempos</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">100+</span>
+                        <span class="stat-label">Proyectos Exitosos</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>El Momento Perfecto para Transformar</h2>
+                        <p>En Kairos Flow entendemos que cada empresa tiene su ritmo único. Por eso desarrollamos soluciones que fluyen naturalmente con tus procesos existentes, potenciándolos sin disrupciones innecesarias.</p>
+                        <p>Nuestra experiencia de más de 20 años en gestión administrativa y transformación digital nos permite identificar el momento oportuno para cada cambio, garantizando resultados sostenibles y medibles.</p>
+                        
+                        <div class="about-features">
+                            <div class="about-feature">
+                                <h4>Timing Perfecto</h4>
+                                <span>Kairos</span>
+                            </div>
+                            <div class="about-feature">
+                                <h4>Flujo Eficiente</h4>
+                                <span>Flow</span>
+                            </div>
+                            <div class="about-feature">
+                                <h4>Resultados</h4>
+                                <span>Medibles</span>
+                            </div>
+                            <div class="about-feature">
+                                <h4>Innovación</h4>
+                                <span>Constante</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-visual">
+                        <!-- Aquí puedes agregar otra imagen o gráfico si lo deseas -->
+                        <div style="background: linear-gradient(135deg, rgba(255,170,51,0.1), rgba(52,152,219,0.1)); border-radius: 15px; padding: 3rem; text-align: center; border: 1px solid rgba(255,170,51,0.2);">
+                            <h3 style="color: #ffaa33; margin-bottom: 1rem;">¿Por qué elegirnos?</h3>
+                            <p style="color: rgba(240,240,240,0.8); margin-bottom: 1.5rem;">Combinamos experiencia administrativa sólida con tecnologías emergentes, garantizando resultados que impactan directamente en el crecimiento de tu empresa.</p>
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 2rem;">
+                                <div style="background: rgba(255,170,51,0.1); padding: 1rem; border-radius: 8px;">
+                                    <div style="font-size: 2rem; color: #ffaa33;">⏰</div>
+                                    <div style="font-size: 0.9rem; color: rgba(240,240,240,0.8);">Timing Estratégico</div>
+                                </div>
+                                <div style="background: rgba(255,170,51,0.1); padding: 1rem; border-radius: 8px;">
+                                    <div style="font-size: 2rem; color: #ffaa33;">🎯</div>
+                                    <div style="font-size: 0.9rem; color: rgba(240,240,240,0.8);">Resultados Precisos</div>
+                                </div>
+                                <div style="background: rgba(255,170,51,0.1); padding: 1rem; border-radius: 8px;">
+                                    <div style="font-size: 2rem; color: #ffaa33;">🚀</div>
+                                    <div style="font-size: 0.9rem; color: rgba(240,240,240,0.8);">Innovación Aplicada</div>
+                                </div>
+                                <div style="background: rgba(255,170,51,0.1); padding: 1rem; border-radius: 8px;">
+                                    <div style="font-size: 2rem; color: #ffaa33;">🤝</div>
+                                    <div style="font-size: 0.9rem; color: rgba(240,240,240,0.8);">Soporte Continuo</div>
+                                </div>
+                            </div>
+                        </div>
