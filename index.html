@@ -1163,7 +1163,329 @@
                 animation-duration: 30s;
             }
         }
-        /* RESPONSIVE DESIGN */
+        /* ICONOGRAFÍA SVG TECH */
+        .tech-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .tech-icon svg {
+            width: 100%;
+            height: 100%;
+            fill: var(--accent-cyan);
+            filter: drop-shadow(0 0 10px var(--accent-cyan));
+        }
+
+        .service-card:hover .tech-icon svg {
+            fill: var(--accent-purple);
+            filter: drop-shadow(0 0 15px var(--accent-purple));
+            transform: scale(1.1);
+        }
+
+        /* CTA MEGA DESTACADO */
+        .mega-cta {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem 3rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 60px;
+            background: var(--gradient-tech);
+            color: var(--dark-navy);
+            text-decoration: none;
+            overflow: hidden;
+            box-shadow: 
+                0 10px 30px rgba(0, 212, 255, 0.4),
+                0 0 50px rgba(0, 212, 255, 0.2);
+            transition: all 0.4s ease;
+            animation: ctaPulse 3s ease-in-out infinite;
+        }
+
+        .mega-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.4), 
+                transparent);
+            transition: left 0.6s ease;
+        }
+
+        .mega-cta:hover::before {
+            left: 100%;
+        }
+
+        .mega-cta:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 
+                0 20px 50px rgba(0, 212, 255, 0.6),
+                0 0 80px rgba(0, 212, 255, 0.4);
+            animation: none;
+        }
+
+        .mega-cta .icon {
+            font-size: 1.5rem;
+            animation: iconBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes ctaPulse {
+            0%, 100% {
+                box-shadow: 
+                    0 10px 30px rgba(0, 212, 255, 0.4),
+                    0 0 50px rgba(0, 212, 255, 0.2);
+            }
+            50% {
+                box-shadow: 
+                    0 15px 40px rgba(0, 212, 255, 0.6),
+                    0 0 70px rgba(0, 212, 255, 0.4);
+            }
+        }
+
+        @keyframes iconBounce {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(5px); }
+        }
+
+        /* SECCIÓN CTA ESPECIAL */
+        .cta-section-mega {
+            padding: 6rem 0;
+            background: 
+                radial-gradient(ellipse at center, rgba(0, 212, 255, 0.1) 0%, transparent 70%),
+                var(--gradient-bg);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section-mega::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(45deg, transparent 48%, rgba(0, 212, 255, 0.1) 50%, transparent 52%),
+                linear-gradient(-45deg, transparent 48%, rgba(99, 102, 241, 0.1) 50%, transparent 52%);
+            animation: crossHatch 8s ease-in-out infinite;
+        }
+
+        @keyframes crossHatch {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        .cta-mega-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-mega-title {
+            font-family: 'Manrope', sans-serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--text-white);
+            letter-spacing: -0.02em;
+        }
+
+        .cta-mega-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        /* MEJORAS RESPONSIVE MÓVILES */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .hero {
+                padding: 120px 0 80px;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: clamp(2.5rem, 8vw, 3.5rem);
+                line-height: 1.2;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+                margin-bottom: 2rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .hero-stat {
+                padding: 1.5rem;
+            }
+
+            .hero-stat-number {
+                font-size: 1.8rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .section-title {
+                font-size: clamp(2rem, 6vw, 2.8rem);
+                margin-bottom: 1rem;
+            }
+
+            .section-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 2rem;
+            }
+
+            .service-card {
+                padding: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .service-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .service-card p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .stat-card {
+                padding: 2rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .contact-content {
+                padding: 0 1rem;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+
+            .contact-info {
+                padding: 2rem;
+                margin-top: 3rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .mega-cta {
+                width: 100%;
+                max-width: 350px;
+                padding: 1.2rem 2rem;
+                font-size: 1.1rem;
+            }
+
+            .cta-mega-title {
+                font-size: clamp(1.8rem, 6vw, 2.5rem);
+            }
+
+            .cta-mega-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 2rem;
+            }
+
+            .cta-section-mega {
+                padding: 4rem 0;
+            }
+
+            .tech-icon {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .hero {
+                padding: 100px 0 60px;
+            }
+
+            .hero-content h1 {
+                font-size: clamp(2rem, 7vw, 3rem);
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .hero-stat {
+                padding: 1rem;
+            }
+
+            .section-header {
+                margin-bottom: 3rem;
+            }
+
+            .service-card {
+                padding: 1.5rem;
+            }
+
+            .contact-info {
+                padding: 1.5rem;
+            }
+
+            .mega-cta {
+                padding: 1rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .nav-logo {
+                font-size: 1.2rem;
+            }
+        }
         @media (max-width: 1024px) {
             .hero-grid {
                 grid-template-columns: 1fr;
@@ -1441,6 +1763,22 @@
             </div>
         </section>
 
+        <!-- SECCIÓN CTA MEGA -->
+        <section class="cta-section-mega">
+            <div class="container">
+                <div class="cta-mega-content">
+                    <h2 class="cta-mega-title">¿Listo para Revolucionar tu Negocio?</h2>
+                    <p class="cta-mega-subtitle">
+                        No pierdas más tiempo con soluciones genéricas. Hablemos de tu proyecto específico y creemos algo único que resuelva exactamente lo que necesitas.
+                    </p>
+                    <a href="https://wa.me/5493812002041?text=Hola%21%20Quiero%20desarrollar%20una%20soluci%C3%B3n%20personalizada%20para%20mi%20empresa" class="mega-cta">
+                        <span class="icon">🚀</span>
+                        Hagamos tu Proyecto Realidad
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <!-- Estadísticas -->
         <section class="stats" id="nosotros">
             <div class="container">
@@ -1464,12 +1802,12 @@
                         <div class="stat-description">Soluciones únicas desarrolladas desde cero</div>
                     </div>
                     <div class="stat-card reveal">
-                        <span class="stat-number">24/7</span>
+                        <span class="stat-number">24 Hrs</span>
                         <div class="stat-label">Automatización Activa</div>
                         <div class="stat-description">Tus procesos optimizados trabajando sin parar</div>
                     </div>
                     <div class="stat-card reveal">
-                        <span class="stat-number">∞</span>
+                        <span class="stat-number">100%</span>
                         <div class="stat-label">Posibilidades de Customización</div>
                         <div class="stat-description">Sin límites de funcionalidades o integraciones</div>
                     </div>
@@ -1492,8 +1830,9 @@
                         <a href="mailto:kairosflow.soluciones@gmail.com" class="btn btn-primary">
                             📧 Consulta Gratuita
                         </a>
-                        <a href="https://wa.me/5493812002041" class="btn btn-secondary">
-                            💬 WhatsApp Directo
+                        <a href="https://wa.me/5493812002041?text=Hola%21%20Me%20interesa%20una%20consulta%20gratuita%20sobre%20desarrollo%20de%20soluciones%20personalizadas" class="mega-cta">
+                            <span class="icon">💬</span>
+                            Contactame Ahora
                         </a>
                     </div>
 
@@ -1512,7 +1851,7 @@
                             </div>
                             <div class="contact-item">
                                 <h4>📍 Ubicación</h4>
-                                <p>Alderetes, Tucumán, Argentina</p>
+                                <p>Tucumán, Argentina</p>
                                 <p style="font-size: 0.9rem; opacity: 0.7;">Servicios a nivel nacional e internacional</p>
                             </div>
                             <div class="contact-item">
@@ -1523,9 +1862,9 @@
                         </div>
 
                         <div style="margin-top: 2rem; padding: 2rem; background: rgba(100, 255, 218, 0.1); border-radius: 15px; border: 1px solid rgba(100, 255, 218, 0.3);">
-                            <h4 style="color: var(--accent-cyan); margin-bottom: 1rem; text-align: center;">🛡️ Garantía de Satisfacción Total</h4>
+                            <h4 style="color: var(--accent-cyan); margin-bottom: 1rem; text-align: center;">🛡️ Garantía de Calidad</h4>
                             <p style="text-align: center; margin: 0;">
-                                <strong>Primera consulta gratuita</strong> • <strong>Prototipo funcional antes del pago</strong> • <strong>Revisiones ilimitadas hasta que esté perfecto</strong> • <strong>Código fuente incluido</strong> • <strong>Soporte técnico de por vida</strong>
+                                <strong>Consulta inicial gratuita</strong> • <strong>Propuesta detallada sin costo</strong> • <strong>Entrega en plazo acordado</strong> • <strong>Soporte post-entrega incluido</strong> • <strong>Satisfacción garantizada</strong>
                             </p>
                         </div>
                     </div>
