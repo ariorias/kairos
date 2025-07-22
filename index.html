@@ -29,7 +29,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <title>Kairos Flow - Transformación Digital Profesional</title>
     <style>
@@ -40,43 +40,44 @@
         }
 
         :root {
-            /* Paleta profesional y elegante */
-            --primary-blue: #1e40af;
+            /* Paleta tech moderna y sofisticada */
+            --primary-blue: #0066ff;
             --primary-blue-light: #3b82f6;
-            --primary-blue-dark: #1e3a8a;
-            --accent-gold: #f59e0b;
-            --accent-gold-light: #fbbf24;
+            --primary-blue-dark: #0052cc;
+            --accent-cyan: #00d4ff;
+            --accent-purple: #6366f1;
             --accent-emerald: #10b981;
-            --accent-purple: #8b5cf6;
+            --accent-orange: #ff6b35;
             
-            /* Backgrounds profesionales */
-            --dark-navy: #0f172a;
-            --slate-dark: #1e293b;
-            --slate-light: #334155;
+            /* Backgrounds tech-inspired */
+            --dark-navy: #0a0e1a;
+            --slate-dark: #1a1f2e;
+            --slate-light: #2d3748;
             --white: #ffffff;
             --gray-50: #f8fafc;
             --gray-100: #f1f5f9;
             --gray-200: #e2e8f0;
             --gray-700: #374151;
             --gray-800: #1f2937;
-            --gray-900: #111827;
+            --gray-900: #0f1419;
             
-            /* Texto profesional */
-            --text-primary: #1f2937;
-            --text-secondary: #6b7280;
+            /* Texto con mejor contraste tech */
+            --text-primary: #1a202c;
+            --text-secondary: #718096;
             --text-white: #ffffff;
-            --text-light: #f8fafc;
+            --text-light: #e2e8f0;
+            --text-tech: #64ffda;
             
-            /* Efectos sutiles */
-            --glass-bg: rgba(255, 255, 255, 0.1);
-            --glass-border: rgba(255, 255, 255, 0.2);
-            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            /* Efectos modernos */
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(100, 255, 218, 0.2);
+            --shadow-tech: 0 8px 32px rgba(0, 102, 255, 0.15);
+            --shadow-glow: 0 0 40px rgba(100, 255, 218, 0.3);
             
-            /* Gradientes profesionales */
-            --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-light) 100%);
-            --gradient-accent: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
-            --gradient-bg: linear-gradient(135deg, var(--dark-navy) 0%, var(--slate-dark) 100%);
+            /* Gradientes tech */
+            --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-cyan) 100%);
+            --gradient-tech: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 50%, var(--primary-blue) 100%);
+            --gradient-bg: linear-gradient(135deg, var(--dark-navy) 0%, var(--slate-dark) 50%, var(--gray-900) 100%);
         }
 
         body {
@@ -85,6 +86,9 @@
             color: var(--text-white);
             line-height: 1.6;
             overflow-x: hidden;
+            font-optical-sizing: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         /* NAVEGACIÓN PROFESIONAL */
@@ -116,14 +120,22 @@
         }
 
         .nav-logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.4rem;
+            font-weight: 600;
             color: var(--text-white);
             text-decoration: none;
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-logo::before {
+            content: '</>';
+            color: var(--accent-cyan);
+            font-weight: 700;
+            margin-right: 0.5rem;
         }
 
         .nav-links {
@@ -147,7 +159,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--accent-gold);
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
             transition: width 0.3s ease;
         }
 
@@ -156,7 +168,7 @@
         }
 
         .nav-link:hover {
-            color: var(--accent-gold);
+            color: var(--accent-cyan);
         }
 
         /* PRELOADER ELEGANTE */
@@ -266,19 +278,32 @@
         }
 
         .hero-content h1 {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Manrope', sans-serif;
             font-size: clamp(3rem, 6vw, 4.5rem);
-            font-weight: 700;
+            font-weight: 800;
             line-height: 1.1;
             margin-bottom: 2rem;
             color: var(--text-white);
+            letter-spacing: -0.03em;
         }
 
         .hero-content .highlight {
-            background: var(--gradient-accent);
+            background: var(--gradient-tech);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            position: relative;
+        }
+
+        .hero-content .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient-tech);
+            opacity: 0.5;
         }
 
         .hero-content p {
@@ -311,12 +336,13 @@
         }
 
         .hero-stat-number {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'JetBrains Mono', monospace;
             font-size: 2rem;
             font-weight: 700;
-            color: var(--accent-gold);
+            color: var(--accent-cyan);
             display: block;
             margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
         }
 
         .hero-stat-label {
@@ -427,22 +453,33 @@
 
         .section-badge {
             display: inline-block;
-            background: rgba(59, 130, 246, 0.1);
-            color: var(--primary-blue-light);
-            padding: 0.5rem 1.5rem;
-            border-radius: 25px;
+            background: rgba(100, 255, 218, 0.1);
+            color: var(--accent-cyan);
+            padding: 0.75rem 2rem;
+            border-radius: 30px;
             font-size: 0.9rem;
             font-weight: 600;
             margin-bottom: 1rem;
-            border: 1px solid rgba(59, 130, 246, 0.3);
+            border: 1px solid rgba(100, 255, 218, 0.3);
+            font-family: 'JetBrains Mono', monospace;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
 
         .section-title {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Manrope', sans-serif;
             font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 700;
+            font-weight: 800;
             margin-bottom: 1.5rem;
             color: var(--text-white);
+            letter-spacing: -0.02em;
+        }
+
+        .section-title .highlight {
+            background: var(--gradient-tech);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .section-subtitle {
@@ -505,11 +542,12 @@
         }
 
         .service-card h3 {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Manrope', sans-serif;
             font-size: 1.5rem;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 1rem;
             color: var(--text-white);
+            letter-spacing: -0.01em;
         }
 
         .service-card p {
@@ -532,11 +570,12 @@
         }
 
         .service-features li::before {
-            content: '✓';
+            content: '▶';
             position: absolute;
             left: 0;
-            color: var(--accent-emerald);
+            color: var(--accent-cyan);
             font-weight: bold;
+            font-size: 0.8rem;
         }
 
         /* SECCIÓN DE ESTADÍSTICAS */
@@ -566,12 +605,13 @@
         }
 
         .stat-number {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'JetBrains Mono', monospace;
             font-size: 3rem;
             font-weight: 700;
-            color: var(--accent-gold);
+            color: var(--accent-cyan);
             display: block;
             margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
         }
 
         .stat-label {
@@ -622,11 +662,13 @@
         }
 
         .contact-item h4 {
-            color: var(--accent-gold);
+            color: var(--accent-cyan);
             margin-bottom: 1rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 600;
         }
 
         .contact-item p {
@@ -704,8 +746,9 @@
         }
 
         .footer-highlight {
-            color: var(--accent-gold);
+            color: var(--accent-cyan);
             font-weight: 600;
+            font-family: 'JetBrains Mono', monospace;
         }
 
         /* EFECTOS SUTILES Y ELEGANTES */
@@ -1036,7 +1079,56 @@
             will-change: transform;
         }
 
-        /* Efectos solo en dispositivos que no prefieren movimiento reducido */
+        /* Efectos tech adicionales */
+        .tech-grid {
+            background-image: 
+                linear-gradient(rgba(100, 255, 218, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(100, 255, 218, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 50px 50px; }
+        }
+
+        /* Mejora en los dots flotantes */
+        .dot {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--accent-cyan);
+            border-radius: 50%;
+            animation: floatDot 15s linear infinite;
+            box-shadow: 0 0 10px var(--accent-cyan);
+        }
+
+        .dot:nth-child(2n) {
+            background: var(--accent-purple);
+            box-shadow: 0 0 10px var(--accent-purple);
+            animation-delay: 5s;
+            animation-duration: 20s;
+        }
+
+        .dot:nth-child(3n) {
+            background: var(--primary-blue);
+            box-shadow: 0 0 10px var(--primary-blue);
+            animation-delay: 10s;
+            animation-duration: 25s;
+        }
+
+        /* Mejora del cursor */
+        .custom-cursor {
+            border: 2px solid var(--accent-cyan);
+            box-shadow: 0 0 10px var(--accent-cyan);
+        }
+
+        .custom-cursor.hover {
+            border-color: var(--accent-purple);
+            background: rgba(99, 102, 241, 0.1);
+            box-shadow: 0 0 20px var(--accent-purple);
+        }
         @media (prefers-reduced-motion: reduce) {
             .floating-dots,
             .breathing,
@@ -1205,7 +1297,7 @@
         </div>
 
         <!-- Hero Section -->
-        <section class="hero">
+        <section class="hero tech-grid">
             <div class="container">
                 <div class="hero-grid">
                     <div class="hero-content">
@@ -1213,7 +1305,7 @@
                             Desarrollo de Soluciones <span class="highlight">a Medida</span>
                         </h1>
                         <p>
-                            Especialista en desarrollo de aplicaciones web personalizadas con Python y automatización empresarial. 
+                            Especialista en desarrollo de aplicaciones web personalizadas con <strong>Python</strong> y automatización empresarial. 
                             <strong>Cada proyecto es único</strong> - desarrollo soluciones desde cero que se adaptan exactamente a lo que tu negocio necesita, sin limitaciones de plantillas o software comercial.
                         </p>
                         
@@ -1430,8 +1522,8 @@
                             </div>
                         </div>
 
-                        <div style="margin-top: 2rem; padding: 2rem; background: rgba(245, 158, 11, 0.1); border-radius: 15px; border: 1px solid rgba(245, 158, 11, 0.3);">
-                            <h4 style="color: var(--accent-gold); margin-bottom: 1rem; text-align: center;">🛡️ Garantía de Satisfacción Total</h4>
+                        <div style="margin-top: 2rem; padding: 2rem; background: rgba(100, 255, 218, 0.1); border-radius: 15px; border: 1px solid rgba(100, 255, 218, 0.3);">
+                            <h4 style="color: var(--accent-cyan); margin-bottom: 1rem; text-align: center;">🛡️ Garantía de Satisfacción Total</h4>
                             <p style="text-align: center; margin: 0;">
                                 <strong>Primera consulta gratuita</strong> • <strong>Prototipo funcional antes del pago</strong> • <strong>Revisiones ilimitadas hasta que esté perfecto</strong> • <strong>Código fuente incluido</strong> • <strong>Soporte técnico de por vida</strong>
                             </p>
