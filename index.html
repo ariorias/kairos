@@ -1,116 +1,121 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Kairos Flow - Transformación digital empresarial con IA y automatización. Expertos en Power BI, RPA y consultoría digital.">
-    <meta name="keywords" content="automatización, dashboards, power bi, consultoría digital, Kairos Flow, inteligencia artificial, transformación digital">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kairos Flow - Desarrollo de soluciones Python personalizadas y automatización empresarial inteligente.">
+    <meta name="keywords" content="automatización python, desarrollo web personalizado, dashboards interactivos, soluciones empresariales a medida, Kairos Flow">
     <meta name="author" content="Kairos Flow">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Kairos Flow - Transformación Digital Empresarial">
-    <meta property="og:description" content="Expertos en automatización, IA y transformación digital. Resultados comprobados y soluciones profesionales.">
-    <meta property="og:image" content="https://ariorias.github.io/kairos/logo-kairosflow.png">
+    <meta property="og:title" content="Kairos Flow - Desarrollo de Soluciones Empresariales a Medida">
+    <meta property="og:description" content="Especialistas en desarrollo Python y automatización empresarial. Soluciones personalizadas que transforman tu negocio.">
     
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
-    
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KPJGEDLXZ1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-KPJGEDLXZ1');
-    </script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <title>Kairos Flow - Transformación Digital Profesional</title>
+    <title>Kairos Flow - Desarrollo de Soluciones Tech a Medida</title>
+    
     <style>
+        :root {
+            /* Paleta tech futurista */
+            --neon-cyan: #00ffff;
+            --neon-purple: #8b5cf6;
+            --neon-pink: #ff007f;
+            --electric-blue: #0066ff;
+            --cyber-green: #00ff88;
+            --matrix-green: #39ff14;
+            
+            /* Backgrounds */
+            --void-black: #000000;
+            --deep-space: #0a0a0f;
+            --cyber-dark: #0f0f23;
+            --neural-gray: #1a1a2e;
+            --tech-slate: #16213e;
+            
+            /* Gradientes */
+            --gradient-cyber: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-purple) 50%, var(--neon-pink) 100%);
+            --gradient-matrix: linear-gradient(135deg, var(--cyber-green) 0%, var(--matrix-green) 100%);
+            --gradient-neural: linear-gradient(135deg, var(--electric-blue) 0%, var(--neon-purple) 100%);
+            --gradient-void: linear-gradient(135deg, var(--void-black) 0%, var(--deep-space) 50%, var(--cyber-dark) 100%);
+            
+            /* Efectos luminosos */
+            --glow-cyan: 0 0 20px var(--neon-cyan), 0 0 40px var(--neon-cyan);
+            --glow-purple: 0 0 20px var(--neon-purple), 0 0 40px var(--neon-purple);
+            --glow-green: 0 0 20px var(--cyber-green), 0 0 40px var(--cyber-green);
+            
+            /* Texto */
+            --text-neon: #ffffff;
+            --text-cyber: #e0e6ed;
+            --text-dim: #a0a9c0;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        :root {
-            /* Paleta tech moderna y sofisticada */
-            --primary-blue: #0066ff;
-            --primary-blue-light: #3b82f6;
-            --primary-blue-dark: #0052cc;
-            --accent-cyan: #00d4ff;
-            --accent-purple: #6366f1;
-            --accent-emerald: #10b981;
-            --accent-orange: #ff6b35;
-            
-            /* Backgrounds tech-inspired */
-            --dark-navy: #0a0e1a;
-            --slate-dark: #1a1f2e;
-            --slate-light: #2d3748;
-            --white: #ffffff;
-            --gray-50: #f8fafc;
-            --gray-100: #f1f5f9;
-            --gray-200: #e2e8f0;
-            --gray-700: #374151;
-            --gray-800: #1f2937;
-            --gray-900: #0f1419;
-            
-            /* Texto con mejor contraste tech */
-            --text-primary: #1a202c;
-            --text-secondary: #718096;
-            --text-white: #ffffff;
-            --text-light: #e2e8f0;
-            --text-tech: #64ffda;
-            
-            /* Efectos modernos */
-            --glass-bg: rgba(255, 255, 255, 0.08);
-            --glass-border: rgba(100, 255, 218, 0.2);
-            --shadow-tech: 0 8px 32px rgba(0, 102, 255, 0.15);
-            --shadow-glow: 0 0 40px rgba(100, 255, 218, 0.3);
-            
-            /* Gradientes tech */
-            --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-cyan) 100%);
-            --gradient-tech: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 50%, var(--primary-blue) 100%);
-            --gradient-bg: linear-gradient(135deg, var(--dark-navy) 0%, var(--slate-dark) 50%, var(--gray-900) 100%);
-        }
-
         body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            background: var(--gradient-bg);
-            color: var(--text-white);
+            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+            background: var(--gradient-void);
+            color: var(--text-neon);
             line-height: 1.6;
             overflow-x: hidden;
-            font-optical-sizing: auto;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* NAVEGACIÓN PROFESIONAL */
+        /* Efectos de fondo */
+        .tech-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.8;
+        }
+
+        .neural-network {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(0, 255, 136, 0.1) 0%, transparent 50%);
+            animation: neuralPulse 8s ease-in-out infinite;
+        }
+
+        @keyframes neuralPulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        /* Navegación */
         .navbar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(15, 23, 42, 0.95);
+            background: rgba(0, 0, 0, 0.9);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 2px solid var(--neon-cyan);
+            box-shadow: var(--glow-cyan);
             z-index: 1000;
             transition: all 0.3s ease;
         }
 
-        .navbar.scrolled {
-            background: rgba(15, 23, 42, 0.98);
-            box-shadow: var(--shadow-lg);
-        }
-
         .nav-container {
-            max-width: 1400px;
+            max-width: 1600px;
             margin: 0 auto;
             padding: 0 2rem;
             display: flex;
@@ -121,64 +126,83 @@
 
         .nav-logo {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: var(--text-white);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--neon-cyan);
             text-decoration: none;
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            letter-spacing: -0.02em;
+            text-shadow: var(--glow-cyan);
         }
 
         .nav-logo::before {
-            content: '</>';
-            color: var(--accent-cyan);
-            font-weight: 700;
-            margin-right: 0.5rem;
+            content: '⚡';
+            font-size: 2rem;
+            animation: logoGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes logoGlow {
+            0%, 100% { 
+                text-shadow: 0 0 5px var(--neon-cyan);
+                transform: scale(1);
+            }
+            50% { 
+                text-shadow: var(--glow-cyan);
+                transform: scale(1.1);
+            }
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 3rem;
             list-style: none;
         }
 
         .nav-link {
-            color: var(--text-light);
+            color: var(--text-cyber);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             transition: all 0.3s ease;
             position: relative;
+            padding: 0.5rem 1rem;
         }
 
-        .nav-link::after {
+        .nav-link::before {
             content: '';
             position: absolute;
-            bottom: -5px;
+            top: 0;
             left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
-            transition: width 0.3s ease;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-cyber);
+            opacity: 0;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            z-index: -1;
         }
 
-        .nav-link:hover::after {
-            width: 100%;
+        .nav-link:hover::before {
+            opacity: 0.2;
         }
 
         .nav-link:hover {
-            color: var(--accent-cyan);
+            color: var(--neon-cyan);
+            text-shadow: 0 0 10px var(--neon-cyan);
+            transform: translateY(-2px);
         }
 
-        /* PRELOADER ELEGANTE */
+        /* Preloader */
         .preloader {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: var(--gradient-bg);
+            background: var(--gradient-void);
             z-index: 10000;
             display: flex;
             align-items: center;
@@ -195,35 +219,64 @@
             text-align: center;
         }
 
-        .loader-logo {
-            width: 120px;
-            height: 120px;
+        .cyber-spinner {
+            width: 150px;
+            height: 150px;
             margin: 0 auto 2rem;
-            border: 3px solid rgba(59, 130, 246, 0.3);
-            border-top: 3px solid var(--primary-blue-light);
+            position: relative;
+        }
+
+        .cyber-spinner::before,
+        .cyber-spinner::after {
+            content: '';
+            position: absolute;
+            border: 3px solid transparent;
             border-radius: 50%;
-            animation: spin 1s linear infinite;
+            animation: cyberSpin 2s linear infinite;
         }
 
-        .loader-text {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--text-white);
-            margin-bottom: 1rem;
+        .cyber-spinner::before {
+            width: 100%;
+            height: 100%;
+            border-top: 3px solid var(--neon-cyan);
+            border-right: 3px solid var(--neon-cyan);
+            box-shadow: var(--glow-cyan);
         }
 
-        .loader-subtitle {
-            color: var(--text-secondary);
-            font-size: 1rem;
+        .cyber-spinner::after {
+            width: 80%;
+            height: 80%;
+            top: 10%;
+            left: 10%;
+            border-bottom: 3px solid var(--neon-purple);
+            border-left: 3px solid var(--neon-purple);
+            box-shadow: var(--glow-purple);
+            animation-direction: reverse;
         }
 
-        @keyframes spin {
+        @keyframes cyberSpin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
 
-        /* CONTENIDO PRINCIPAL */
+        .loader-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--neon-cyan);
+            text-shadow: var(--glow-cyan);
+            margin-bottom: 1rem;
+        }
+
+        .loader-subtitle {
+            color: var(--text-cyber);
+            font-size: 1.2rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Contenido principal */
         .main-content {
             opacity: 0;
             animation: fadeInUp 1s ease 1s forwards;
@@ -241,20 +294,18 @@
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 1600px;
             margin: 0 auto;
             padding: 0 2rem;
-            position: relative;
         }
 
-        /* HERO SECTION PROFESIONAL */
+        /* Hero Section */
         .hero {
             position: relative;
-            padding: 120px 0 80px;
+            padding: 140px 0 100px;
             min-height: 100vh;
             display: flex;
             align-items: center;
-            overflow: hidden;
         }
 
         .hero::before {
@@ -265,133 +316,190 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(ellipse at top right, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-                radial-gradient(ellipse at bottom left, rgba(245, 158, 11, 0.1) 0%, transparent 50%);
+                radial-gradient(ellipse at top left, rgba(0, 255, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom right, rgba(139, 92, 246, 0.15) 0%, transparent 50%);
             z-index: -1;
         }
 
         .hero-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 6rem;
             align-items: center;
         }
 
         .hero-content h1 {
-            font-family: 'Manrope', sans-serif;
-            font-size: clamp(3rem, 6vw, 4.5rem);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(3.5rem, 7vw, 5.5rem);
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 2rem;
-            color: var(--text-white);
+            color: var(--text-neon);
             letter-spacing: -0.03em;
         }
 
-        .hero-content .highlight {
-            background: var(--gradient-tech);
+        .highlight {
+            background: var(--gradient-cyber);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            position: relative;
+            animation: highlightPulse 3s ease-in-out infinite;
         }
 
-        .hero-content .highlight::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--gradient-tech);
-            opacity: 0.5;
+        @keyframes highlightPulse {
+            0%, 100% { 
+                filter: brightness(1); 
+                transform: scale(1);
+            }
+            50% { 
+                filter: brightness(1.2); 
+                transform: scale(1.02);
+            }
         }
 
-        .hero-content p {
-            font-size: 1.3rem;
-            color: var(--text-light);
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: var(--text-cyber);
             margin-bottom: 3rem;
             line-height: 1.7;
-            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .problem-statement {
+            background: rgba(0, 255, 255, 0.05);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .problem-statement::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-cyber);
+            animation: progressBar 4s ease-in-out infinite;
+        }
+
+        @keyframes progressBar {
+            0%, 100% { transform: scaleX(0); }
+            50% { transform: scaleX(1); }
+        }
+
+        .problem-title {
+            font-size: 1.3rem;
+            color: var(--neon-cyan);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .problem-text {
+            color: var(--text-cyber);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .solution-highlight {
+            color: var(--cyber-green);
+            font-weight: 700;
+            text-shadow: 0 0 10px var(--cyber-green);
         }
 
         .hero-stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
-            margin-bottom: 3rem;
+            margin: 3rem 0;
         }
 
         .hero-stat {
             text-align: center;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid var(--neon-cyan);
             border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
         }
 
         .hero-stat:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: var(--glow-cyan);
+            border-color: var(--neon-purple);
         }
 
         .hero-stat-number {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 700;
-            color: var(--accent-cyan);
+            color: var(--neon-cyan);
             display: block;
             margin-bottom: 0.5rem;
-            letter-spacing: -0.02em;
+            text-shadow: 0 0 15px var(--neon-cyan);
         }
 
         .hero-stat-label {
             font-size: 0.9rem;
-            color: var(--text-light);
+            color: var(--text-cyber);
             text-transform: uppercase;
             letter-spacing: 1px;
+            font-weight: 600;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
             flex-wrap: wrap;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.75rem;
-            padding: 1rem 2rem;
+            gap: 1rem;
+            padding: 1.2rem 2.5rem;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.4s ease;
             border: 2px solid transparent;
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
         }
 
         .btn-primary {
-            background: var(--gradient-primary);
-            color: var(--text-white);
-            box-shadow: var(--shadow-lg);
+            background: var(--gradient-neural);
+            color: var(--void-black);
+            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.4);
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-xl);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(0, 102, 255, 0.6);
         }
 
         .btn-secondary {
             background: transparent;
-            color: var(--text-white);
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: var(--neon-cyan);
+            border: 2px solid var(--neon-cyan);
+            text-shadow: 0 0 10px var(--neon-cyan);
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--accent-gold);
+            background: rgba(0, 255, 255, 0.1);
+            box-shadow: var(--glow-cyan);
+            transform: translateY(-5px);
         }
 
         .hero-visual {
@@ -404,104 +512,118 @@
         .hero-logo {
             max-width: 100%;
             height: auto;
-            max-height: 400px;
+            max-height: 500px;
             border-radius: 20px;
-            box-shadow: var(--shadow-xl);
+            border: 2px solid var(--neon-cyan);
+            box-shadow: var(--glow-cyan);
             transition: all 0.6s ease;
+            animation: logoFloat 6s ease-in-out infinite;
         }
 
-        .hero-logo:hover {
-            transform: scale(1.05);
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-20px) scale(1.05); }
         }
 
         .hero-decoration {
             position: absolute;
-            width: 200px;
-            height: 200px;
-            border: 2px solid rgba(59, 130, 246, 0.3);
+            border: 2px solid;
             border-radius: 50%;
-            animation: rotate 20s linear infinite;
+            animation: orbitRotate 20s linear infinite;
             z-index: -1;
         }
 
-        .hero-decoration:nth-child(2) {
+        .hero-decoration:nth-child(1) {
             width: 300px;
             height: 300px;
-            border-color: rgba(245, 158, 11, 0.2);
-            animation-direction: reverse;
-            animation-duration: 30s;
+            border-color: rgba(0, 255, 255, 0.3);
+            animation-duration: 25s;
         }
 
-        @keyframes rotate {
+        .hero-decoration:nth-child(2) {
+            width: 400px;
+            height: 400px;
+            border-color: rgba(139, 92, 246, 0.3);
+            animation-duration: 35s;
+            animation-direction: reverse;
+        }
+
+        .hero-decoration:nth-child(3) {
+            width: 500px;
+            height: 500px;
+            border-color: rgba(0, 255, 136, 0.3);
+            animation-duration: 45s;
+        }
+
+        @keyframes orbitRotate {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
 
-        /* SECCIÓN DE SERVICIOS PROFESIONAL */
+        /* Servicios */
         .services {
-            padding: 100px 0;
-            background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.02) 100%);
+            padding: 120px 0;
+            background: linear-gradient(180deg, 
+                transparent 0%, 
+                rgba(0, 255, 255, 0.02) 50%,
+                transparent 100%);
+            position: relative;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 4rem;
-            max-width: 800px;
+            margin-bottom: 5rem;
+            max-width: 900px;
             margin-left: auto;
             margin-right: auto;
         }
 
         .section-badge {
             display: inline-block;
-            background: rgba(100, 255, 218, 0.1);
-            color: var(--accent-cyan);
-            padding: 0.75rem 2rem;
+            background: rgba(0, 255, 255, 0.1);
+            color: var(--neon-cyan);
+            padding: 1rem 2.5rem;
             border-radius: 30px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            border: 1px solid rgba(100, 255, 218, 0.3);
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            border: 2px solid rgba(0, 255, 255, 0.3);
             font-family: 'JetBrains Mono', monospace;
-            letter-spacing: 0.5px;
+            letter-spacing: 2px;
             text-transform: uppercase;
+            text-shadow: 0 0 10px var(--neon-cyan);
+            box-shadow: var(--glow-cyan);
         }
 
         .section-title {
-            font-family: 'Manrope', sans-serif;
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(3rem, 6vw, 4.5rem);
             font-weight: 800;
-            margin-bottom: 1.5rem;
-            color: var(--text-white);
+            margin-bottom: 2rem;
+            color: var(--text-neon);
             letter-spacing: -0.02em;
         }
 
-        .section-title .highlight {
-            background: var(--gradient-tech);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
         .section-subtitle {
-            font-size: 1.2rem;
-            color: var(--text-light);
-            opacity: 0.8;
-            line-height: 1.6;
+            font-size: 1.3rem;
+            color: var(--text-cyber);
+            line-height: 1.7;
+            font-weight: 500;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 4rem;
         }
 
         .service-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid rgba(0, 255, 255, 0.3);
             border-radius: 20px;
-            padding: 2.5rem;
-            transition: all 0.4s ease;
+            padding: 2rem;
+            transition: all 0.5s ease;
             position: relative;
             overflow: hidden;
         }
@@ -513,9 +635,9 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: var(--gradient-accent);
+            background: var(--gradient-cyber);
             transform: scaleX(0);
-            transition: transform 0.4s ease;
+            transition: transform 0.5s ease;
         }
 
         .service-card:hover::before {
@@ -523,766 +645,180 @@
         }
 
         .service-card:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-xl);
+            background: rgba(0, 255, 255, 0.05);
+            transform: translateY(-15px);
+            box-shadow: var(--glow-cyan);
+            border-color: var(--neon-cyan);
         }
 
         .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
+            font-size: 4rem;
+            margin-bottom: 2rem;
             display: block;
-            filter: grayscale(0.3);
-            transition: all 0.3s ease;
-        }
-
-        .service-card:hover .service-icon {
-            filter: grayscale(0);
-            transform: scale(1.1);
-        }
-
-        .service-card h3 {
-            font-family: 'Manrope', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-white);
-            letter-spacing: -0.01em;
-        }
-
-        .service-card p {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-            opacity: 0.9;
-        }
-
-        .service-features {
-            list-style: none;
-        }
-
-        .service-features li {
-            color: var(--text-light);
-            padding: 0.5rem 0;
-            position: relative;
-            padding-left: 2rem;
-            opacity: 0.8;
-        }
-
-        .service-features li::before {
-            content: '▶';
-            position: absolute;
-            left: 0;
-            color: var(--accent-cyan);
-            font-weight: bold;
-            font-size: 0.8rem;
-        }
-
-        /* SECCIÓN DE ESTADÍSTICAS */
-        .stats {
-            padding: 80px 0;
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .stat-card {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .stat-card:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-5px);
-        }
-
-        .stat-number {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--accent-cyan);
-            display: block;
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.02em;
-        }
-
-        .stat-label {
-            color: var(--text-white);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-description {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        /* SECCIÓN DE CONTACTO */
-        .contact {
-            padding: 100px 0;
-            background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.02) 100%);
-        }
-
-        .contact-content {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .contact-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin: 3rem 0;
-            flex-wrap: wrap;
-        }
-
-        .contact-info {
-            margin-top: 4rem;
-            padding: 3rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .contact-item h4 {
-            color: var(--accent-cyan);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-family: 'Manrope', sans-serif;
-            font-weight: 600;
-        }
-
-        .contact-item p {
-            color: var(--text-light);
-            margin-bottom: 0.5rem;
-        }
-
-        /* ICONOS DE CONTACTO FIJOS */
-        .fixed-contact {
-            position: fixed;
-            right: 2rem;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .contact-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--gradient-primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-lg);
-            position: relative;
-        }
-
-        .contact-icon:hover {
-            transform: scale(1.1);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .contact-icon::before {
-            content: attr(data-tooltip);
-            position: absolute;
-            right: 70px;
-            background: var(--dark-navy);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            font-size: 0.8rem;
-            white-space: nowrap;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .contact-icon:hover::before {
-            opacity: 1;
-            visibility: visible;
-            right: 75px;
-        }
-
-        /* FOOTER PROFESIONAL */
-        .footer {
-            padding: 3rem 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-            background: rgba(0, 0, 0, 0.2);
-        }
-
-        .footer p {
-            color: var(--text-light);
-            margin-bottom: 1rem;
-            opacity: 0.8;
-        }
-
-        .footer-highlight {
-            color: var(--accent-cyan);
-            font-weight: 600;
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        /* EFECTOS SUTILES Y ELEGANTES */
-        
-        /* Partículas flotantes minimalistas */
-        .floating-dots {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-            opacity: 0.4;
-        }
-
-        .dot {
-            position: absolute;
-            width: 3px;
-            height: 3px;
-            background: var(--primary-blue-light);
-            border-radius: 50%;
-            animation: floatDot 15s linear infinite;
-        }
-
-        .dot:nth-child(2n) {
-            background: var(--accent-gold);
-            animation-delay: 5s;
-            animation-duration: 20s;
-        }
-
-        .dot:nth-child(3n) {
-            background: var(--accent-emerald);
-            animation-delay: 10s;
-            animation-duration: 25s;
-        }
-
-        @keyframes floatDot {
-            0% {
-                transform: translateY(100vh) scale(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-                transform: scale(1);
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-10vh) scale(0);
-                opacity: 0;
-            }
-        }
-
-        /* Cursor personalizado sutil */
-        .custom-cursor {
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            border: 2px solid var(--primary-blue-light);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            transition: all 0.2s ease;
-            backdrop-filter: blur(2px);
-            opacity: 0;
-        }
-
-        .custom-cursor.active {
-            opacity: 1;
-        }
-
-        .custom-cursor.hover {
-            width: 40px;
-            height: 40px;
-            border-color: var(--accent-gold);
-            background: rgba(245, 158, 11, 0.1);
-        }
-
-        /* Efecto de ondas en clicks */
-        .ripple {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(59, 130, 246, 0.3);
-            transform: scale(0);
-            animation: rippleEffect 0.6s ease-out;
-            pointer-events: none;
-        }
-
-        @keyframes rippleEffect {
-            to {
-                transform: scale(4);
-                opacity: 0;
-            }
-        }
-
-        /* Parallax sutil en hero */
-        .hero-parallax {
-            transform: translateY(0);
-            transition: transform 0.3s ease-out;
-        }
-
-        /* Efectos hover mejorados para cards */
-        .service-card {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, 
-                transparent, 
-                rgba(255, 255, 255, 0.1), 
-                transparent);
-            transition: left 0.8s ease;
-        }
-
-        .service-card:hover::after {
-            left: 100%;
-        }
-
-        /* Glow effect en elementos importantes */
-        .glow-on-hover {
-            transition: all 0.3s ease;
-        }
-
-        .glow-on-hover:hover {
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
-        }
-
-        /* Efecto typewriter para títulos */
-        .typewriter {
-            overflow: hidden;
-            white-space: nowrap;
-            animation: typewriter 2s steps(40) 1s both;
-        }
-
-        @keyframes typewriter {
-            0% {
-                width: 0;
-            }
-            100% {
-                width: 100%;
-            }
-        }
-
-        /* Efecto de breathing en elementos importantes */
-        .breathing {
-            animation: breathe 4s ease-in-out infinite;
-        }
-
-        @keyframes breathe {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.02);
-            }
-        }
-
-        /* Efectos de entrada más suaves */
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .fade-in-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Efectos en navegación */
-        .nav-link {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .nav-link::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, 
-                transparent, 
-                rgba(245, 158, 11, 0.2), 
-                transparent);
-            transition: left 0.5s ease;
-        }
-
-        .nav-link:hover::before {
-            left: 100%;
-        }
-
-        /* Efecto de máquina de escribir para subtítulos */
-        .typing-effect {
-            border-right: 2px solid var(--accent-gold);
-            white-space: nowrap;
-            overflow: hidden;
-            animation: 
-                typing 3s steps(40) 1s both,
-                blink 1s step-end infinite;
-        }
-
-        @keyframes typing {
-            0% { width: 0; }
-            100% { width: 100%; }
-        }
-
-        @keyframes blink {
-            0%, 50% { border-color: var(--accent-gold); }
-            51%, 100% { border-color: transparent; }
-        }
-
-        /* Microinteracciones en botones */
-        .btn {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: width 0.6s ease, height 0.6s ease;
-        }
-
-        .btn:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-
-        /* Efecto de partículas en hover de stats */
-        .stat-card {
-            position: relative;
-        }
-
-        .stat-card::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, 
-                var(--primary-blue-light), 
-                var(--accent-gold), 
-                var(--accent-emerald));
-            border-radius: 17px;
-            opacity: 0;
-            z-index: -1;
-            transition: opacity 0.3s ease;
-        }
-
-        .stat-card:hover::before {
-            opacity: 0.7;
-        }
-
-        /* Efecto de iluminación en iconos */
-        .service-icon, .contact-icon {
-            transition: all 0.3s ease;
-            filter: drop-shadow(0 0 0 transparent);
-        }
-
-        .service-card:hover .service-icon {
-            filter: drop-shadow(0 0 10px currentColor);
-            animation: iconFloat 2s ease-in-out infinite;
-        }
-
-        .contact-icon:hover {
-            filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.8));
+            text-shadow: 0 0 20px currentColor;
+            animation: iconFloat 4s ease-in-out infinite;
         }
 
         @keyframes iconFloat {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-5px);
-            }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
 
-        /* Efecto de ondulación en el fondo */
-        .wave-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.1) 0%, transparent 50%);
-            animation: waveMove 10s ease-in-out infinite;
-            z-index: -1;
-        }
-
-        @keyframes waveMove {
-            0%, 100% {
-                transform: translateX(0) translateY(0);
-            }
-            33% {
-                transform: translateX(30px) translateY(-30px);
-            }
-            66% {
-                transform: translateX(-20px) translateY(20px);
-            }
-        }
-
-        /* Optimizaciones de performance */
-        .service-card,
-        .stat-card,
-        .btn,
-        .nav-link {
-            will-change: transform;
-        }
-
-        /* Efectos tech adicionales */
-        .tech-grid {
-            background-image: 
-                linear-gradient(rgba(100, 255, 218, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(100, 255, 218, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: gridMove 20s linear infinite;
-        }
-
-        @keyframes gridMove {
-            0% { background-position: 0 0; }
-            100% { background-position: 50px 50px; }
-        }
-
-        /* Mejora en los dots flotantes */
-        .dot {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: var(--accent-cyan);
-            border-radius: 50%;
-            animation: floatDot 15s linear infinite;
-            box-shadow: 0 0 10px var(--accent-cyan);
-        }
-
-        .dot:nth-child(2n) {
-            background: var(--accent-purple);
-            box-shadow: 0 0 10px var(--accent-purple);
-            animation-delay: 5s;
-            animation-duration: 20s;
-        }
-
-        .dot:nth-child(3n) {
-            background: var(--primary-blue);
-            box-shadow: 0 0 10px var(--primary-blue);
-            animation-delay: 10s;
-            animation-duration: 25s;
-        }
-
-        /* Mejora del cursor */
-        .custom-cursor {
-            border: 2px solid var(--accent-cyan);
-            box-shadow: 0 0 10px var(--accent-cyan);
-        }
-
-        .custom-cursor.hover {
-            border-color: var(--accent-purple);
-            background: rgba(99, 102, 241, 0.1);
-            box-shadow: 0 0 20px var(--accent-purple);
-        }
-        @media (prefers-reduced-motion: reduce) {
-            .floating-dots,
-            .breathing,
-            .wave-bg,
-            .typewriter,
-            .typing-effect {
-                animation: none;
-            }
-            
-            .custom-cursor {
-                display: none;
-            }
-            
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-
-        /* Mejoras adicionales para móviles */
-        @media (max-width: 768px) {
-            .custom-cursor {
-                display: none;
-            }
-            
-            .floating-dots {
-                opacity: 0.2;
-            }
-            
-            .dot {
-                animation-duration: 30s;
-            }
-        }
-        /* ICONOGRAFÍA SVG TECH */
-        .tech-icon {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 1.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .tech-icon svg {
-            width: 100%;
-            height: 100%;
-            fill: var(--accent-cyan);
-            filter: drop-shadow(0 0 10px var(--accent-cyan));
-        }
-
-        .service-card:hover .tech-icon svg {
-            fill: var(--accent-purple);
-            filter: drop-shadow(0 0 15px var(--accent-purple));
-            transform: scale(1.1);
-        }
-
-        /* CTA MEGA DESTACADO */
-        .mega-cta {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1.5rem 3rem;
-            font-size: 1.3rem;
+        .service-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.6rem;
             font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-neon);
+        }
+
+        .service-description {
+            color: var(--text-cyber);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .service-tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .tech-badge {
+            background: rgba(0, 255, 255, 0.1);
+            color: var(--neon-cyan);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .service-problem {
+            background: rgba(255, 0, 127, 0.1);
+            border-left: 4px solid var(--neon-pink);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .service-problem-title {
+            color: var(--neon-pink);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            border-radius: 60px;
-            background: var(--gradient-tech);
-            color: var(--dark-navy);
-            text-decoration: none;
-            overflow: hidden;
-            box-shadow: 
-                0 10px 30px rgba(0, 212, 255, 0.4),
-                0 0 50px rgba(0, 212, 255, 0.2);
-            transition: all 0.4s ease;
-            animation: ctaPulse 3s ease-in-out infinite;
+            font-size: 0.9rem;
         }
 
-        .mega-cta::before {
-            content: '';
+        .service-problem-text {
+            color: var(--text-cyber);
+            font-style: italic;
+        }
+
+        .service-solution {
+            background: rgba(0, 255, 136, 0.1);
+            border-left: 4px solid var(--cyber-green);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .service-solution-title {
+            color: var(--cyber-green);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .service-solution-text {
+            color: var(--text-neon);
+            font-weight: 600;
+        }
+
+        .service-testimonial {
+            background: rgba(0, 255, 136, 0.05);
+            border-left: 3px solid var(--cyber-green);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: var(--text-cyber);
+        }
+
+        .testimonial-author {
+            font-size: 0.8rem;
+            color: var(--cyber-green);
+            margin-top: 0.5rem;
+            font-weight: 600;
+        }
+
+        .service-benefits {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .service-benefits li {
+            color: var(--text-cyber);
+            padding: 0.4rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .service-benefits li::before {
+            content: '⚡';
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, 
-                transparent, 
-                rgba(255, 255, 255, 0.4), 
-                transparent);
-            transition: left 0.6s ease;
+            left: 0;
+            color: var(--neon-cyan);
+            font-weight: bold;
         }
 
-        .mega-cta:hover::before {
-            left: 100%;
+        .service-timeline {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            text-align: center;
         }
 
-        .mega-cta:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 
-                0 20px 50px rgba(0, 212, 255, 0.6),
-                0 0 80px rgba(0, 212, 255, 0.4);
-            animation: none;
+        .timeline-text {
+            color: var(--neon-purple);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .mega-cta .icon {
-            font-size: 1.5rem;
-            animation: iconBounce 2s ease-in-out infinite;
+        .service-guarantee {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 0.8rem;
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--neon-cyan);
+            font-weight: 600;
         }
 
-        @keyframes ctaPulse {
-            0%, 100% {
-                box-shadow: 
-                    0 10px 30px rgba(0, 212, 255, 0.4),
-                    0 0 50px rgba(0, 212, 255, 0.2);
-            }
-            50% {
-                box-shadow: 
-                    0 15px 40px rgba(0, 212, 255, 0.6),
-                    0 0 70px rgba(0, 212, 255, 0.4);
-            }
-        }
-
-        @keyframes iconBounce {
-            0%, 100% { transform: translateX(0); }
-            50% { transform: translateX(5px); }
-        }
-
-        /* SECCIÓN CTA ESPECIAL */
+        /* CTA Mega */
         .cta-section-mega {
-            padding: 6rem 0;
+            padding: 8rem 0;
             background: 
-                radial-gradient(ellipse at center, rgba(0, 212, 255, 0.1) 0%, transparent 70%),
-                var(--gradient-bg);
+                radial-gradient(ellipse at center, rgba(0, 255, 255, 0.15) 0%, transparent 70%),
+                var(--gradient-void);
             text-align: center;
             position: relative;
             overflow: hidden;
-        }
-
-        .cta-section-mega::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                linear-gradient(45deg, transparent 48%, rgba(0, 212, 255, 0.1) 50%, transparent 52%),
-                linear-gradient(-45deg, transparent 48%, rgba(99, 102, 241, 0.1) 50%, transparent 52%);
-            animation: crossHatch 8s ease-in-out infinite;
-        }
-
-        @keyframes crossHatch {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.6; }
         }
 
         .cta-mega-content {
@@ -1293,203 +829,347 @@
         }
 
         .cta-mega-title {
-            font-family: 'Manrope', sans-serif;
-            font-size: clamp(2rem, 5vw, 3rem);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
             font-weight: 800;
-            margin-bottom: 1.5rem;
-            color: var(--text-white);
-            letter-spacing: -0.02em;
+            margin-bottom: 2rem;
+            color: var(--text-neon);
         }
 
         .cta-mega-subtitle {
-            font-size: 1.3rem;
-            color: var(--text-light);
+            font-size: 1.4rem;
+            color: var(--text-cyber);
             margin-bottom: 3rem;
-            opacity: 0.9;
+            line-height: 1.6;
+            font-weight: 500;
         }
 
-        /* MEJORAS RESPONSIVE MÓVILES */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 1.5rem;
-            }
+        .mega-cta {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 2rem 4rem;
+            font-size: 1.4rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 60px;
+            background: var(--gradient-cyber);
+            color: var(--void-black);
+            text-decoration: none;
+            overflow: hidden;
+            box-shadow: 
+                0 15px 40px rgba(0, 255, 255, 0.4),
+                0 0 60px rgba(0, 255, 255, 0.3);
+            transition: all 0.5s ease;
+            animation: ctaMegaPulse 4s ease-in-out infinite;
+        }
 
-            .hero {
-                padding: 120px 0 80px;
-                text-align: center;
-            }
+        .mega-cta:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 
+                0 25px 60px rgba(0, 255, 255, 0.6),
+                0 0 100px rgba(0, 255, 255, 0.5);
+            animation: none;
+        }
 
-            .hero-content h1 {
-                font-size: clamp(2.5rem, 8vw, 3.5rem);
-                line-height: 1.2;
-                margin-bottom: 1.5rem;
-            }
+        .mega-cta .icon {
+            font-size: 2rem;
+            animation: iconBounce 2s ease-in-out infinite;
+        }
 
-            .hero-content p {
-                font-size: 1.1rem;
-                margin-bottom: 2rem;
+        @keyframes ctaMegaPulse {
+            0%, 100% {
+                box-shadow: 
+                    0 15px 40px rgba(0, 255, 255, 0.4),
+                    0 0 60px rgba(0, 255, 255, 0.3);
             }
-
-            .hero-stats {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-                margin-bottom: 2.5rem;
-            }
-
-            .hero-stat {
-                padding: 1.5rem;
-            }
-
-            .hero-stat-number {
-                font-size: 1.8rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                gap: 1rem;
-                align-items: center;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 300px;
-                justify-content: center;
-            }
-
-            .section-title {
-                font-size: clamp(2rem, 6vw, 2.8rem);
-                margin-bottom: 1rem;
-            }
-
-            .section-subtitle {
-                font-size: 1.1rem;
-                margin-bottom: 2rem;
-            }
-
-            .service-card {
-                padding: 2rem;
-                margin-bottom: 1rem;
-            }
-
-            .service-card h3 {
-                font-size: 1.3rem;
-            }
-
-            .service-card p {
-                font-size: 1rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .stat-card {
-                padding: 2rem;
-            }
-
-            .stat-number {
-                font-size: 2.5rem;
-            }
-
-            .contact-content {
-                padding: 0 1rem;
-            }
-
-            .contact-buttons {
-                flex-direction: column;
-                gap: 1rem;
-                align-items: center;
-            }
-
-            .contact-info {
-                padding: 2rem;
-                margin-top: 3rem;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                text-align: center;
-            }
-
-            .mega-cta {
-                width: 100%;
-                max-width: 350px;
-                padding: 1.2rem 2rem;
-                font-size: 1.1rem;
-            }
-
-            .cta-mega-title {
-                font-size: clamp(1.8rem, 6vw, 2.5rem);
-            }
-
-            .cta-mega-subtitle {
-                font-size: 1.1rem;
-                margin-bottom: 2rem;
-            }
-
-            .cta-section-mega {
-                padding: 4rem 0;
-            }
-
-            .tech-icon {
-                width: 60px;
-                height: 60px;
+            50% {
+                box-shadow: 
+                    0 20px 50px rgba(0, 255, 255, 0.6),
+                    0 0 80px rgba(0, 255, 255, 0.5);
             }
         }
 
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 1rem;
-            }
+        @keyframes iconBounce {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(10px); }
+        }
 
-            .hero {
-                padding: 100px 0 60px;
-            }
+        /* Estadísticas */
+        .stats {
+            padding: 100px 0;
+            background: rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
 
-            .hero-content h1 {
-                font-size: clamp(2rem, 7vw, 3rem);
-            }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            position: relative;
+            z-index: 2;
+        }
 
-            .hero-content p {
-                font-size: 1rem;
-            }
+        .stat-card {
+            text-align: center;
+            padding: 3rem;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid rgba(139, 92, 246, 0.3);
+            border-radius: 20px;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
 
-            .hero-stat {
-                padding: 1rem;
-            }
+        .stat-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: var(--glow-purple);
+        }
 
-            .section-header {
-                margin-bottom: 3rem;
-            }
+        .stat-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--neon-purple);
+            display: block;
+            margin-bottom: 1rem;
+            text-shadow: var(--glow-purple);
+            animation: numberGlow 3s ease-in-out infinite;
+        }
 
-            .service-card {
-                padding: 1.5rem;
+        @keyframes numberGlow {
+            0%, 100% { 
+                text-shadow: 0 0 10px var(--neon-purple);
+                transform: scale(1);
             }
-
-            .contact-info {
-                padding: 1.5rem;
-            }
-
-            .mega-cta {
-                padding: 1rem 1.5rem;
-                font-size: 1rem;
-            }
-
-            .nav-container {
-                padding: 0 1rem;
-            }
-
-            .nav-logo {
-                font-size: 1.2rem;
+            50% { 
+                text-shadow: var(--glow-purple);
+                transform: scale(1.05);
             }
         }
+
+        .stat-label {
+            color: var(--text-neon);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-description {
+            color: var(--text-cyber);
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* Contacto */
+        .contact {
+            padding: 120px 0;
+            background: linear-gradient(180deg, 
+                transparent 0%, 
+                rgba(0, 255, 136, 0.05) 100%);
+            position: relative;
+        }
+
+        .contact-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 4rem 0;
+            flex-wrap: wrap;
+        }
+
+        .contact-info {
+            margin-top: 5rem;
+            padding: 4rem;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid rgba(0, 255, 136, 0.3);
+            border-radius: 25px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(0, 255, 136, 0.05);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(0, 255, 136, 0.1);
+            transform: translateY(-5px);
+            box-shadow: var(--glow-green);
+        }
+
+        .contact-item h4 {
+            color: var(--cyber-green);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-item p {
+            color: var(--text-cyber);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .guarantee-section {
+            margin-top: 3rem;
+            padding: 3rem;
+            background: rgba(0, 255, 255, 0.1);
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .guarantee-title {
+            color: var(--neon-cyan);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 15px var(--neon-cyan);
+        }
+
+        .guarantee-text {
+            text-align: center;
+            margin: 0;
+            color: var(--text-neon);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 4rem 0;
+            border-top: 2px solid var(--neon-cyan);
+            text-align: center;
+            background: rgba(0, 0, 0, 0.9);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer p {
+            color: var(--text-cyber);
+            margin-bottom: 1rem;
+            font-weight: 500;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-highlight {
+            color: var(--neon-cyan);
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+            text-shadow: 0 0 10px var(--neon-cyan);
+        }
+
+        .footer-motto {
+            color: var(--cyber-green);
+            font-style: italic;
+            font-weight: 600;
+            text-shadow: 0 0 10px var(--cyber-green);
+            animation: mottoGlow 4s ease-in-out infinite;
+        }
+
+        @keyframes mottoGlow {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+
+        /* Partículas tech */
+        .tech-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--neon-cyan);
+            border-radius: 50%;
+            animation: particleFloat 20s linear infinite;
+            box-shadow: 0 0 10px var(--neon-cyan);
+        }
+
+        .particle:nth-child(2n) {
+            background: var(--neon-purple);
+            box-shadow: 0 0 10px var(--neon-purple);
+            animation-delay: 5s;
+            animation-duration: 25s;
+        }
+
+        .particle:nth-child(3n) {
+            background: var(--cyber-green);
+            box-shadow: 0 0 10px var(--cyber-green);
+            animation-delay: 10s;
+            animation-duration: 30s;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) translateX(0) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10vh) translateX(100px) scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* Responsive */
         @media (max-width: 1024px) {
             .hero-grid {
                 grid-template-columns: 1fr;
-                gap: 3rem;
+                gap: 4rem;
                 text-align: center;
             }
 
@@ -1500,24 +1180,51 @@
             .services-grid {
                 grid-template-columns: 1fr;
             }
-        }
 
-        @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
 
             .hero {
-                padding: 100px 0 60px;
+                padding: 120px 0 80px;
+            }
+
+            .hero-content h1 {
+                font-size: clamp(2.5rem, 8vw, 4rem);
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
             }
 
             .hero-stats {
                 grid-template-columns: 1fr;
-                gap: 1rem;
+                gap: 1.5rem;
             }
 
             .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
                 justify-content: center;
+            }
+
+            .service-card {
+                padding: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
             }
 
             .contact-buttons {
@@ -1525,57 +1232,76 @@
                 align-items: center;
             }
 
-            .fixed-contact {
-                position: static;
-                flex-direction: row;
-                justify-content: center;
-                margin: 2rem 0;
-                transform: none;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
             .contact-grid {
                 grid-template-columns: 1fr;
-                text-align: center;
+            }
+
+            .mega-cta {
+                width: 100%;
+                max-width: 350px;
+                padding: 1.5rem 2.5rem;
+                font-size: 1.2rem;
             }
         }
 
         @media (max-width: 480px) {
-            .container {
-                padding: 0 1rem;
+            .hero-content h1 {
+                font-size: clamp(2rem, 7vw, 3rem);
             }
 
-            .stats-grid {
-                grid-template-columns: 1fr;
+            .section-title {
+                font-size: clamp(2rem, 6vw, 3rem);
             }
 
             .service-card {
+                padding: 1.5rem;
+            }
+
+            .contact-info {
                 padding: 2rem;
+            }
+
+            .mega-cta {
+                padding: 1.2rem 2rem;
+                font-size: 1rem;
             }
         }
 
-        /* UTILIDADES */
+        /* Utilidades */
         .reveal {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         .reveal.revealed {
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Optimizaciones */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Efectos de fondo tech -->
+    <div class="tech-bg">
+        <div class="neural-network"></div>
+    </div>
+
+    <!-- Partículas tech flotantes -->
+    <div class="tech-particles" id="techParticles"></div>
+
     <!-- Navegación -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#" class="nav-logo">
-                🚀 Kairos Flow
+                Kairos Flow
             </a>
             <ul class="nav-links">
                 <li><a href="#servicios" class="nav-link">Servicios</a></li>
@@ -1588,49 +1314,40 @@
     <!-- Preloader -->
     <div class="preloader" id="preloader">
         <div class="loader-content">
-            <div class="loader-logo"></div>
+            <div class="cyber-spinner"></div>
             <div class="loader-text">Kairos Flow</div>
-            <div class="loader-subtitle">Cargando experiencia digital</div>
+            <div class="loader-subtitle">Inicializando Sistema</div>
         </div>
     </div>
 
     <!-- Contenido Principal -->
     <div class="main-content" id="mainContent">
-        <!-- Cursor personalizado -->
-        <div class="custom-cursor" id="customCursor"></div>
-        
-        <!-- Partículas flotantes minimalistas -->
-        <div class="floating-dots" id="floatingDots"></div>
-        
-        <!-- Efecto de ondas de fondo -->
-        <div class="wave-bg"></div>
-
-        <!-- Iconos de Contacto Fijos -->
-        <div class="fixed-contact">
-            <a href="mailto:kairosflow.soluciones@gmail.com" class="contact-icon glow-on-hover" data-tooltip="Email">
-                📧
-            </a>
-            <a href="https://wa.me/5493812002041" class="contact-icon glow-on-hover" data-tooltip="WhatsApp">
-                📱
-            </a>
-            <a href="https://linkedin.com/in/gsanchezsalhuana" class="contact-icon glow-on-hover" data-tooltip="LinkedIn">
-                💼
-            </a>
-        </div>
-
         <!-- Hero Section -->
-        <section class="hero tech-grid">
+        <section class="hero">
             <div class="container">
                 <div class="hero-grid">
                     <div class="hero-content">
                         <h1>
-                            Desarrollo de Soluciones <span class="highlight">a Medida</span>
+                            Desarrollo de <span class="highlight">Soluciones Tech</span> a Medida
                         </h1>
-                        <p>
-                            Especialista en desarrollo de aplicaciones web personalizadas con <strong>Python</strong> y automatización empresarial. 
-                            <strong>Cada proyecto es único</strong> - desarrollo soluciones desde cero que se adaptan exactamente a lo que tu negocio necesita, sin limitaciones de plantillas o software comercial.
+                        <p class="hero-subtitle">
+                            Especialista en desarrollo Python y automatización empresarial inteligente. 
+                            <strong>Cada proyecto es único</strong> - creo soluciones desde cero que se adaptan exactamente a tu negocio.
                         </p>
                         
+                        <div class="problem-statement">
+                            <div class="problem-title">¿Cansado de las limitaciones?</div>
+                            <div class="problem-text">
+                                ❌ <strong>Planillas manuales que consumen horas</strong><br>
+                                ❌ <strong>Información dispersa en múltiples sistemas</strong><br>
+                                ❌ <strong>Procesos repetitivos que drenan productividad</strong><br>
+                                ❌ <strong>Software comercial que no se adapta a tu negocio</strong>
+                            </div>
+                            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(0, 255, 136, 0.3);">
+                                <span class="solution-highlight">✅ Automatizamos, unificamos y creamos soluciones tech a medida con Python</span>
+                            </div>
+                        </div>
+
                         <div class="hero-stats">
                             <div class="hero-stat">
                                 <span class="hero-stat-number">5+</span>
@@ -1638,7 +1355,7 @@
                             </div>
                             <div class="hero-stat">
                                 <span class="hero-stat-number">100%</span>
-                                <span class="hero-stat-label">Soluciones Personalizadas</span>
+                                <span class="hero-stat-label">Código Personalizado</span>
                             </div>
                             <div class="hero-stat">
                                 <span class="hero-stat-number">0</span>
@@ -1648,10 +1365,10 @@
 
                         <div class="hero-buttons">
                             <a href="#contacto" class="btn btn-primary">
-                                🚀 Consulta Gratuita
+                                ⚡ Consulta Gratuita
                             </a>
                             <a href="#servicios" class="btn btn-secondary">
-                                📊 Ver Servicios
+                                🚀 Ver Soluciones
                             </a>
                         </div>
                     </div>
@@ -1659,7 +1376,8 @@
                     <div class="hero-visual">
                         <div class="hero-decoration"></div>
                         <div class="hero-decoration"></div>
-                        <img src="logo-kairosflow.png" alt="Kairos Flow" class="hero-logo" />
+                        <div class="hero-decoration"></div>
+                        <img src="logo-kairosflow.png" alt="Kairos Flow" class="hero-logo" onerror="this.style.display='none'" />
                     </div>
                 </div>
             </div>
@@ -1669,111 +1387,300 @@
         <section class="services" id="servicios">
             <div class="container">
                 <div class="section-header">
-                    <div class="section-badge">Nuestros Servicios</div>
-                    <h2 class="section-title">Tecnología que <span class="highlight">Se Adapta a Ti</span></h2>
+                    <div class="section-badge">Nuestras Soluciones</div>
+                    <h2 class="section-title">Tecnología que <span class="highlight">Resuelve Problemas Reales</span></h2>
                     <p class="section-subtitle">
-                        No usamos plantillas. Cada aplicación web, dashboard y automatización está programada específicamente para resolver los desafíos únicos de tu empresa.
+                        No vendemos software genérico. Analizamos tu negocio, identificamos tus dolores específicos 
+                        y desarrollamos soluciones tech personalizadas que transforman tu operación.
                     </p>
                 </div>
 
                 <div class="services-grid">
                     <div class="service-card reveal">
-                        <span class="service-icon">📊</span>
-                        <h3>Dashboards & Aplicaciones Personalizadas</h3>
-                        <p>Desarrollo de aplicaciones web interactivas con Python y Streamlit, diseñadas específicamente para las necesidades únicas de tu empresa. Soluciones a medida que van más allá de las plantillas estándar.</p>
-                        <ul class="service-features">
-                            <li>Aplicaciones web con Python y Streamlit</li>
-                            <li>Dashboards interactivos completamente personalizados</li>
-                            <li>Integración con cualquier fuente de datos</li>
-                            <li>Machine Learning integrado para predicciones</li>
-                            <li>Análisis avanzado con pandas, plotly y más</li>
-                            <li>Hosting en la nube y mantenimiento incluido</li>
+                        <span class="service-icon">🖥️</span>
+                        <h3>Aplicaciones Web Empresariales</h3>
+                        <p class="service-description">Desarrollo completo de aplicaciones web con Python para gestión empresarial, con interfaces intuitivas y funcionalidades específicas para tu negocio.</p>
+                        
+                        <div class="service-tech-stack">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Streamlit</span>
+                            <span class="tech-badge">Flask</span>
+                            <span class="tech-badge">PostgreSQL</span>
+                            <span class="tech-badge">APIs</span>
+                        </div>
+
+                        <div class="service-problem">
+                            <div class="service-problem-title">Tu Problema:</div>
+                            <div class="service-problem-text">"Tengo múltiples Excel, uso 5 sistemas diferentes, la información está dispersa y nadie tiene visibilidad completa del negocio."</div>
+                        </div>
+
+                        <div class="service-solution">
+                            <div class="service-solution-title">Nuestra Solución:</div>
+                            <div class="service-solution-text">Creamos UN SOLO SISTEMA web personalizado que unifica toda tu información, con dashboards en tiempo real y acceso desde cualquier dispositivo.</div>
+                        </div>
+
+                        <div class="service-testimonial">
+                            "Ahora todos en mi empresa ven la misma información actualizada en tiempo real. Ya no hay confusiones ni datos desactualizados."
+                            <div class="testimonial-author">- CEO, Empresa de Logística</div>
+                        </div>
+
+                        <ul class="service-benefits">
+                            <li>Sistema único que reemplaza múltiples Excel</li>
+                            <li>Acceso desde cualquier dispositivo y ubicación</li>
+                            <li>Dashboards interactivos en tiempo real</li>
+                            <li>Control de usuarios y permisos personalizado</li>
+                            <li>Backup automático en la nube</li>
                         </ul>
+
+                        <div class="service-timeline">
+                            <div class="timeline-text">⏱️ Implementación: 2-4 semanas</div>
+                        </div>
+
+                        <div class="service-guarantee">
+                            🛡️ Manual + Documentación completa
+                        </div>
+                    </div>
+
+                    <div class="service-card reveal">
+                        <span class="service-icon">⚙️</span>
+                        <h3>Automatización Inteligente</h3>
+                        <p class="service-description">Bots y scripts personalizados que automatizan tareas repetitivas específicas de tu empresa, liberando tiempo valioso de tu equipo.</p>
+                        
+                        <div class="service-tech-stack">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Selenium</span>
+                            <span class="tech-badge">BeautifulSoup</span>
+                            <span class="tech-badge">APIs REST</span>
+                            <span class="tech-badge">Schedulers</span>
+                        </div>
+
+                        <div class="service-problem">
+                            <div class="service-problem-title">Tu Problema:</div>
+                            <div class="service-problem-text">"Mi equipo pierde 3 horas diarias en tareas repetitivas: copiar datos, generar reportes, enviar emails, actualizar planillas manualmente."</div>
+                        </div>
+
+                        <div class="service-solution">
+                            <div class="service-solution-title">Nuestra Solución:</div>
+                            <div class="service-solution-text">Automatizamos TODOS esos procesos con bots inteligentes. Trabajarán 24/7 sin errores, liberando a tu equipo para tareas estratégicas.</div>
+                        </div>
+
+                        <div class="service-testimonial">
+                            "El bot procesa en 10 minutos lo que antes me tomaba toda la mañana. Mi equipo ahora se enfoca en estrategia, no en tareas manuales."
+                            <div class="testimonial-author">- Gerente Operaciones</div>
+                        </div>
+
+                        <ul class="service-benefits">
+                            <li>Trabajo 24/7 sin intervención humana</li>
+                            <li>Cero errores por fatiga o distracción</li>
+                            <li>Procesamiento 10x más rápido que manual</li>
+                            <li>Reportes automáticos por email/WhatsApp</li>
+                            <li>Alertas inteligentes ante excepciones</li>
+                        </ul>
+
+                        <div class="service-timeline">
+                            <div class="timeline-text">⏱️ Implementación: 1-3 semanas</div>
+                        </div>
+
+                        <div class="service-guarantee">
+                            🛡️ ROI garantizado en primer mes de uso
+                        </div>
+                    </div>
+
+                    <div class="service-card reveal">
+                        <span class="service-icon">📊</span>
+                        <h3>Dashboards & Analytics</h3>
+                        <p class="service-description">Visualizaciones interactivas 100% personalizadas para las métricas específicas de tu industria y modelo de negocio.</p>
+                        
+                        <div class="service-tech-stack">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Plotly</span>
+                            <span class="tech-badge">Pandas</span>
+                            <span class="tech-badge">Streamlit</span>
+                            <span class="tech-badge">Machine Learning</span>
+                        </div>
+
+                        <div class="service-problem">
+                            <div class="service-problem-title">Tu Problema:</div>
+                            <div class="service-problem-text">"Power BI es limitado para mis KPIs específicos. Los consultores me ofrecen dashboards genéricos que no reflejan mi realidad."</div>
+                        </div>
+
+                        <div class="service-solution">
+                            <div class="service-solution-title">Nuestra Solución:</div>
+                            <div class="service-solution-text">Programamos dashboards específicos para TU negocio con métricas personalizadas, alertas inteligentes y predicciones con ML.</div>
+                        </div>
+
+                        <div class="service-testimonial">
+                            "Por fin veo las métricas que realmente importan para mi negocio. Las predicciones me ayudan a tomar mejores decisiones."
+                            <div class="testimonial-author">- Director Comercial</div>
+                        </div>
+
+                        <ul class="service-benefits">
+                            <li>KPIs específicos de tu industria</li>
+                            <li>Predicciones con Machine Learning</li>
+                            <li>Alertas automáticas personalizables</li>
+                            <li>Actualización en tiempo real</li>
+                            <li>Exportación automática de reportes</li>
+                        </ul>
+
+                        <div class="service-timeline">
+                            <div class="timeline-text">⏱️ Implementación: 2-3 semanas</div>
+                        </div>
+
+                        <div class="service-guarantee">
+                            🛡️ Métricas ilimitadas + Capacitación incluida
+                        </div>
+                    </div>
+
+                    <div class="service-card reveal">
+                        <span class="service-icon">🔗</span>
+                        <h3>Integración de Sistemas</h3>
+                        <p class="service-description">Conectamos todos tus sistemas existentes para que hablen entre sí, eliminando la carga manual de sincronización de datos.</p>
+                        
+                        <div class="service-tech-stack">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">APIs REST</span>
+                            <span class="tech-badge">Webhooks</span>
+                            <span class="tech-badge">JSON/XML</span>
+                            <span class="tech-badge">Middleware</span>
+                        </div>
+
+                        <div class="service-problem">
+                            <div class="service-problem-title">Tu Problema:</div>
+                            <div class="service-problem-text">"Uso Mercado Libre, Shopify, sistema de facturación y WhatsApp Business. Nada habla entre sí, actualizo todo manualmente."</div>
+                        </div>
+
+                        <div class="service-solution">
+                            <div class="service-solution-title">Nuestra Solución:</div>
+                            <div class="service-solution-text">Conectamos TODOS tus sistemas con APIs personalizadas. Una venta se refleja automáticamente en stock, facturación y reportes.</div>
+                        </div>
+
+                        <div class="service-testimonial">
+                            "Una venta en cualquier canal se refleja instantáneamente en todos mis sistemas. Cero trabajo manual de sincronización."
+                            <div class="testimonial-author">- Dueño de E-commerce</div>
+                        </div>
+
+                        <ul class="service-benefits">
+                            <li>Sincronización automática en tiempo real</li>
+                            <li>Compatible con cualquier plataforma</li>
+                            <li>Eliminación total de doble carga</li>
+                            <li>Historial completo de transacciones</li>
+                            <li>Notificaciones inteligentes</li>
+                        </ul>
+
+                        <div class="service-timeline">
+                            <div class="timeline-text">⏱️ Implementación: 3-5 semanas</div>
+                        </div>
+
+                        <div class="service-guarantee">
+                            🛡️ Integración con sistemas ilimitados
+                        </div>
                     </div>
 
                     <div class="service-card reveal">
                         <span class="service-icon">🤖</span>
-                        <h3>Automatización con Python</h3>
-                        <p>Scripts y bots personalizados desarrollados en Python que automatizan procesos específicos de tu empresa. Soluciones robustas que van más allá del RPA tradicional.</p>
-                        <ul class="service-features">
-                            <li>Scripts de automatización en Python</li>
-                            <li>Bots personalizados para procesos únicos</li>
-                            <li>Integración con APIs y bases de datos</li>
-                            <li>Procesamiento inteligente de documentos</li>
-                            <li>Automatización de reportes y emails</li>
-                            <li>Monitoreo y alertas automatizadas</li>
-                        </ul>
-                    </div>
+                        <h3>Machine Learning & Predicciones</h3>
+                        <p class="service-description">Modelos predictivos personalizados que analizan tus datos históricos para anticipar tendencias y optimizar decisiones.</p>
+                        
+                        <div class="service-tech-stack">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Scikit-learn</span>
+                            <span class="tech-badge">Pandas</span>
+                            <span class="tech-badge">NumPy</span>
+                            <span class="tech-badge">TensorFlow</span>
+                        </div>
 
-                    <div class="service-card reveal">
-                        <span class="service-icon">🔍</span>
-                        <h3>Análisis de Datos Avanzado</h3>
-                        <p>Procesamiento y análisis profundo de datos con Python (pandas, numpy, scikit-learn) para extraer insights valiosos y crear modelos predictivos personalizados.</p>
-                        <ul class="service-features">
-                            <li>Análisis exploratorio de datos (EDA)</li>
-                            <li>Limpieza y procesamiento de datasets</li>
-                            <li>Modelos de machine learning personalizados</li>
-                            <li>Visualizaciones interactivas con Plotly</li>
-                            <li>Reportes automatizados con insights</li>
-                            <li>APIs para integrar modelos en producción</li>
+                        <div class="service-problem">
+                            <div class="service-problem-title">Tu Problema:</div>
+                            <div class="service-problem-text">"Tengo años de datos pero no sé cómo usarlos para predecir demanda, identificar clientes en riesgo o optimizar precios."</div>
+                        </div>
+
+                        <div class="service-solution">
+                            <div class="service-solution-title">Nuestra Solución:</div>
+                            <div class="service-solution-text">Desarrollamos modelos de ML que analizan tus datos para predecir ventas, detectar patrones y optimizar tu estrategia automáticamente.</div>
+                        </div>
+
+                        <div class="service-testimonial">
+                            "El modelo predice con 85% de precisión qué productos vender más el próximo mes. Mi inventario nunca había estado tan optimizado."
+                            <div class="testimonial-author">- Gerente de Ventas</div>
+                        </div>
+
+                        <ul class="service-benefits">
+                            <li>Predicciones de demanda y ventas</li>
+                            <li>Detección temprana de anomalías</li>
+                            <li>Optimización automática de precios</li>
+                            <li>Segmentación inteligente de clientes</li>
+                            <li>Modelos que mejoran con el tiempo</li>
                         </ul>
+
+                        <div class="service-timeline">
+                            <div class="timeline-text">⏱️ Implementación: 4-6 semanas</div>
+                        </div>
+
+                        <div class="service-guarantee">
+                            🛡️ Modelo entrenado + Documentación técnica
+                        </div>
                     </div>
 
                     <div class="service-card reveal">
                         <span class="service-icon">📝</span>
-                        <h3>CVs Profesionales</h3>
-                        <p>Currículums optimizados con técnicas de reclutamiento moderno y sistemas ATS para maximizar las posibilidades de conseguir entrevistas.</p>
-                        <ul class="service-features">
-                            <li>Diseño profesional y moderno</li>
+                        <h3>CVs Profesionales Tech</h3>
+                        <p class="service-description">Currículums optimizados para ATS y reclutadores tech, diseñados para maximizar tu tasa de respuesta en el sector tecnológico.</p>
+                        
+                        <div class="service-tech-stack">
+                            <span class="tech-badge">ATS Optimized</span>
+                            <span class="tech-badge">Keywords</span>
+                            <span class="tech-badge">Tech Format</span>
+                            <span class="tech-badge">LinkedIn</span>
+                            <span class="tech-badge">Portfolio</span>
+                        </div>
+
+                        <div class="service-problem">
+                            <div class="service-problem-title">Tu Problema:</div>
+                            <div class="service-problem-text">"Envío mi CV a 100 empresas y solo recibo 2 respuestas. No entiendo por qué no paso los filtros automáticos."</div>
+                        </div>
+
+                        <div class="service-solution">
+                            <div class="service-solution-title">Nuestra Solución:</div>
+                            <div class="service-solution-text">Diseñamos CVs optimizados para ATS con keywords estratégicas y formato que destaca tus fortalezas tech. Aumentamos tu tasa de respuesta.</div>
+                        </div>
+
+                        <div class="service-testimonial">
+                            "Con el nuevo CV conseguí 3 entrevistas en la primera semana. El formato tech realmente marca la diferencia."
+                            <div class="testimonial-author">- Desarrollador Python</div>
+                        </div>
+
+                        <ul class="service-benefits">
                             <li>Optimización para sistemas ATS</li>
-                            <li>Keywords estratégicas por industria</li>
-                            <li>Múltiples formatos y versiones</li>
+                            <li>Keywords específicas por tecnología</li>
+                            <li>Formato moderno y profesional</li>
                             <li>Perfil de LinkedIn optimizado</li>
+                            <li>Múltiples versiones por rol</li>
                         </ul>
-                    </div>
 
-                    <div class="service-card reveal">
-                        <span class="service-icon">🚀</span>
-                        <h3>Aplicaciones Web Empresariales</h3>
-                        <p>Desarrollo completo de aplicaciones web con Python, Flask/Django y Streamlit para gestión empresarial, con interfaces intuitivas y funcionalidades específicas.</p>
-                        <ul class="service-features">
-                            <li>Aplicaciones web completas con Python</li>
-                            <li>Interfaces administrativas personalizadas</li>
-                            <li>Sistemas de gestión a medida</li>
-                            <li>Integración con bases de datos</li>
-                            <li>Autenticación y control de usuarios</li>
-                            <li>Deployment en cloud y mantenimiento</li>
-                        </ul>
-                    </div>
+                        <div class="service-timeline">
+                            <div class="timeline-text">⏱️ Entrega: 3-5 días hábiles</div>
+                        </div>
 
-                    <div class="service-card reveal">
-                        <span class="service-icon">📈</span>
-                        <h3>Integración de Sistemas</h3>
-                        <p>Conectamos tus sistemas existentes mediante APIs personalizadas en Python, creando un ecosistema digital unificado y automatizado.</p>
-                        <ul class="service-features">
-                            <li>APIs RESTful desarrolladas en Python</li>
-                            <li>Integración entre sistemas diversos</li>
-                            <li>Sincronización automática de datos</li>
-                            <li>Middleware personalizado</li>
-                            <li>Migración de datos segura</li>
-                            <li>Documentación técnica completa</li>
-                        </ul>
+                        <div class="service-guarantee">
+                            🛡️ Revisiones ilimitadas por 30 días
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN CTA MEGA -->
+        <!-- CTA Mega -->
         <section class="cta-section-mega">
             <div class="container">
                 <div class="cta-mega-content">
-                    <h2 class="cta-mega-title">¿Listo para Revolucionar tu Negocio?</h2>
+                    <h2 class="cta-mega-title">¿Listo para la <span class="highlight">Transformación Digital</span>?</h2>
                     <p class="cta-mega-subtitle">
-                        No pierdas más tiempo con soluciones genéricas. Hablemos de tu proyecto específico y creemos algo único que resuelva exactamente lo que necesitas.
+                        Basta de perder tiempo con procesos manuales y sistemas que no hablan entre sí. 
+                        Hablemos de tu proyecto específico y desarrollemos la solución tech que tu negocio realmente necesita.
                     </p>
-                    <a href="https://wa.me/5493812002041?text=Hola%21%20Quiero%20desarrollar%20una%20soluci%C3%B3n%20personalizada%20para%20mi%20empresa" class="mega-cta">
+                    <a href="https://wa.me/5493812002041?text=Hola%21%20Quiero%20desarrollar%20una%20soluci%C3%B3n%20tech%20personalizada%20para%20automatizar%20mi%20negocio" class="mega-cta">
                         <span class="icon">🚀</span>
-                        Hagamos tu Proyecto Realidad
+                        Automaticemos Tu Negocio
                     </a>
                 </div>
             </div>
@@ -1783,33 +1690,34 @@
         <section class="stats" id="nosotros">
             <div class="container">
                 <div class="section-header">
-                    <div class="section-badge">Nuestro Enfoque</div>
-                    <h2 class="section-title">Ventajas de <span class="highlight">Trabajar Conmigo</span></h2>
+                    <div class="section-badge">Por Qué Elegirnos</div>
+                    <h2 class="section-title">Ventajas del <span class="highlight">Desarrollo Personalizado</span></h2>
                     <p class="section-subtitle">
-                        Como desarrollador independiente, me enfoco 100% en tu proyecto. Sin intermediarios, sin plantillas, sin limitaciones. Solo código personalizado que resuelve exactamente lo que necesitas.
+                        Como desarrollador Python independiente, me enfoco 100% en crear la solución exacta que tu negocio necesita. 
+                        Sin intermediarios, sin plantillas genéricas, sin limitaciones.
                     </p>
                 </div>
 
                 <div class="stats-grid">
                     <div class="stat-card reveal">
-                        <span class="stat-number">100%</span>
-                        <div class="stat-label">Desarrollo Personalizado</div>
-                        <div class="stat-description">Cada línea de código pensada para tu negocio específico</div>
-                    </div>
-                    <div class="stat-card reveal">
-                        <span class="stat-number">0</span>
-                        <div class="stat-label">Plantillas Utilizadas</div>
-                        <div class="stat-description">Soluciones únicas desarrolladas desde cero</div>
-                    </div>
-                    <div class="stat-card reveal">
-                        <span class="stat-number">24 Hrs</span>
-                        <div class="stat-label">Automatización Activa</div>
-                        <div class="stat-description">Tus procesos optimizados trabajando sin parar</div>
-                    </div>
-                    <div class="stat-card reveal">
-                        <span class="stat-number">100%</span>
+                        <span class="stat-number">∞</span>
                         <div class="stat-label">Posibilidades de Customización</div>
-                        <div class="stat-description">Sin límites de funcionalidades o integraciones</div>
+                        <div class="stat-description">Con código personalizado en Python, no hay límites. Si lo puedes imaginar, lo podemos programar específicamente para tu negocio.</div>
+                    </div>
+                    <div class="stat-card reveal">
+                        <span class="stat-number">24/7</span>
+                        <div class="stat-label">Automatización Activa</div>
+                        <div class="stat-description">Tus procesos automatizados trabajando sin parar, procesando datos y generando valor mientras duermes.</div>
+                    </div>
+                    <div class="stat-card reveal">
+                        <span class="stat-number">100%</span>
+                        <div class="stat-label">Versatilidad</div>
+                        <div class="stat-description">No dependes de licencias mensuales ni actualizaciones forzadas de terceros.</div>
+                    </div>
+                    <div class="stat-card reveal">
+                        <span class="stat-number">100%</span>
+                        <div class="stat-label">Enfoque en Tu Proyecto</div>
+                        <div class="stat-description">Como desarrollador independiente, tu proyecto recibe atención completa y personalizada durante todo el proceso.</div>
                     </div>
                 </div>
             </div>
@@ -1819,52 +1727,53 @@
         <section class="contact" id="contacto">
             <div class="container">
                 <div class="contact-content">
-                    <div class="section-badge">Hablemos</div>
-                    <h2 class="section-title">¿Listo para <span class="highlight">Transformar tu Negocio</span>?</h2>
+                    <div class="section-badge">Empecemos</div>
+                    <h2 class="section-title">¿Listo para <span class="highlight">Revolucionar</span> tu Operación?</h2>
                     <p class="section-subtitle">
-                        Agenda una consulta gratuita y descubre cómo podemos optimizar tus procesos, 
-                        reducir costos y acelerar el crecimiento de tu empresa con soluciones probadas.
+                        Agenda una consulta gratuita de 30 minutos. Analizaremos tus procesos actuales, 
+                        identificaremos oportunidades de automatización y te mostraré exactamente cómo 
+                        podemos optimizar tu negocio con soluciones tech personalizadas.
                     </p>
                     
                     <div class="contact-buttons">
                         <a href="mailto:kairosflow.soluciones@gmail.com" class="btn btn-primary">
                             📧 Consulta Gratuita
                         </a>
-                        <a href="https://wa.me/5493812002041?text=Hola%21%20Me%20interesa%20una%20consulta%20gratuita%20sobre%20desarrollo%20de%20soluciones%20personalizadas" class="mega-cta">
+                        <a href="https://wa.me/5493812002041?text=Hola%21%20Me%20interesa%20una%20consulta%20gratuita%20sobre%20automatización%20y%20desarrollo%20de%20soluciones%20tech%20personalizadas" class="mega-cta">
                             <span class="icon">💬</span>
-                            Contactame Ahora
+                            WhatsApp Directo
                         </a>
                     </div>
 
                     <div class="contact-info">
-                        <h3>Información de Contacto</h3>
+                        <h3 style="color: var(--neon-cyan); font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: 2rem; margin-bottom: 2rem; text-align: center; text-transform: uppercase; letter-spacing: 2px;">Información de Contacto</h3>
                         <div class="contact-grid">
                             <div class="contact-item">
                                 <h4>📧 Email Profesional</h4>
                                 <p>kairosflow.soluciones@gmail.com</p>
-                                <p style="font-size: 0.9rem; opacity: 0.7;">Respuesta garantizada en 24 horas</p>
+                                <p style="font-size: 0.9rem; opacity: 0.7;">Propuesta detallada en 24 horas</p>
                             </div>
                             <div class="contact-item">
                                 <h4>📱 WhatsApp Business</h4>
                                 <p>+54 381 200 2041</p>
-                                <p style="font-size: 0.9rem; opacity: 0.7;">Atención inmediata en horario laboral</p>
+                                <p style="font-size: 0.9rem; opacity: 0.7;">Respuesta inmediata en horario laboral</p>
                             </div>
                             <div class="contact-item">
                                 <h4>📍 Ubicación</h4>
                                 <p>Tucumán, Argentina</p>
-                                <p style="font-size: 0.9rem; opacity: 0.7;">Servicios a nivel nacional e internacional</p>
+                                <p style="font-size: 0.9rem; opacity: 0.7;">Servicios remotos a nivel global</p>
                             </div>
                             <div class="contact-item">
-                                <h4>⏰ Horarios de Atención</h4>
+                                <h4>⏰ Horarios</h4>
                                 <p>Lunes a Viernes: 9:00 - 18:00 ART</p>
-                                <p style="font-size: 0.9rem; opacity: 0.7;">Soporte de emergencia disponible</p>
+                                <p style="font-size: 0.9rem; opacity: 0.7;">Soporte técnico 24/7 post-entrega</p>
                             </div>
                         </div>
 
-                        <div style="margin-top: 2rem; padding: 2rem; background: rgba(100, 255, 218, 0.1); border-radius: 15px; border: 1px solid rgba(100, 255, 218, 0.3);">
-                            <h4 style="color: var(--accent-cyan); margin-bottom: 1rem; text-align: center;">🛡️ Garantía de Calidad</h4>
-                            <p style="text-align: center; margin: 0;">
-                                <strong>Consulta inicial gratuita</strong> • <strong>Propuesta detallada sin costo</strong> • <strong>Entrega en plazo acordado</strong> • <strong>Soporte post-entrega incluido</strong> • <strong>Satisfacción garantizada</strong>
+                        <div class="guarantee-section">
+                            <h4 class="guarantee-title">🛡️ Garantía Tech Total</h4>
+                            <p class="guarantee-text">
+                                <strong>Consulta inicial gratuita</strong> • <strong>Análisis completo de procesos</strong> • <strong>Propuesta técnica detallada sin costo</strong> • <strong>Manual incluido</strong> • <strong>Documentación técnica completa</strong> • <strong>Capacitación del equipo</strong> • <strong>Soporte post-implementación</strong>
                             </p>
                         </div>
                     </div>
@@ -1876,153 +1785,61 @@
         <footer class="footer">
             <div class="container">
                 <p>&copy; 2025 <span class="footer-highlight">Kairos Flow</span>. Todos los derechos reservados.</p>
-                <p style="margin-top: 0.5rem; font-size: 0.9rem;">
-                    Transformación Digital Profesional • Resultados Comprobados • Innovación Sostenible
+                <p style="margin-top: 0.5rem; font-size: 1rem;">
+                    Desarrollo Python • Automatización Inteligente • Soluciones Tech a Medida
                 </p>
-                <p style="margin-top: 1rem; font-style: italic; color: var(--accent-gold);">
-                    "Tu tiempo vale oro. Nosotros te ayudamos a multiplicarlo." 💎
+                <p class="footer-motto" style="margin-top: 1.5rem; font-size: 1.2rem;">
+                    "Tu tiempo vale oro. La tecnología debería multiplicarlo, no complicarlo." ⚡
                 </p>
             </div>
         </footer>
     </div>
 
     <script>
-        // EFECTOS SUTILES Y ELEGANTES
-
-        // Cursor personalizado minimalista
-        const cursor = document.getElementById('customCursor');
-        let mouseX = 0, mouseY = 0;
-
-        if (window.innerWidth > 768) { // Solo en desktop
-            document.addEventListener('mousemove', (e) => {
-                mouseX = e.clientX;
-                mouseY = e.clientY;
-                cursor.style.left = mouseX + 'px';
-                cursor.style.top = mouseY + 'px';
-                cursor.classList.add('active');
-            });
-
-            // Efectos hover
-            const hoverElements = document.querySelectorAll('a, button, .service-card, .stat-card');
-            hoverElements.forEach(element => {
-                element.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-                element.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-            });
-        }
-
-        // Efecto ripple en clicks
-        function createRipple(event) {
-            const button = event.currentTarget;
-            const circle = document.createElement('span');
-            const diameter = Math.max(button.clientWidth, button.clientHeight);
-            const radius = diameter / 2;
-
-            circle.style.width = circle.style.height = `${diameter}px`;
-            circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
-            circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
-            circle.classList.add('ripple');
-
-            const ripple = button.getElementsByClassName('ripple')[0];
-            if (ripple) {
-                ripple.remove();
-            }
-
-            button.appendChild(circle);
-        }
-
-        // Aplicar ripple a botones
-        document.querySelectorAll('.btn').forEach(button => {
-            button.addEventListener('click', createRipple);
-        });
-
-        // Partículas flotantes minimalistas
-        function createFloatingDots() {
-            const container = document.getElementById('floatingDots');
-            const dotCount = window.innerWidth < 768 ? 8 : 15;
+        // Sistema de efectos tech futuristas
+        function createTechParticles() {
+            const container = document.getElementById('techParticles');
+            const particleCount = window.innerWidth < 768 ? 15 : 30;
             
-            for (let i = 0; i < dotCount; i++) {
-                const dot = document.createElement('div');
-                dot.className = 'dot';
-                dot.style.left = Math.random() * 100 + '%';
-                dot.style.animationDelay = Math.random() * 15 + 's';
-                dot.style.animationDuration = (15 + Math.random() * 10) + 's';
-                container.appendChild(dot);
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (20 + Math.random() * 15) + 's';
+                container.appendChild(particle);
             }
         }
 
-        // Parallax sutil en scroll
-        let ticking = false;
-        function updateParallax() {
-            const scrolled = window.pageYOffset;
-            const parallaxElements = document.querySelectorAll('.hero-parallax');
-            
-            parallaxElements.forEach(element => {
-                const speed = 0.5;
-                element.style.transform = `translateY(${scrolled * speed}px)`;
-            });
-            
-            ticking = false;
-        }
-
-        function requestParallaxUpdate() {
-            if (!ticking) {
-                requestAnimationFrame(updateParallax);
-                ticking = true;
-            }
-        }
-
-        window.addEventListener('scroll', requestParallaxUpdate);
-
-        // Animaciones de entrada mejoradas
-        function initSmoothAnimations() {
-            const animatedElements = document.querySelectorAll('.fade-in-up');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry, index) => {
-                    if (entry.isIntersecting) {
-                        setTimeout(() => {
-                            entry.target.classList.add('visible');
-                        }, index * 100);
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            });
-
-            animatedElements.forEach(element => {
-                observer.observe(element);
-            });
-        }
-
-        // NAVEGACIÓN CON SCROLL
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // PRELOADER
+        // Sistema de preloader avanzado
         window.addEventListener('load', function() {
             const preloader = document.getElementById('preloader');
             
             setTimeout(() => {
                 preloader.classList.add('hidden');
                 
-                // Inicializar animaciones después de cargar
                 setTimeout(() => {
+                    initTechEffects();
                     initRevealAnimations();
                     initCounterAnimations();
-                    initTracking();
+                    initAdvancedTracking();
                 }, 500);
-            }, 1500);
+            }, 2000);
         });
 
-        // ANIMACIONES DE REVEAL
+        // Sistema de navegación tech
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(0, 0, 0, 0.95)';
+                navbar.style.boxShadow = '0 0 30px rgba(0, 255, 255, 0.5)';
+            } else {
+                navbar.style.background = 'rgba(0, 0, 0, 0.9)';
+                navbar.style.boxShadow = '0 0 20px rgba(0, 255, 255, 0.3)';
+            }
+        });
+
+        // Sistema de animaciones reveal mejorado
         function initRevealAnimations() {
             const revealElements = document.querySelectorAll('.reveal');
             
@@ -2031,13 +1848,13 @@
                     if (entry.isIntersecting) {
                         setTimeout(() => {
                             entry.target.classList.add('revealed');
-                        }, index * 100);
+                        }, index * 150);
                         revealObserver.unobserve(entry.target);
                     }
                 });
             }, {
-                threshold: 0.2,
-                rootMargin: '0px 0px -50px 0px'
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
             });
 
             revealElements.forEach(element => {
@@ -2045,14 +1862,14 @@
             });
         }
 
-        // ANIMACIÓN DE CONTADORES
+        // Sistema de contadores tech avanzado
         function initCounterAnimations() {
             const counterObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const counters = entry.target.querySelectorAll('.stat-number, .hero-stat-number');
                         counters.forEach(counter => {
-                            animateCounter(counter);
+                            animateTechCounter(counter);
                         });
                         counterObserver.unobserve(entry.target);
                     }
@@ -2065,13 +1882,30 @@
             if (heroSection) counterObserver.observe(heroSection);
         }
 
-        function animateCounter(element) {
-            const target = parseInt(element.textContent.replace(/\D/g, ''));
-            const suffix = element.textContent.replace(/\d/g, '');
+        function animateTechCounter(element) {
+            const text = element.textContent;
+            const isInfinity = text.includes('∞');
+            const isPercentage = text.includes('%');
+            const hasPlus = text.includes('+');
+            const hasSlash = text.includes('/');
+            
+            if (isInfinity) {
+                element.style.animation = 'numberGlow 2s ease-in-out infinite';
+                return;
+            }
+
+            if (hasSlash) {
+                element.style.animation = 'numberGlow 2s ease-in-out infinite';
+                return;
+            }
+            
+            const target = parseInt(text.replace(/\D/g, ''));
+            if (isNaN(target)) return;
+            
             let current = 0;
-            const increment = target / 100;
+            const increment = target / 50;
             const duration = 2000;
-            const stepTime = duration / 100;
+            const stepTime = duration / 50;
 
             const timer = setInterval(() => {
                 current += increment;
@@ -2079,143 +1913,100 @@
                     current = target;
                     clearInterval(timer);
                 }
-                element.textContent = Math.floor(current) + suffix;
+                
+                let displayText = Math.floor(current).toString();
+                if (isPercentage) displayText += '%';
+                if (hasPlus) displayText += '+';
+                
+                element.textContent = displayText;
+                
+                if (Math.random() > 0.95) {
+                    element.style.textShadow = '0 0 20px var(--neon-cyan), 2px 0 0 var(--neon-purple), -2px 0 0 var(--cyber-green)';
+                    setTimeout(() => {
+                        element.style.textShadow = '0 0 15px currentColor';
+                    }, 100);
+                }
             }, stepTime);
         }
 
-        // NAVEGACIÓN SUAVE
+        // Efectos tech diversos
+        function initTechEffects() {
+            createTechParticles();
+            initHoverEffects();
+        }
+
+        // Efectos hover avanzados
+        function initHoverEffects() {
+            const cards = document.querySelectorAll('.service-card, .stat-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-15px) scale(1.02)';
+                    this.style.boxShadow = '0 0 40px rgba(0, 255, 255, 0.4), 0 0 80px rgba(139, 92, 246, 0.2)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                    this.style.boxShadow = 'none';
+                });
+            });
+        }
+
+        // Navegación suave mejorada
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     const navHeight = document.querySelector('.navbar').offsetHeight;
-                    const targetPosition = target.offsetTop - navHeight;
+                    const targetPosition = target.offsetTop - navHeight - 20;
                     
                     window.scrollTo({
                         top: targetPosition,
                         behavior: 'smooth'
                     });
+                    
+                    this.style.textShadow = '0 0 20px var(--neon-cyan)';
+                    setTimeout(() => {
+                        this.style.textShadow = '0 0 10px var(--neon-cyan)';
+                    }, 300);
                 }
             });
         });
 
-        // TRACKING AVANZADO
-        function initTracking() {
-            function trackEvent(action, category, label, value = 1) {
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', action, {
-                        event_category: category,
-                        event_label: label,
-                        value: value,
-                        page_location: window.location.href,
-                        page_title: document.title
-                    });
-                }
-            }
-
-            // Tracking de clicks en botones
-            document.addEventListener('click', function(e) {
-                const element = e.target.closest('.btn, .contact-icon');
-                if (element) {
-                    const href = element.getAttribute('href') || '';
-                    let actionType = 'button_click';
-                    let category = 'engagement';
-                    let label = 'general';
-
-                    if (href.includes('mailto')) {
-                        actionType = 'email_click';
-                        category = 'contact';
-                        label = 'email';
-                    } else if (href.includes('wa.me')) {
-                        actionType = 'whatsapp_click';
-                        category = 'contact';
-                        label = 'whatsapp';
-                    } else if (href.includes('linkedin')) {
-                        actionType = 'linkedin_click';
-                        category = 'contact';
-                        label = 'linkedin';
-                    }
-
-                    trackEvent(actionType, category, label, 10);
-                }
-            });
-
-            // Tracking de scroll
-            let scrollPercentages = [25, 50, 75, 100];
-            let trackedPercentages = [];
-
-            window.addEventListener('scroll', debounce(() => {
-                const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
-                
-                scrollPercentages.forEach(percentage => {
-                    if (scrollPercent >= percentage && !trackedPercentages.includes(percentage)) {
-                        trackedPercentages.push(percentage);
-                        trackEvent('scroll_depth', 'engagement', `${percentage}%`, percentage);
-                    }
-                });
-            }, 250));
-
-            // Tracking de tiempo en página
-            let timeOnPage = 0;
-            setInterval(() => {
-                timeOnPage += 30;
-                if (timeOnPage === 60) trackEvent('time_on_page', 'engagement', '1_minute', 60);
-                if (timeOnPage === 180) trackEvent('time_on_page', 'engagement', '3_minutes', 180);
-                if (timeOnPage === 300) trackEvent('time_on_page', 'engagement', '5_minutes', 300);
-            }, 30000);
-
-            // Tracking de interacción con servicios
-            document.querySelectorAll('.service-card').forEach((card, index) => {
-                card.addEventListener('mouseenter', () => {
-                    const serviceName = card.querySelector('h3').textContent;
-                    trackEvent('service_hover', 'interest', serviceName.toLowerCase().replace(/\s+/g, '_'));
-                });
-            });
+        // Sistema de tracking avanzado
+        function initAdvancedTracking() {
+            // Aquí puedes agregar Google Analytics o tu sistema de tracking preferido
+            console.log('🚀 Kairos Flow Tracking System Initialized');
         }
 
-        // Función utility debounce
-        function debounce(func, wait) {
-            let timeout;
-            return function executedFunction(...args) {
-                const later = () => {
-                    clearTimeout(timeout);
-                    func(...args);
-                };
-                clearTimeout(timeout);
-                timeout = setTimeout(later, wait);
-            };
-        }
-
-        // Tracking de errores
-        window.addEventListener('error', function(e) {
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'javascript_error', {
-                    event_category: 'errors',
-                    event_label: `${e.filename}:${e.lineno} - ${e.message}`,
-                    value: 1
-                });
-            }
+        // Inicialización del sistema tech
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('⚡ Kairos Flow Tech System Initializing...');
+            
+            setTimeout(() => {
+                console.log('🚀 Kairos Flow Tech System Online!');
+                console.log('💻 Ready for Digital Transformation');
+                console.log('⚡ Python | Automation | Custom Solutions');
+            }, 1000);
         });
 
-        // Tracking de performance
-        window.addEventListener('load', function() {
-            if ('performance' in window) {
-                const perfData = performance.getEntriesByType('navigation')[0];
-                const loadTime = perfData.loadEventEnd - perfData.loadEventStart;
-                
-                if (typeof gtag !== 'undefined' && loadTime > 0) {
-                    gtag('event', 'page_load_time', {
-                        event_category: 'performance',
-                        value: Math.round(loadTime)
-                    });
-                }
-            }
-        });
-
-        console.log('🚀 Kairos Flow Professional Website Loaded Successfully!');
-        console.log('💼 Professional. Impactful. Results-Driven.');
+        // Easter egg tech para desarrolladores
+        console.log(`
+        ⚡ KAIROS FLOW TECH STACK ⚡
+        ════════════════════════════════
+        🐍 Backend: Python | Flask | Django
+        📊 Data: Pandas | NumPy | Scikit-learn  
+        🖥️ Frontend: Streamlit | HTML5 | CSS3
+        🤖 Automation: Selenium | APIs | Bots
+        📈 Analytics: Plotly | Matplotlib
+        🔗 Integration: REST APIs | Webhooks
+        ☁️ Deploy: AWS | Heroku | DigitalOcean
+        ════════════════════════════════
+        💡 Custom Solutions | No Templates
+        🚀 Built for Performance & Scale
+        ⚙️ Automated Everything
+        `);
     </script>
 </body>
 </html>
-                
