@@ -1,2012 +1,944 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kairos Flow - Desarrollo de soluciones Python personalizadas y automatización empresarial inteligente.">
-    <meta name="keywords" content="automatización python, desarrollo web personalizado, dashboards interactivos, soluciones empresariales a medida, Kairos Flow">
-    <meta name="author" content="Kairos Flow">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Kairos Flow - Desarrollo de Soluciones Empresariales a Medida">
-    <meta property="og:description" content="Especialistas en desarrollo Python y automatización empresarial. Soluciones personalizadas que transforman tu negocio.">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <title>Kairos Flow - Desarrollo de Soluciones Tech a Medida</title>
-    
-    <style>
-        :root {
-            /* Paleta tech futurista */
-            --neon-cyan: #00ffff;
-            --neon-purple: #8b5cf6;
-            --neon-pink: #ff007f;
-            --electric-blue: #0066ff;
-            --cyber-green: #00ff88;
-            --matrix-green: #39ff14;
-            
-            /* Backgrounds */
-            --void-black: #000000;
-            --deep-space: #0a0a0f;
-            --cyber-dark: #0f0f23;
-            --neural-gray: #1a1a2e;
-            --tech-slate: #16213e;
-            
-            /* Gradientes */
-            --gradient-cyber: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-purple) 50%, var(--neon-pink) 100%);
-            --gradient-matrix: linear-gradient(135deg, var(--cyber-green) 0%, var(--matrix-green) 100%);
-            --gradient-neural: linear-gradient(135deg, var(--electric-blue) 0%, var(--neon-purple) 100%);
-            --gradient-void: linear-gradient(135deg, var(--void-black) 0%, var(--deep-space) 50%, var(--cyber-dark) 100%);
-            
-            /* Efectos luminosos */
-            --glow-cyan: 0 0 20px var(--neon-cyan), 0 0 40px var(--neon-cyan);
-            --glow-purple: 0 0 20px var(--neon-purple), 0 0 40px var(--neon-purple);
-            --glow-green: 0 0 20px var(--cyber-green), 0 0 40px var(--cyber-green);
-            
-            /* Texto */
-            --text-neon: #ffffff;
-            --text-cyber: #e0e6ed;
-            --text-dim: #a0a9c0;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
-            background: var(--gradient-void);
-            color: var(--text-neon);
-            line-height: 1.6;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* Efectos de fondo */
-        .tech-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-            opacity: 0.8;
-        }
-
-        .neural-network {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(0, 255, 136, 0.1) 0%, transparent 50%);
-            animation: neuralPulse 8s ease-in-out infinite;
-        }
-
-        @keyframes neuralPulse {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.6; }
-        }
-
-        /* Navegación */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            backdrop-filter: blur(20px);
-            border-bottom: 2px solid var(--neon-cyan);
-            box-shadow: var(--glow-cyan);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .nav-container {
-            max-width: 1600px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 80px;
-        }
-
-        .nav-logo {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--neon-cyan);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            text-shadow: var(--glow-cyan);
-        }
-
-        .nav-logo::before {
-            content: '⚡';
-            font-size: 2rem;
-            animation: logoGlow 2s ease-in-out infinite;
-        }
-
-        @keyframes logoGlow {
-            0%, 100% { 
-                text-shadow: 0 0 5px var(--neon-cyan);
-                transform: scale(1);
-            }
-            50% { 
-                text-shadow: var(--glow-cyan);
-                transform: scale(1.1);
-            }
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 3rem;
-            list-style: none;
-        }
-
-        .nav-link {
-            color: var(--text-cyber);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 0.5rem 1rem;
-        }
-
-        .nav-link::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-cyber);
-            opacity: 0;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            z-index: -1;
-        }
-
-        .nav-link:hover::before {
-            opacity: 0.2;
-        }
-
-        .nav-link:hover {
-            color: var(--neon-cyan);
-            text-shadow: 0 0 10px var(--neon-cyan);
-            transform: translateY(-2px);
-        }
-
-        /* Preloader */
-        .preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-void);
-            z-index: 10000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 1s ease;
-        }
-
-        .preloader.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .loader-content {
-            text-align: center;
-        }
-
-        .cyber-spinner {
-            width: 150px;
-            height: 150px;
-            margin: 0 auto 2rem;
-            position: relative;
-        }
-
-        .cyber-spinner::before,
-        .cyber-spinner::after {
-            content: '';
-            position: absolute;
-            border: 3px solid transparent;
-            border-radius: 50%;
-            animation: cyberSpin 2s linear infinite;
-        }
-
-        .cyber-spinner::before {
-            width: 100%;
-            height: 100%;
-            border-top: 3px solid var(--neon-cyan);
-            border-right: 3px solid var(--neon-cyan);
-            box-shadow: var(--glow-cyan);
-        }
-
-        .cyber-spinner::after {
-            width: 80%;
-            height: 80%;
-            top: 10%;
-            left: 10%;
-            border-bottom: 3px solid var(--neon-purple);
-            border-left: 3px solid var(--neon-purple);
-            box-shadow: var(--glow-purple);
-            animation-direction: reverse;
-        }
-
-        @keyframes cyberSpin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .loader-text {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--neon-cyan);
-            text-shadow: var(--glow-cyan);
-            margin-bottom: 1rem;
-        }
-
-        .loader-subtitle {
-            color: var(--text-cyber);
-            font-size: 1.2rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        /* Contenido principal */
-        .main-content {
-            opacity: 0;
-            animation: fadeInUp 1s ease 1s forwards;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .container {
-            max-width: 1600px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Hero Section */
-        .hero {
-            position: relative;
-            padding: 140px 0 100px;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(ellipse at top left, rgba(0, 255, 255, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at bottom right, rgba(139, 92, 246, 0.15) 0%, transparent 50%);
-            z-index: -1;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6rem;
-            align-items: center;
-        }
-
-        .hero-content h1 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(3.5rem, 7vw, 5.5rem);
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 2rem;
-            color: var(--text-neon);
-            letter-spacing: -0.03em;
-        }
-
-        .highlight {
-            background: var(--gradient-cyber);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: highlightPulse 3s ease-in-out infinite;
-        }
-
-        @keyframes highlightPulse {
-            0%, 100% { 
-                filter: brightness(1); 
-                transform: scale(1);
-            }
-            50% { 
-                filter: brightness(1.2); 
-                transform: scale(1.02);
-            }
-        }
-
-        .hero-subtitle {
-            font-size: 1.4rem;
-            color: var(--text-cyber);
-            margin-bottom: 3rem;
-            line-height: 1.7;
-            font-weight: 500;
-        }
-
-        .problem-statement {
-            background: rgba(0, 255, 255, 0.05);
-            border: 1px solid rgba(0, 255, 255, 0.3);
-            border-radius: 15px;
-            padding: 2rem;
-            margin: 2rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .problem-statement::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--gradient-cyber);
-            animation: progressBar 4s ease-in-out infinite;
-        }
-
-        @keyframes progressBar {
-            0%, 100% { transform: scaleX(0); }
-            50% { transform: scaleX(1); }
-        }
-
-        .problem-title {
-            font-size: 1.3rem;
-            color: var(--neon-cyan);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .problem-text {
-            color: var(--text-cyber);
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        .solution-highlight {
-            color: var(--cyber-green);
-            font-weight: 700;
-            text-shadow: 0 0 10px var(--cyber-green);
-        }
-
-        .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .hero-stat {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(0, 0, 0, 0.6);
-            border: 1px solid var(--neon-cyan);
-            border-radius: 15px;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-stat:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--glow-cyan);
-            border-color: var(--neon-purple);
-        }
-
-        .hero-stat-number {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--neon-cyan);
-            display: block;
-            margin-bottom: 0.5rem;
-            text-shadow: 0 0 15px var(--neon-cyan);
-        }
-
-        .hero-stat-label {
-            font-size: 0.9rem;
-            color: var(--text-cyber);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1.2rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.4s ease;
-            border: 2px solid transparent;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-primary {
-            background: var(--gradient-neural);
-            color: var(--void-black);
-            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.4);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 20px 50px rgba(0, 102, 255, 0.6);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--neon-cyan);
-            border: 2px solid var(--neon-cyan);
-            text-shadow: 0 0 10px var(--neon-cyan);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(0, 255, 255, 0.1);
-            box-shadow: var(--glow-cyan);
-            transform: translateY(-5px);
-        }
-
-        .hero-visual {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-logo {
-            max-width: 100%;
-            height: auto;
-            max-height: 500px;
-            border-radius: 20px;
-            border: 2px solid var(--neon-cyan);
-            box-shadow: var(--glow-cyan);
-            transition: all 0.6s ease;
-            animation: logoFloat 6s ease-in-out infinite;
-        }
-
-        @keyframes logoFloat {
-            0%, 100% { transform: translateY(0px) scale(1); }
-            50% { transform: translateY(-20px) scale(1.05); }
-        }
-
-        .hero-decoration {
-            position: absolute;
-            border: 2px solid;
-            border-radius: 50%;
-            animation: orbitRotate 20s linear infinite;
-            z-index: -1;
-        }
-
-        .hero-decoration:nth-child(1) {
-            width: 300px;
-            height: 300px;
-            border-color: rgba(0, 255, 255, 0.3);
-            animation-duration: 25s;
-        }
-
-        .hero-decoration:nth-child(2) {
-            width: 400px;
-            height: 400px;
-            border-color: rgba(139, 92, 246, 0.3);
-            animation-duration: 35s;
-            animation-direction: reverse;
-        }
-
-        .hero-decoration:nth-child(3) {
-            width: 500px;
-            height: 500px;
-            border-color: rgba(0, 255, 136, 0.3);
-            animation-duration: 45s;
-        }
-
-        @keyframes orbitRotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Servicios */
-        .services {
-            padding: 120px 0;
-            background: linear-gradient(180deg, 
-                transparent 0%, 
-                rgba(0, 255, 255, 0.02) 50%,
-                transparent 100%);
-            position: relative;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 5rem;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .section-badge {
-            display: inline-block;
-            background: rgba(0, 255, 255, 0.1);
-            color: var(--neon-cyan);
-            padding: 1rem 2.5rem;
-            border-radius: 30px;
-            font-size: 1rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            border: 2px solid rgba(0, 255, 255, 0.3);
-            font-family: 'JetBrains Mono', monospace;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            text-shadow: 0 0 10px var(--neon-cyan);
-            box-shadow: var(--glow-cyan);
-        }
-
-        .section-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(3rem, 6vw, 4.5rem);
-            font-weight: 800;
-            margin-bottom: 2rem;
-            color: var(--text-neon);
-            letter-spacing: -0.02em;
-        }
-
-        .section-subtitle {
-            font-size: 1.3rem;
-            color: var(--text-cyber);
-            line-height: 1.7;
-            font-weight: 500;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .service-card {
-            background: rgba(0, 0, 0, 0.8);
-            border: 2px solid rgba(0, 255, 255, 0.3);
-            border-radius: 20px;
-            padding: 2rem;
-            transition: all 0.5s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--gradient-cyber);
-            transform: scaleX(0);
-            transition: transform 0.5s ease;
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .service-card:hover {
-            background: rgba(0, 255, 255, 0.05);
-            transform: translateY(-15px);
-            box-shadow: var(--glow-cyan);
-            border-color: var(--neon-cyan);
-        }
-
-        .service-icon {
-            font-size: 4rem;
-            margin-bottom: 2rem;
-            display: block;
-            text-shadow: 0 0 20px currentColor;
-            animation: iconFloat 4s ease-in-out infinite;
-        }
-
-        @keyframes iconFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .service-card h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: var(--text-neon);
-        }
-
-        .service-description {
-            color: var(--text-cyber);
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-
-        .service-tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .tech-badge {
-            background: rgba(0, 255, 255, 0.1);
-            color: var(--neon-cyan);
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            border: 1px solid rgba(0, 255, 255, 0.3);
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        .service-problem {
-            background: rgba(255, 0, 127, 0.1);
-            border-left: 4px solid var(--neon-pink);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 0 10px 10px 0;
-        }
-
-        .service-problem-title {
-            color: var(--neon-pink);
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-        }
-
-        .service-problem-text {
-            color: var(--text-cyber);
-            font-style: italic;
-        }
-
-        .service-solution {
-            background: rgba(0, 255, 136, 0.1);
-            border-left: 4px solid var(--cyber-green);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 0 10px 10px 0;
-        }
-
-        .service-solution-title {
-            color: var(--cyber-green);
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-        }
-
-        .service-solution-text {
-            color: var(--text-neon);
-            font-weight: 600;
-        }
-
-        .service-testimonial {
-            background: rgba(0, 255, 136, 0.05);
-            border-left: 3px solid var(--cyber-green);
-            padding: 1rem;
-            margin: 1.5rem 0;
-            border-radius: 0 8px 8px 0;
-            font-style: italic;
-            color: var(--text-cyber);
-        }
-
-        .testimonial-author {
-            font-size: 0.8rem;
-            color: var(--cyber-green);
-            margin-top: 0.5rem;
-            font-weight: 600;
-        }
-
-        .service-benefits {
-            list-style: none;
-            margin: 1.5rem 0;
-        }
-
-        .service-benefits li {
-            color: var(--text-cyber);
-            padding: 0.4rem 0;
-            position: relative;
-            padding-left: 1.5rem;
-            font-size: 0.9rem;
-        }
-
-        .service-benefits li::before {
-            content: '⚡';
-            position: absolute;
-            left: 0;
-            color: var(--neon-cyan);
-            font-weight: bold;
-        }
-
-        .service-timeline {
-            background: rgba(139, 92, 246, 0.1);
-            border: 1px solid rgba(139, 92, 246, 0.3);
-            border-radius: 8px;
-            padding: 1rem;
-            margin: 1.5rem 0;
-            text-align: center;
-        }
-
-        .timeline-text {
-            color: var(--neon-purple);
-            font-weight: 700;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .service-guarantee {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            background: rgba(0, 255, 255, 0.1);
-            border: 1px solid rgba(0, 255, 255, 0.3);
-            border-radius: 20px;
-            padding: 0.8rem;
-            margin-top: 1.5rem;
-            font-size: 0.85rem;
-            color: var(--neon-cyan);
-            font-weight: 600;
-        }
-
-        /* CTA Mega */
-        .cta-section-mega {
-            padding: 8rem 0;
-            background: 
-                radial-gradient(ellipse at center, rgba(0, 255, 255, 0.15) 0%, transparent 70%),
-                var(--gradient-void);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-mega-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .cta-mega-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            font-weight: 800;
-            margin-bottom: 2rem;
-            color: var(--text-neon);
-        }
-
-        .cta-mega-subtitle {
-            font-size: 1.4rem;
-            color: var(--text-cyber);
-            margin-bottom: 3rem;
-            line-height: 1.6;
-            font-weight: 500;
-        }
-
-        .mega-cta {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            gap: 1.5rem;
-            padding: 2rem 4rem;
-            font-size: 1.4rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border-radius: 60px;
-            background: var(--gradient-cyber);
-            color: var(--void-black);
-            text-decoration: none;
-            overflow: hidden;
-            box-shadow: 
-                0 15px 40px rgba(0, 255, 255, 0.4),
-                0 0 60px rgba(0, 255, 255, 0.3);
-            transition: all 0.5s ease;
-            animation: ctaMegaPulse 4s ease-in-out infinite;
-        }
-
-        .mega-cta:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 
-                0 25px 60px rgba(0, 255, 255, 0.6),
-                0 0 100px rgba(0, 255, 255, 0.5);
-            animation: none;
-        }
-
-        .mega-cta .icon {
-            font-size: 2rem;
-            animation: iconBounce 2s ease-in-out infinite;
-        }
-
-        @keyframes ctaMegaPulse {
-            0%, 100% {
-                box-shadow: 
-                    0 15px 40px rgba(0, 255, 255, 0.4),
-                    0 0 60px rgba(0, 255, 255, 0.3);
-            }
-            50% {
-                box-shadow: 
-                    0 20px 50px rgba(0, 255, 255, 0.6),
-                    0 0 80px rgba(0, 255, 255, 0.5);
-            }
-        }
-
-        @keyframes iconBounce {
-            0%, 100% { transform: translateX(0); }
-            50% { transform: translateX(10px); }
-        }
-
-        /* Estadísticas */
-        .stats {
-            padding: 100px 0;
-            background: rgba(0, 0, 0, 0.3);
-            position: relative;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 3rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .stat-card {
-            text-align: center;
-            padding: 3rem;
-            background: rgba(0, 0, 0, 0.8);
-            border: 2px solid rgba(139, 92, 246, 0.3);
-            border-radius: 20px;
-            transition: all 0.5s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-10px) scale(1.05);
-            box-shadow: var(--glow-purple);
-        }
-
-        .stat-number {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 4rem;
-            font-weight: 700;
-            color: var(--neon-purple);
-            display: block;
-            margin-bottom: 1rem;
-            text-shadow: var(--glow-purple);
-            animation: numberGlow 3s ease-in-out infinite;
-        }
-
-        @keyframes numberGlow {
-            0%, 100% { 
-                text-shadow: 0 0 10px var(--neon-purple);
-                transform: scale(1);
-            }
-            50% { 
-                text-shadow: var(--glow-purple);
-                transform: scale(1.05);
-            }
-        }
-
-        .stat-label {
-            color: var(--text-neon);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .stat-description {
-            color: var(--text-cyber);
-            font-size: 1rem;
-            line-height: 1.5;
-        }
-
-        /* Contacto */
-        .contact {
-            padding: 120px 0;
-            background: linear-gradient(180deg, 
-                transparent 0%, 
-                rgba(0, 255, 136, 0.05) 100%);
-            position: relative;
-        }
-
-        .contact-content {
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .contact-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 4rem 0;
-            flex-wrap: wrap;
-        }
-
-        .contact-info {
-            margin-top: 5rem;
-            padding: 4rem;
-            background: rgba(0, 0, 0, 0.8);
-            border: 2px solid rgba(0, 255, 136, 0.3);
-            border-radius: 25px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .contact-item {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(0, 255, 136, 0.05);
-            border: 1px solid rgba(0, 255, 136, 0.3);
-            border-radius: 15px;
-            transition: all 0.3s ease;
-        }
-
-        .contact-item:hover {
-            background: rgba(0, 255, 136, 0.1);
-            transform: translateY(-5px);
-            box-shadow: var(--glow-green);
-        }
-
-        .contact-item h4 {
-            color: var(--cyber-green);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .contact-item p {
-            color: var(--text-cyber);
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        .guarantee-section {
-            margin-top: 3rem;
-            padding: 3rem;
-            background: rgba(0, 255, 255, 0.1);
-            border: 2px solid rgba(0, 255, 255, 0.3);
-            border-radius: 20px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .guarantee-title {
-            color: var(--neon-cyan);
-            margin-bottom: 1.5rem;
-            text-align: center;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 800;
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 0 0 15px var(--neon-cyan);
-        }
-
-        .guarantee-text {
-            text-align: center;
-            margin: 0;
-            color: var(--text-neon);
-            font-weight: 600;
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        /* Footer */
-        .footer {
-            padding: 4rem 0;
-            border-top: 2px solid var(--neon-cyan);
-            text-align: center;
-            background: rgba(0, 0, 0, 0.9);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .footer p {
-            color: var(--text-cyber);
-            margin-bottom: 1rem;
-            font-weight: 500;
-            position: relative;
-            z-index: 2;
-        }
-
-        .footer-highlight {
-            color: var(--neon-cyan);
-            font-weight: 700;
-            font-family: 'JetBrains Mono', monospace;
-            text-shadow: 0 0 10px var(--neon-cyan);
-        }
-
-        .footer-motto {
-            color: var(--cyber-green);
-            font-style: italic;
-            font-weight: 600;
-            text-shadow: 0 0 10px var(--cyber-green);
-            animation: mottoGlow 4s ease-in-out infinite;
-        }
-
-        @keyframes mottoGlow {
-            0%, 100% { opacity: 0.8; }
-            50% { opacity: 1; }
-        }
-
-        /* Partículas tech */
-        .tech-particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-            opacity: 0.6;
-        }
-
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: var(--neon-cyan);
-            border-radius: 50%;
-            animation: particleFloat 20s linear infinite;
-            box-shadow: 0 0 10px var(--neon-cyan);
-        }
-
-        .particle:nth-child(2n) {
-            background: var(--neon-purple);
-            box-shadow: 0 0 10px var(--neon-purple);
-            animation-delay: 5s;
-            animation-duration: 25s;
-        }
-
-        .particle:nth-child(3n) {
-            background: var(--cyber-green);
-            box-shadow: 0 0 10px var(--cyber-green);
-            animation-delay: 10s;
-            animation-duration: 30s;
-        }
-
-        @keyframes particleFloat {
-            0% {
-                transform: translateY(100vh) translateX(0) scale(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-                transform: scale(1);
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-10vh) translateX(100px) scale(0);
-                opacity: 0;
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-                gap: 4rem;
-                text-align: center;
-            }
-
-            .hero-stats {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .nav-links {
-                display: none;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 1.5rem;
-            }
-
-            .hero {
-                padding: 120px 0 80px;
-            }
-
-            .hero-content h1 {
-                font-size: clamp(2.5rem, 8vw, 4rem);
-            }
-
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-
-            .hero-stats {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 300px;
-                justify-content: center;
-            }
-
-            .service-card {
-                padding: 2rem;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .mega-cta {
-                width: 100%;
-                max-width: 350px;
-                padding: 1.5rem 2.5rem;
-                font-size: 1.2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-content h1 {
-                font-size: clamp(2rem, 7vw, 3rem);
-            }
-
-            .section-title {
-                font-size: clamp(2rem, 6vw, 3rem);
-            }
-
-            .service-card {
-                padding: 1.5rem;
-            }
-
-            .contact-info {
-                padding: 2rem;
-            }
-
-            .mega-cta {
-                padding: 1.2rem 2rem;
-                font-size: 1rem;
-            }
-        }
-
-        /* Utilidades */
-        .reveal {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .reveal.revealed {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Optimizaciones */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation: none !important;
-                transition: none !important;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Kairos Flow — Consultoría en IA aplicada a empresas. Transformamos operaciones en sistemas inteligentes. Tucumán, Argentina.">
+<title>Kairos Flow — Inteligencia Aplicada a tu Negocio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070707;
+  --bg1:#0d0d0d;
+  --bg2:#131313;
+  --line:#1c1c1c;
+  --line2:#252525;
+  --muted:#383838;
+  --gray:#666;
+  --silver:#999;
+  --fog:#c0c0c0;
+  --snow:#efefef;
+  --gold:#c9a84c;
+  --gold2:#8a6a28;
+  --goldfog:rgba(201,168,76,.07);
+  --ai:#6366f1;
+  --ai2:#4f46e5;
+  --aifog:rgba(99,102,241,.08);
+  --red:#c94c4c;
+  --D:'Bebas Neue',sans-serif;
+  --M:'IBM Plex Mono',monospace;
+  --B:'IBM Plex Sans',sans-serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--B);background:var(--bg);color:var(--snow);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* CURSOR */
+.cur{position:fixed;width:8px;height:8px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);mix-blend-mode:difference;transition:width .15s,height .15s}
+.cur-r{position:fixed;width:36px;height:36px;border:1px solid rgba(201,168,76,.3);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:all .1s ease}
+
+/* PRELOADER */
+#pl{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1.5rem;transition:opacity .6s,visibility .6s}
+#pl.out{opacity:0;visibility:hidden}
+.pl-mark{animation:plb 1.2s ease-in-out infinite}
+@keyframes plb{0%,100%{opacity:.35;transform:scale(.96)}50%{opacity:1;transform:scale(1)}}
+.pl-bar{width:180px;height:1px;background:var(--line2);overflow:hidden}
+.pl-fill{height:100%;width:0;background:var(--gold);transition:width 1.1s cubic-bezier(.4,0,.2,1)}
+.pl-txt{font-family:var(--M);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;width:100%;z-index:1000;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;background:rgba(7,7,7,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);transition:border-color .3s}
+nav.lit{border-bottom-color:var(--gold2)}
+.nav-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none}
+.nav-wm{font-family:var(--D);font-size:1.4rem;letter-spacing:.12em;color:var(--snow)}
+.nav-wm span{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
+.nav-links a{font-family:var(--M);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--snow)}
+.nav-cta{font-family:var(--M);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--gold2);color:var(--gold);padding:.48rem 1.3rem;text-decoration:none;transition:background .2s}
+.nav-cta:hover{background:var(--goldfog)}
+
+/* ══════════════════════════════
+   HERO — split logo / mensaje
+══════════════════════════════ */
+.hero{min-height:100vh;padding-top:60px;display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}
+.hl{border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:4rem 3rem 7rem;position:relative;overflow:hidden;background:var(--bg1)}
+.hl::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,var(--line2) 1px,transparent 1px);background-size:26px 26px;opacity:.5}
+.hl::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 48%,rgba(201,168,76,.09) 0%,transparent 65%)}
+.mark{position:relative;z-index:2;width:270px;height:270px;display:flex;align-items:center;justify-content:center}
+.mr1{position:absolute;inset:0;border-radius:50%;border:1px solid var(--line2);animation:sp1 35s linear infinite}
+.mr2{position:absolute;inset:22px;border-radius:50%;border:1px dashed var(--muted);opacity:.35;animation:sp1 20s linear infinite reverse}
+.md{position:absolute;top:-3px;left:50%;width:6px;height:6px;margin-left:-3px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold)}
+@keyframes sp1{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+.mc{width:148px;height:148px;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);background:var(--bg2);display:flex;align-items:center;justify-content:center;position:relative;z-index:1;animation:cb 5s ease-in-out infinite}
+@keyframes cb{0%,100%{filter:drop-shadow(0 0 0 transparent)}50%{filter:drop-shadow(0 0 20px rgba(201,168,76,.22))}}
+.mkf{font-family:var(--D);font-size:4rem;letter-spacing:.1em;line-height:1;background:linear-gradient(135deg,#7a5c1e,#c9a84c,#e8c46a,#c9a84c,#7a5c1e);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shine 3s linear infinite}
+@keyframes shine{to{background-position:200% center}}
+.ml{position:relative;z-index:2;margin-top:2rem;text-align:center}
+.ml-n{font-family:var(--D);font-size:2.6rem;letter-spacing:.22em;color:var(--snow)}
+.ml-n span{color:var(--gold)}
+.ml-s{font-family:var(--M);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gray);margin-top:.4rem}
+.hl-stats{position:absolute;bottom:0;left:0;right:0;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);z-index:2}
+.hls{padding:1.1rem;border-right:1px solid var(--line);text-align:center}
+.hls:last-child{border-right:none}
+.hls-v{font-family:var(--D);font-size:1.9rem;color:var(--gold);letter-spacing:.06em;line-height:1}
+.hls-l{font-family:var(--M);font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);margin-top:.15rem}
+.hr{display:flex;flex-direction:column;justify-content:center;padding:4rem 3.5rem 7rem;position:relative}
+.hr-tag{font-family:var(--M);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.75rem;margin-bottom:2.5rem}
+.hr-tag::before{content:'';width:18px;height:1px;background:var(--gold)}
+.hr-h{font-family:var(--D);font-size:clamp(2.8rem,4.2vw,5rem);line-height:.95;letter-spacing:.04em;color:var(--snow);margin-bottom:1.75rem}
+.hr-h .g{color:var(--gold)}
+.hr-h .d{color:var(--muted)}
+.hr-claim{font-size:.92rem;color:var(--gray);line-height:1.85;max-width:440px;margin-bottom:2.5rem;font-weight:300;border-left:2px solid var(--gold2);padding-left:1.25rem}
+.hr-claim strong{color:var(--fog);font-weight:500}
+.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:2.5rem}
+.ph{background:var(--bg1);padding:1.2rem 1rem;text-align:center;position:relative;overflow:hidden;transition:background .3s}
+.ph:hover{background:var(--bg2)}
+.ph::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.ph:hover::before{transform:scaleX(1)}
+.ph-n{font-family:var(--M);font-size:.58rem;color:var(--gold);letter-spacing:.1em;margin-bottom:.25rem}
+.ph-t{font-family:var(--D);font-size:1.05rem;letter-spacing:.08em;color:var(--snow)}
+.ph-d{font-size:.7rem;color:var(--gray);margin-top:.2rem;line-height:1.35}
+.btns{display:flex;gap:1rem;align-items:center}
+.btn-g{display:inline-flex;align-items:center;gap:.6rem;background:var(--gold);color:var(--bg);padding:.85rem 2rem;text-decoration:none;font-family:var(--M);font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;transition:opacity .2s,transform .15s}
+.btn-g:hover{opacity:.88;transform:translateY(-1px)}
+.btn-o{display:inline-flex;align-items:center;gap:.6rem;border:1px solid var(--line2);color:var(--silver);padding:.85rem 2rem;text-decoration:none;font-family:var(--M);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;transition:border-color .2s,color .2s}
+.btn-o:hover{border-color:var(--silver);color:var(--snow)}
+.scroll-ind{position:absolute;bottom:2.5rem;right:3rem;font-family:var(--M);font-size:.56rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);writing-mode:vertical-rl;display:flex;align-items:center;gap:.6rem;animation:spulse 3s ease-in-out infinite}
+.scroll-ind::before{content:'';width:1px;height:30px;background:linear-gradient(var(--gold),transparent)}
+@keyframes spulse{0%,100%{opacity:.25}50%{opacity:.7}}
+
+/* TICKER */
+.ticker{height:40px;overflow:hidden;white-space:nowrap;border-bottom:1px solid var(--line);background:var(--bg1);display:flex;align-items:center}
+.tick-t{display:inline-flex;animation:tick 32s linear infinite}
+.tick-t:hover{animation-play-state:paused}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ti{font-family:var(--M);font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:0 2rem;border-right:1px solid var(--line);display:inline-flex;align-items:center;gap:.6rem}
+.ti b{color:var(--gold);font-size:.4rem}
+.ti.ai-tick{color:#818cf8}
+.ti.ai-tick b{color:#6366f1}
+
+/* ══════════════════════════════
+   SECCIÓN IA — EL CABALLO DE BATALLA
+   Ocupa todo el ancho, impacto total
+══════════════════════════════ */
+.ia-section{
+  border-bottom:1px solid var(--line);
+  position:relative;overflow:hidden;
+}
+/* fondo animado exclusivo para esta sección */
+.ia-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse at 20% 50%,rgba(99,102,241,.12) 0%,transparent 55%),
+    radial-gradient(ellipse at 80% 50%,rgba(139,92,246,.08) 0%,transparent 55%);
+  animation:iabg 8s ease-in-out infinite;
+}
+@keyframes iabg{0%,100%{opacity:.6}50%{opacity:1}}
+.ia-grid-bg{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(99,102,241,.06) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(99,102,241,.06) 1px,transparent 1px);
+  background-size:48px 48px;
+}
+
+.ia-top{
+  padding:6rem 3rem 4rem;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:5rem;align-items:center;
+  position:relative;z-index:2;
+  border-bottom:1px solid rgba(99,102,241,.15);
+}
+.ia-badge{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-family:var(--M);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;
+  color:#a5b4fc;margin-bottom:1.5rem;
+  border:1px solid rgba(99,102,241,.3);padding:.4rem 1rem;
+  width:fit-content;
+}
+.ia-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:#6366f1;animation:iapulse 1.5s ease-in-out infinite}
+@keyframes iapulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.6)}}
+
+.ia-title{
+  font-family:var(--D);
+  font-size:clamp(3.5rem,6vw,7rem);
+  line-height:.88;letter-spacing:.03em;
+  color:var(--snow);margin-bottom:1.5rem;
+}
+.ia-title .purple{
+  background:linear-gradient(135deg,#6366f1,#a855f7,#ec4899);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.ia-title .dim{color:var(--muted)}
+
+.ia-claim{
+  font-size:1.1rem;color:var(--gray);line-height:1.85;font-weight:300;
+  border-left:2px solid #6366f1;padding-left:1.5rem;
+  margin-bottom:2rem;
+}
+.ia-claim strong{color:var(--fog);font-weight:500}
+
+.ia-cta-row{display:flex;gap:1rem;align-items:center}
+.btn-ai{
+  display:inline-flex;align-items:center;gap:.6rem;
+  background:linear-gradient(135deg,#6366f1,#8b5cf6);
+  color:#fff;padding:.9rem 2.2rem;
+  font-family:var(--M);font-size:.72rem;font-weight:500;
+  letter-spacing:.1em;text-transform:uppercase;
+  text-decoration:none;transition:opacity .2s,transform .15s;
+  border:none;
+}
+.btn-ai:hover{opacity:.88;transform:translateY(-1px)}
+
+/* lado derecho IA — el argumento */
+.ia-right{}
+.ia-stat-row{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(99,102,241,.15);border:1px solid rgba(99,102,241,.2);margin-bottom:2rem}
+.ia-stat{background:var(--bg1);padding:1.5rem;text-align:center;transition:background .3s}
+.ia-stat:hover{background:var(--bg2)}
+.ia-stat-n{font-family:var(--D);font-size:3rem;line-height:1;margin-bottom:.25rem}
+.ia-stat-n.purple{background:linear-gradient(135deg,#6366f1,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ia-stat-l{font-family:var(--M);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gray)}
+.ia-warning{
+  background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.2);
+  border-left:3px solid var(--gold);padding:1.25rem 1.5rem;
+}
+.ia-warning-t{font-family:var(--M);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+.ia-warning-b{font-size:.85rem;color:var(--gray);line-height:1.7}
+.ia-warning-b strong{color:var(--fog);font-weight:500}
+
+/* los 3 problemas de IA en empresas */
+.ia-problems{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(99,102,241,.15);position:relative;z-index:2}
+.iap{padding:2.5rem;border-right:1px solid rgba(99,102,241,.12);transition:background .3s;position:relative;overflow:hidden}
+.iap:last-child{border-right:none}
+.iap:hover{background:var(--aifog)}
+.iap::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#6366f1,#8b5cf6);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.iap:hover::before{transform:scaleX(1)}
+.iap-n{font-family:var(--D);font-size:3.5rem;color:rgba(99,102,241,.2);line-height:1;margin-bottom:1rem;transition:color .3s}
+.iap:hover .iap-n{color:rgba(99,102,241,.5)}
+.iap h4{font-size:.92rem;font-weight:600;color:var(--fog);margin-bottom:.5rem}
+.iap p{font-size:.82rem;color:var(--gray);line-height:1.7}
+.iap-tag{display:inline-block;font-family:var(--M);font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;color:#818cf8;border:1px solid rgba(99,102,241,.3);padding:.2rem .6rem;margin-top:.75rem}
+
+/* lo que hacemos con IA */
+.ia-how{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(99,102,241,.15);position:relative;z-index:2}
+.iahow{padding:2.5rem 2rem;border-right:1px solid rgba(99,102,241,.12);transition:background .3s}
+.iahow:last-child{border-right:none}
+.iahow:hover{background:var(--aifog)}
+.iahow-ico{font-size:1.5rem;margin-bottom:1rem;display:block}
+.iahow-t{font-family:var(--D);font-size:1.2rem;letter-spacing:.04em;color:var(--snow);margin-bottom:.5rem}
+.iahow-d{font-size:.8rem;color:var(--gray);line-height:1.7}
+
+/* ══ SECTION BASE ══ */
+.S{border-bottom:1px solid var(--line)}
+.sh{padding:5rem 3rem 3rem;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end}
+.slbl{font-family:var(--M);font-size:.63rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.6rem;margin-bottom:1.1rem}
+.slbl::before{content:'';width:14px;height:1px;background:var(--gold)}
+.stit{font-family:var(--D);font-size:clamp(3rem,5vw,6rem);line-height:.9;letter-spacing:.04em;color:var(--snow)}
+.stit em{color:var(--gold);font-style:normal}
+.sh-r p{font-size:.88rem;color:var(--gray);line-height:1.85;font-weight:300;max-width:420px}
+
+/* ══ DOLOR ══ */
+.pain-g{display:grid;grid-template-columns:1fr 1fr}
+.pain{padding:2.5rem;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;gap:1.5rem;transition:background .3s;position:relative;overflow:hidden}
+.pain::after{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--red);transform:scaleY(0);transform-origin:top;transition:transform .4s}
+.pain:hover::after{transform:scaleY(1)}
+.pain:hover{background:var(--bg2)}
+.pain:nth-child(2n){border-right:none}
+.pain:nth-child(3),.pain:nth-child(4){border-bottom:none}
+.pain-n{font-family:var(--D);font-size:3.5rem;color:var(--line2);line-height:1;flex-shrink:0;width:3.5rem;transition:color .3s}
+.pain:hover .pain-n{color:var(--red)}
+.pain h4{font-size:.88rem;font-weight:600;color:var(--fog);margin-bottom:.4rem}
+.pain p{font-size:.82rem;color:var(--gray);line-height:1.7}
+.pain-q{font-style:italic;color:var(--silver);margin-top:.75rem;padding-left:.75rem;border-left:1px solid var(--muted);font-size:.8rem}
+
+/* ══ MÉTODO ══ */
+.mth-g{display:grid;grid-template-columns:repeat(3,1fr)}
+.mth{border-right:1px solid var(--line)}
+.mth:last-child{border-right:none}
+.mth-top{padding:2.5rem 2.5rem 1.5rem;border-bottom:1px solid var(--line);background:var(--bg1);display:flex;align-items:flex-start;justify-content:space-between}
+.mth-n{font-family:var(--D);font-size:4rem;color:var(--line2);line-height:1}
+.mth-lbl{font-family:var(--M);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);text-align:right;padding-top:.3rem}
+.mth-body{padding:2rem 2.5rem;transition:background .3s}
+.mth:hover .mth-body{background:var(--bg2)}
+.mth-t{font-family:var(--D);font-size:1.7rem;letter-spacing:.04em;color:var(--snow);margin-bottom:.75rem}
+.mth-d{font-size:.83rem;color:var(--gray);line-height:1.75}
+.mth-list{list-style:none;margin-top:1rem}
+.mth-list li{font-size:.8rem;color:var(--silver);padding:.32rem 0;border-top:1px solid var(--line);display:flex;align-items:center;gap:.5rem}
+.mth-list li::before{content:'→';color:var(--gold);font-size:.65rem;flex-shrink:0}
+
+/* ══ SERVICIOS ══ */
+.svc-g{display:grid;grid-template-columns:repeat(3,1fr)}
+.svc{border-right:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.svc:nth-child(3n){border-right:none}
+.svc:nth-child(n+4){border-bottom:none}
+.svc-in{padding:2.5rem;height:100%;display:flex;flex-direction:column;transition:background .3s}
+.svc:hover .svc-in{background:var(--bg2)}
+.svc-line{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold2));transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.svc:hover .svc-line{transform:scaleX(1)}
+.svc-ix{font-family:var(--M);font-size:.6rem;letter-spacing:.1em;color:var(--muted);margin-bottom:2rem}
+.svc-ico{width:42px;height:42px;border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;font-size:1rem;margin-bottom:1.5rem;transition:border-color .3s}
+.svc:hover .svc-ico{border-color:var(--gold2)}
+.svc-t{font-family:var(--D);font-size:1.45rem;letter-spacing:.04em;color:var(--snow);margin-bottom:.7rem;line-height:1.1}
+.svc-d{font-size:.82rem;color:var(--gray);line-height:1.75;margin-bottom:1.5rem;flex:1}
+.svc-tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:1.5rem}
+.stag{font-family:var(--M);font-size:.58rem;letter-spacing:.04em;border:1px solid var(--line2);color:var(--muted);padding:.12rem .48rem;transition:border-color .2s,color .2s}
+.svc:hover .stag{border-color:var(--gold2);color:var(--gold)}
+.svc-ft{border-top:1px solid var(--line);padding-top:.9rem;display:flex;justify-content:flex-end}
+.svc-go{font-family:var(--M);font-size:.62rem;color:var(--gold);opacity:0;transform:translateX(-6px);transition:opacity .3s,transform .3s}
+.svc:hover .svc-go{opacity:1;transform:translateX(0)}
+.svc-sp .svc-in{background:var(--goldfog)}
+.svc-sp .svc-t{color:var(--gold)}
+
+/* ══ CASOS ══ */
+.casos-g{display:grid;grid-template-columns:repeat(3,1fr)}
+.caso{border-right:1px solid var(--line);padding:3rem 2.5rem;position:relative;overflow:hidden;transition:background .3s}
+.caso:last-child{border-right:none}
+.caso:hover{background:var(--bg2)}
+.caso-tag{font-family:var(--M);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;display:flex;align-items:center;gap:.5rem}
+.caso-tag::before{content:'';width:10px;height:1px;background:var(--gold)}
+.caso-num{font-family:var(--D);font-size:5rem;line-height:1;letter-spacing:.04em;color:var(--snow);margin-bottom:.4rem}
+.caso-num span{color:var(--gold);font-size:2.8rem}
+.caso-tit{font-size:.88rem;font-weight:600;color:var(--fog);margin-bottom:.7rem}
+.caso-b{font-size:.82rem;color:var(--gray);line-height:1.75}
+.caso-detail{margin-top:1.2rem;padding:1rem;border-left:2px solid var(--gold2);background:rgba(201,168,76,.04);font-size:.77rem;color:var(--silver);line-height:1.65;font-style:italic}
+
+/* ══ NOSOTROS ══ */
+.about-g{display:grid;grid-template-columns:1fr 1fr}
+.about-l{border-right:1px solid var(--line);padding:5rem 3rem;display:flex;flex-direction:column;justify-content:center}
+.about-r{padding:5rem 3rem}
+.av{display:flex;align-items:center;gap:1.5rem;margin-bottom:2.5rem}
+.av-hex{width:72px;height:72px;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);background:linear-gradient(135deg,var(--gold2),var(--gold));display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.av-init{font-family:var(--D);font-size:1.8rem;color:var(--bg);letter-spacing:.1em}
+.av-name{font-family:var(--D);font-size:1.6rem;letter-spacing:.06em;color:var(--snow);line-height:1}
+.av-role{font-family:var(--M);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:.3rem}
+.about-bio{font-size:.9rem;color:var(--gray);line-height:1.88;font-weight:300;margin-bottom:2rem}
+.about-bio strong{color:var(--fog);font-weight:500}
+.dif-g{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+.dif{border:1px solid var(--line);padding:.9rem 1rem;display:flex;align-items:flex-start;gap:.75rem;transition:border-color .2s,background .2s}
+.dif:hover{border-color:var(--gold2);background:var(--goldfog)}
+.dif-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:.45rem}
+.dif-t{font-size:.8rem;color:var(--silver);line-height:1.5}
+.stack-pills{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:2rem}
+.sp{font-family:var(--M);font-size:.65rem;border:1px solid var(--line2);color:var(--muted);padding:.2rem .6rem;transition:border-color .2s,color .2s}
+.sp:hover{border-color:var(--gold2);color:var(--gold)}
+.sp.ai-pill{border-color:rgba(99,102,241,.3);color:#818cf8}
+.sp.ai-pill:hover{border-color:#6366f1;color:#a5b4fc}
+
+/* ══ WHY ══ */
+.why{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line)}
+.why-c{padding:3rem 2.5rem;border-right:1px solid var(--line);transition:background .3s}
+.why-c:last-child{border-right:none}
+.why-c:hover{background:var(--bg1)}
+.why-big{font-family:var(--D);font-size:4.5rem;color:var(--snow);letter-spacing:.04em;line-height:1;margin-bottom:.5rem}
+.why-big b{color:var(--gold)}
+.why-lbl{font-size:.8rem;font-weight:600;color:var(--fog);margin-bottom:.3rem}
+.why-desc{font-size:.77rem;color:var(--gray);line-height:1.6}
+
+/* ══ CTA ══ */
+.cta{padding:7rem 3rem;background:var(--bg1);border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr auto;gap:5rem;align-items:center}
+.cta h2{font-family:var(--D);font-size:clamp(3rem,5vw,5.5rem);letter-spacing:.04em;color:var(--snow);line-height:.95;margin-bottom:1rem}
+.cta h2 em{color:var(--gold);font-style:normal}
+.cta p{font-size:.9rem;color:var(--gray);line-height:1.85;font-weight:300;max-width:500px}
+.cta-btns{display:flex;flex-direction:column;gap:.75rem;flex-shrink:0}
+
+/* ══ CONTACTO ══ */
+.ct-g{display:grid;grid-template-columns:5fr 7fr}
+.ct-l{border-right:1px solid var(--line);padding:5rem 3rem}
+.ct-r{padding:5rem 3rem}
+.ct-tit{font-family:var(--D);font-size:clamp(2.5rem,4vw,4.5rem);letter-spacing:.04em;color:var(--snow);line-height:.95;margin-bottom:3rem}
+.ct-tit em{color:var(--gold);font-style:normal}
+.ct-rows{display:flex;flex-direction:column}
+.ct-row{display:grid;grid-template-columns:88px 1fr;border-top:1px solid var(--line);padding:1.2rem 0}
+.ct-row:last-child{border-bottom:1px solid var(--line)}
+.ct-k{font-family:var(--M);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-top:.1rem}
+.ct-v{font-size:.88rem;color:var(--fog)}
+.ct-n{font-size:.73rem;color:var(--gray);margin-top:.15rem}
+.ct-rt{font-family:var(--D);font-size:2rem;letter-spacing:.06em;color:var(--snow);margin-bottom:.4rem}
+.ct-rs{font-size:.86rem;color:var(--gray);margin-bottom:2rem;line-height:1.75;font-weight:300}
+.ch{display:flex;align-items:center;gap:1.2rem;border:1px solid var(--line);padding:1.2rem 1.5rem;text-decoration:none;color:var(--snow);transition:border-color .2s,background .2s;margin-bottom:.75rem}
+.ch:hover{border-color:var(--gold2);background:var(--goldfog)}
+.ch-ico{width:38px;height:38px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.ch-ico.wa{background:#25d366}
+.ch-ico.em{background:var(--line2)}
+.ch-nm{font-size:.88rem;font-weight:500}
+.ch-nt{font-size:.7rem;color:var(--gray);margin-top:.1rem}
+.ch-ar{margin-left:auto;color:var(--gold);opacity:0;transform:translateX(-4px);transition:opacity .2s,transform .2s}
+.ch:hover .ch-ar{opacity:1;transform:translateX(0)}
+.promise{margin-top:2rem;padding:1.5rem;border-left:2px solid var(--gold);background:var(--goldfog)}
+.promise-t{font-family:var(--M);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+.promise-b{font-size:.8rem;color:var(--gray);line-height:1.75}
+
+/* FOOTER */
+footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-top:1px solid var(--line)}
+.f-lg{font-family:var(--D);font-size:1.3rem;letter-spacing:.15em;color:var(--snow)}
+.f-lg span{color:var(--gold)}
+.f-cp{font-family:var(--M);font-size:.6rem;color:var(--muted);letter-spacing:.06em}
+.f-mo{font-size:.76rem;color:var(--muted);font-style:italic}
+
+/* REVEAL */
+.r{opacity:0;transform:translateY(20px);transition:opacity .75s ease,transform .75s ease}
+.r.on{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}.d4{transition-delay:.28s}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .ia-top{grid-template-columns:1fr;gap:3rem}
+  .ia-how{grid-template-columns:1fr 1fr}
+  .iahow:nth-child(2n){border-right:none}
+  .iahow{border-bottom:1px solid rgba(99,102,241,.12)}
+  .iahow:nth-child(3),.iahow:nth-child(4){border-bottom:none}
+  .svc-g{grid-template-columns:1fr 1fr}
+  .svc:nth-child(3n){border-right:1px solid var(--line)}
+  .svc:nth-child(2n){border-right:none}
+  .mth-g{grid-template-columns:1fr}
+  .mth{border-right:none;border-bottom:1px solid var(--line)}
+  .mth:last-child{border-bottom:none}
+  .why{grid-template-columns:1fr 1fr}
+  .why-c:nth-child(2){border-right:none}
+  .why-c{border-bottom:1px solid var(--line)}
+  .why-c:nth-child(3),.why-c:nth-child(4){border-bottom:none}
+  .about-g{grid-template-columns:1fr}
+  .about-l{border-right:none;border-bottom:1px solid var(--line)}
+  .ct-g{grid-template-columns:1fr}
+  .ct-l{border-right:none;border-bottom:1px solid var(--line)}
+}
+@media(max-width:768px){
+  nav{padding:0 1.5rem}
+  .nav-links li:not(:last-child){display:none}
+  .hero{grid-template-columns:1fr}
+  .hl{min-height:65vh;border-right:none;border-bottom:1px solid var(--line)}
+  .hr{padding:3rem 1.5rem 6rem}
+  .sh{grid-template-columns:1fr;padding:3rem 1.5rem}
+  .ia-top{padding:3rem 1.5rem}
+  .ia-problems{grid-template-columns:1fr}
+  .iap{border-right:none;border-bottom:1px solid rgba(99,102,241,.12)}
+  .ia-how{grid-template-columns:1fr}
+  .iahow{border-right:none}
+  .ia-stat-row{grid-template-columns:1fr 1fr}
+  .pain-g{grid-template-columns:1fr}
+  .pain{border-right:none!important}
+  .pain:nth-child(3){border-bottom:1px solid var(--line)!important}
+  .svc-g,.casos-g{grid-template-columns:1fr}
+  .svc,.caso{border-right:none!important}
+  .cta{grid-template-columns:1fr;gap:2.5rem;padding:4rem 1.5rem}
+  .about-l,.about-r,.ct-l,.ct-r{padding:3rem 1.5rem}
+  .dif-g{grid-template-columns:1fr}
+  footer{padding:1.5rem}
+  .cur,.cur-r{display:none}
+}
+</style>
 </head>
 <body>
-    <!-- Efectos de fondo tech -->
-    <div class="tech-bg">
-        <div class="neural-network"></div>
+
+<div class="cur" id="cur"></div>
+<div class="cur-r" id="curR"></div>
+
+<!-- PRELOADER -->
+<div id="pl">
+  <svg class="pl-mark" width="72" height="72" viewBox="0 0 80 80" fill="none">
+    <polygon points="40,3 77,21.5 77,58.5 40,77 3,58.5 3,21.5" fill="none" stroke="#252525" stroke-width="1.5"/>
+    <polygon points="40,14 66,27.5 66,52.5 40,66 14,52.5 14,27.5" fill="none" stroke="#333" stroke-width="1"/>
+    <text x="40" y="53" text-anchor="middle" font-family="Bebas Neue" font-size="28" letter-spacing="3" fill="url(#gPL)">KF</text>
+    <defs><linearGradient id="gPL" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8a6a28"/><stop offset="50%" stop-color="#c9a84c"/><stop offset="100%" stop-color="#e8c46a"/></linearGradient></defs>
+  </svg>
+  <div class="pl-bar"><div class="pl-fill" id="plf"></div></div>
+  <div class="pl-txt">Iniciando sistema</div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <svg width="30" height="30" viewBox="0 0 80 80" fill="none">
+      <polygon points="40,3 77,21.5 77,58.5 40,77 3,58.5 3,21.5" fill="none" stroke="#252525" stroke-width="1.5"/>
+      <text x="40" y="53" text-anchor="middle" font-family="Bebas Neue" font-size="28" letter-spacing="3" fill="url(#gN)">KF</text>
+      <defs><linearGradient id="gN" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8a6a28"/><stop offset="50%" stop-color="#c9a84c"/><stop offset="100%" stop-color="#e8c46a"/></linearGradient></defs>
+    </svg>
+    <span class="nav-wm">KAIROS<span>FLOW</span></span>
+  </a>
+  <div style="display:flex;align-items:center;gap:2.5rem">
+    <ul class="nav-links">
+      <li><a href="#ia">Inteligencia Artificial</a></li>
+      <li><a href="#metodo">Método</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#casos">Resultados</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a href="https://wa.me/5493812002041?text=Hola! Me interesa el diagnóstico gratuito de Kairos Flow" class="nav-cta">Diagnóstico gratuito</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hl">
+    <div class="mark">
+      <div class="mr1"><div class="md"></div></div>
+      <div class="mr2"></div>
+      <div class="mc"><span class="mkf">KF</span></div>
     </div>
+    <div class="ml">
+      <div class="ml-n">KAIROS<span>FLOW</span></div>
+      <div class="ml-s">Consultoría Tech · Tucumán · Argentina</div>
+    </div>
+    <div class="hl-stats">
+      <div class="hls"><div class="hls-v">20<span style="font-size:1rem;color:var(--gold2)">+</span></div><div class="hls-l">Años de experiencia</div></div>
+      <div class="hls"><div class="hls-v">100%</div><div class="hls-l">Código propio</div></div>
+      <div class="hls"><div class="hls-v">0</div><div class="hls-l">Plantillas</div></div>
+    </div>
+  </div>
+  <div class="hr">
+    <div class="hr-tag">Consultoría · Relevamiento · Solución</div>
+    <div class="hr-h">
+      AUTOMATIZAR<br>UN PROCESO<br>
+      <span class="d">ROTO SOLO</span><br>
+      <span class="g">ACELERA EL CAOS.</span>
+    </div>
+    <p class="hr-claim">
+      La mayoría llega con soluciones antes de entender el problema.<br><br>
+      Nosotros hacemos lo contrario: <strong>primero relevamos, diagnosticamos y reorganizamos.</strong> La tecnología — incluida la IA — es la consecuencia. No el punto de partida.
+    </p>
+    <div class="phases">
+      <div class="ph"><div class="ph-n">FASE 01</div><div class="ph-t">CONSULTORÍA</div><div class="ph-d">Entendemos tu operación y sus conflictos</div></div>
+      <div class="ph"><div class="ph-n">FASE 02</div><div class="ph-t">RELEVAMIENTO</div><div class="ph-d">Mapeamos procesos, datos y fricciones</div></div>
+      <div class="ph"><div class="ph-n">FASE 03</div><div class="ph-t">SOLUCIÓN</div><div class="ph-d">Construimos tecnología que perdura</div></div>
+    </div>
+    <div class="btns">
+      <a href="#ia" class="btn-g">Ver cómo usamos IA <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="#casos" class="btn-o">Ver resultados reales</a>
+    </div>
+    <div class="scroll-ind">scroll</div>
+  </div>
+</section>
 
-    <!-- Partículas tech flotantes -->
-    <div class="tech-particles" id="techParticles"></div>
+<!-- TICKER -->
+<div class="ticker"><div class="tick-t" id="tt"></div></div>
 
-    <!-- Navegación -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#" class="nav-logo">
-                Kairos Flow
-            </a>
-            <ul class="nav-links">
-                <li><a href="#servicios" class="nav-link">Servicios</a></li>
-                <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
-                <li><a href="#contacto" class="nav-link">Contacto</a></li>
-            </ul>
+<!-- ══════════════════════════════════════
+   SECCIÓN IA — PROTAGONISTA ABSOLUTA
+══════════════════════════════════════ -->
+<section class="ia-section" id="ia">
+  <div class="ia-bg"></div>
+  <div class="ia-grid-bg"></div>
+
+  <!-- IMPACTO SUPERIOR -->
+  <div class="ia-top r">
+    <div>
+      <div class="ia-badge">Inteligencia Artificial Aplicada</div>
+      <div class="ia-title">
+        EL MUNDO<br>
+        <span class="purple">CAMBIÓ.</span><br>
+        TU EMPRESA<br>
+        <span class="dim">¿LO SABE?</span>
+      </div>
+      <p class="ia-claim">
+        La IA ya no es una tendencia ni una promesa futura. <strong>Es el nuevo estándar operativo.</strong> Las empresas que no la incorporan hoy están cediendo terreno, eficiencia y clientes a las que sí lo hacen.<br><br>
+        Pero implementar IA sobre procesos rotos o datos desordenados es el error más caro que puede cometer una organización. <strong>Primero hay que estar listo. Nosotros te decimos si lo estás — y si no, te preparamos.</strong>
+      </p>
+      <div class="ia-cta-row">
+        <a href="#contacto" class="btn-ai">Diagnóstico de madurez IA →</a>
+        <a href="#contacto" class="btn-o">Consulta gratuita</a>
+      </div>
+    </div>
+    <div class="ia-right">
+      <div class="ia-stat-row">
+        <div class="ia-stat">
+          <div class="ia-stat-n purple">77%</div>
+          <div class="ia-stat-l">de empresas están explorando IA pero no saben cómo implementarla</div>
         </div>
-    </nav>
-
-    <!-- Preloader -->
-    <div class="preloader" id="preloader">
-        <div class="loader-content">
-            <div class="cyber-spinner"></div>
-            <div class="loader-text">Kairos Flow</div>
-            <div class="loader-subtitle">Inicializando Sistema</div>
+        <div class="ia-stat">
+          <div class="ia-stat-n purple">3x</div>
+          <div class="ia-stat-l">más rentables son las empresas con procesos inteligentes automatizados</div>
         </div>
+        <div class="ia-stat">
+          <div class="ia-stat-n purple">40%</div>
+          <div class="ia-stat-l">de las tareas repetitivas en una empresa pueden ser automatizadas hoy</div>
+        </div>
+        <div class="ia-stat">
+          <div class="ia-stat-n purple">2025</div>
+          <div class="ia-stat-l">el año en que la IA deja de ser ventaja competitiva y se vuelve requisito mínimo</div>
+        </div>
+      </div>
+      <div class="ia-warning">
+        <div class="ia-warning-t">⚠ El riesgo real</div>
+        <p class="ia-warning-b">No es implementar IA demasiado pronto. Es <strong>quedarse mirando mientras tu competencia opera con la mitad del costo y el doble de velocidad.</strong> Eso ya está pasando.</p>
+      </div>
     </div>
+  </div>
 
-    <!-- Contenido Principal -->
-    <div class="main-content" id="mainContent">
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <div class="hero-grid">
-                    <div class="hero-content">
-                        <h1>
-                            Desarrollo de <span class="highlight">Soluciones Tech</span> a Medida
-                        </h1>
-                        <p class="hero-subtitle">
-                            Especialista en desarrollo Python y automatización empresarial inteligente. 
-                            <strong>Cada proyecto es único</strong> - creo soluciones desde cero que se adaptan exactamente a tu negocio.
-                        </p>
-                        
-                        <div class="problem-statement">
-                            <div class="problem-title">¿Cansado de las limitaciones?</div>
-                            <div class="problem-text">
-                                ❌ <strong>Planillas manuales que consumen horas</strong><br>
-                                ❌ <strong>Información dispersa en múltiples sistemas</strong><br>
-                                ❌ <strong>Procesos repetitivos que drenan productividad</strong><br>
-                                ❌ <strong>Software comercial que no se adapta a tu negocio</strong>
-                            </div>
-                            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(0, 255, 136, 0.3);">
-                                <span class="solution-highlight">✅ Automatizamos, unificamos y creamos soluciones tech a medida con Python</span>
-                            </div>
-                        </div>
-
-                        <div class="hero-stats">
-                            <div class="hero-stat">
-                                <span class="hero-stat-number">5+</span>
-                                <span class="hero-stat-label">Años Programando</span>
-                            </div>
-                            <div class="hero-stat">
-                                <span class="hero-stat-number">100%</span>
-                                <span class="hero-stat-label">Código Personalizado</span>
-                            </div>
-                            <div class="hero-stat">
-                                <span class="hero-stat-number">0</span>
-                                <span class="hero-stat-label">Plantillas Usadas</span>
-                            </div>
-                        </div>
-
-                        <div class="hero-buttons">
-                            <a href="#contacto" class="btn btn-primary">
-                                ⚡ Consulta Gratuita
-                            </a>
-                            <a href="#servicios" class="btn btn-secondary">
-                                🚀 Ver Soluciones
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="hero-visual">
-                        <div class="hero-decoration"></div>
-                        <div class="hero-decoration"></div>
-                        <div class="hero-decoration"></div>
-                        <img src="logo-kairosflow.png" alt="Kairos Flow" class="hero-logo" onerror="this.style.display='none'" />
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Servicios -->
-        <section class="services" id="servicios">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-badge">Nuestras Soluciones</div>
-                    <h2 class="section-title">Tecnología que <span class="highlight">Resuelve Problemas Reales</span></h2>
-                    <p class="section-subtitle">
-                        No vendemos software genérico. Analizamos tu negocio, identificamos tus dolores específicos 
-                        y desarrollamos soluciones tech personalizadas que transforman tu operación.
-                    </p>
-                </div>
-
-                <div class="services-grid">
-                    <div class="service-card reveal">
-                        <span class="service-icon">🖥️</span>
-                        <h3>Aplicaciones Web Empresariales</h3>
-                        <p class="service-description">Desarrollo completo de aplicaciones web con Python para gestión empresarial, con interfaces intuitivas y funcionalidades específicas para tu negocio.</p>
-                        
-                        <div class="service-tech-stack">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">Streamlit</span>
-                            <span class="tech-badge">Flask</span>
-                            <span class="tech-badge">PostgreSQL</span>
-                            <span class="tech-badge">APIs</span>
-                        </div>
-
-                        <div class="service-problem">
-                            <div class="service-problem-title">Tu Problema:</div>
-                            <div class="service-problem-text">"Tengo múltiples Excel, uso 5 sistemas diferentes, la información está dispersa y nadie tiene visibilidad completa del negocio."</div>
-                        </div>
-
-                        <div class="service-solution">
-                            <div class="service-solution-title">Nuestra Solución:</div>
-                            <div class="service-solution-text">Creamos UN SOLO SISTEMA web personalizado que unifica toda tu información, con dashboards en tiempo real y acceso desde cualquier dispositivo.</div>
-                        </div>
-
-                        <div class="service-testimonial">
-                            "Ahora todos en mi empresa ven la misma información actualizada en tiempo real. Ya no hay confusiones ni datos desactualizados."
-                            <div class="testimonial-author">- CEO, Empresa de Logística</div>
-                        </div>
-
-                        <ul class="service-benefits">
-                            <li>Sistema único que reemplaza múltiples Excel</li>
-                            <li>Acceso desde cualquier dispositivo y ubicación</li>
-                            <li>Dashboards interactivos en tiempo real</li>
-                            <li>Control de usuarios y permisos personalizado</li>
-                            <li>Backup automático en la nube</li>
-                        </ul>
-
-                        <div class="service-timeline">
-                            <div class="timeline-text">⏱️ Implementación: 2-4 semanas</div>
-                        </div>
-
-                        <div class="service-guarantee">
-                            🛡️ Manual + Documentación completa
-                        </div>
-                    </div>
-
-                    <div class="service-card reveal">
-                        <span class="service-icon">⚙️</span>
-                        <h3>Automatización Inteligente</h3>
-                        <p class="service-description">Bots y scripts personalizados que automatizan tareas repetitivas específicas de tu empresa, liberando tiempo valioso de tu equipo.</p>
-                        
-                        <div class="service-tech-stack">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">Selenium</span>
-                            <span class="tech-badge">BeautifulSoup</span>
-                            <span class="tech-badge">APIs REST</span>
-                            <span class="tech-badge">Schedulers</span>
-                        </div>
-
-                        <div class="service-problem">
-                            <div class="service-problem-title">Tu Problema:</div>
-                            <div class="service-problem-text">"Mi equipo pierde 3 horas diarias en tareas repetitivas: copiar datos, generar reportes, enviar emails, actualizar planillas manualmente."</div>
-                        </div>
-
-                        <div class="service-solution">
-                            <div class="service-solution-title">Nuestra Solución:</div>
-                            <div class="service-solution-text">Automatizamos TODOS esos procesos con bots inteligentes. Trabajarán 24/7 sin errores, liberando a tu equipo para tareas estratégicas.</div>
-                        </div>
-
-                        <div class="service-testimonial">
-                            "El bot procesa en 10 minutos lo que antes me tomaba toda la mañana. Mi equipo ahora se enfoca en estrategia, no en tareas manuales."
-                            <div class="testimonial-author">- Gerente Operaciones</div>
-                        </div>
-
-                        <ul class="service-benefits">
-                            <li>Trabajo 24/7 sin intervención humana</li>
-                            <li>Cero errores por fatiga o distracción</li>
-                            <li>Procesamiento 10x más rápido que manual</li>
-                            <li>Reportes automáticos por email/WhatsApp</li>
-                            <li>Alertas inteligentes ante excepciones</li>
-                        </ul>
-
-                        <div class="service-timeline">
-                            <div class="timeline-text">⏱️ Implementación: 1-3 semanas</div>
-                        </div>
-
-                        <div class="service-guarantee">
-                            🛡️ ROI garantizado en primer mes de uso
-                        </div>
-                    </div>
-
-                    <div class="service-card reveal">
-                        <span class="service-icon">📊</span>
-                        <h3>Dashboards & Analytics</h3>
-                        <p class="service-description">Visualizaciones interactivas 100% personalizadas para las métricas específicas de tu industria y modelo de negocio.</p>
-                        
-                        <div class="service-tech-stack">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">Plotly</span>
-                            <span class="tech-badge">Pandas</span>
-                            <span class="tech-badge">Streamlit</span>
-                            <span class="tech-badge">Machine Learning</span>
-                        </div>
-
-                        <div class="service-problem">
-                            <div class="service-problem-title">Tu Problema:</div>
-                            <div class="service-problem-text">"Power BI es limitado para mis KPIs específicos. Los consultores me ofrecen dashboards genéricos que no reflejan mi realidad."</div>
-                        </div>
-
-                        <div class="service-solution">
-                            <div class="service-solution-title">Nuestra Solución:</div>
-                            <div class="service-solution-text">Programamos dashboards específicos para TU negocio con métricas personalizadas, alertas inteligentes y predicciones con ML.</div>
-                        </div>
-
-                        <div class="service-testimonial">
-                            "Por fin veo las métricas que realmente importan para mi negocio. Las predicciones me ayudan a tomar mejores decisiones."
-                            <div class="testimonial-author">- Director Comercial</div>
-                        </div>
-
-                        <ul class="service-benefits">
-                            <li>KPIs específicos de tu industria</li>
-                            <li>Predicciones con Machine Learning</li>
-                            <li>Alertas automáticas personalizables</li>
-                            <li>Actualización en tiempo real</li>
-                            <li>Exportación automática de reportes</li>
-                        </ul>
-
-                        <div class="service-timeline">
-                            <div class="timeline-text">⏱️ Implementación: 2-3 semanas</div>
-                        </div>
-
-                        <div class="service-guarantee">
-                            🛡️ Métricas ilimitadas + Capacitación incluida
-                        </div>
-                    </div>
-
-                    <div class="service-card reveal">
-                        <span class="service-icon">🔗</span>
-                        <h3>Integración de Sistemas</h3>
-                        <p class="service-description">Conectamos todos tus sistemas existentes para que hablen entre sí, eliminando la carga manual de sincronización de datos.</p>
-                        
-                        <div class="service-tech-stack">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">APIs REST</span>
-                            <span class="tech-badge">Webhooks</span>
-                            <span class="tech-badge">JSON/XML</span>
-                            <span class="tech-badge">Middleware</span>
-                        </div>
-
-                        <div class="service-problem">
-                            <div class="service-problem-title">Tu Problema:</div>
-                            <div class="service-problem-text">"Uso Mercado Libre, Shopify, sistema de facturación y WhatsApp Business. Nada habla entre sí, actualizo todo manualmente."</div>
-                        </div>
-
-                        <div class="service-solution">
-                            <div class="service-solution-title">Nuestra Solución:</div>
-                            <div class="service-solution-text">Conectamos TODOS tus sistemas con APIs personalizadas. Una venta se refleja automáticamente en stock, facturación y reportes.</div>
-                        </div>
-
-                        <div class="service-testimonial">
-                            "Una venta en cualquier canal se refleja instantáneamente en todos mis sistemas. Cero trabajo manual de sincronización."
-                            <div class="testimonial-author">- Dueño de E-commerce</div>
-                        </div>
-
-                        <ul class="service-benefits">
-                            <li>Sincronización automática en tiempo real</li>
-                            <li>Compatible con cualquier plataforma</li>
-                            <li>Eliminación total de doble carga</li>
-                            <li>Historial completo de transacciones</li>
-                            <li>Notificaciones inteligentes</li>
-                        </ul>
-
-                        <div class="service-timeline">
-                            <div class="timeline-text">⏱️ Implementación: 3-5 semanas</div>
-                        </div>
-
-                        <div class="service-guarantee">
-                            🛡️ Integración con sistemas ilimitados
-                        </div>
-                    </div>
-
-                    <div class="service-card reveal">
-                        <span class="service-icon">🤖</span>
-                        <h3>Machine Learning & Predicciones</h3>
-                        <p class="service-description">Modelos predictivos personalizados que analizan tus datos históricos para anticipar tendencias y optimizar decisiones.</p>
-                        
-                        <div class="service-tech-stack">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">Scikit-learn</span>
-                            <span class="tech-badge">Pandas</span>
-                            <span class="tech-badge">NumPy</span>
-                            <span class="tech-badge">TensorFlow</span>
-                        </div>
-
-                        <div class="service-problem">
-                            <div class="service-problem-title">Tu Problema:</div>
-                            <div class="service-problem-text">"Tengo años de datos pero no sé cómo usarlos para predecir demanda, identificar clientes en riesgo o optimizar precios."</div>
-                        </div>
-
-                        <div class="service-solution">
-                            <div class="service-solution-title">Nuestra Solución:</div>
-                            <div class="service-solution-text">Desarrollamos modelos de ML que analizan tus datos para predecir ventas, detectar patrones y optimizar tu estrategia automáticamente.</div>
-                        </div>
-
-                        <div class="service-testimonial">
-                            "El modelo predice con 85% de precisión qué productos vender más el próximo mes. Mi inventario nunca había estado tan optimizado."
-                            <div class="testimonial-author">- Gerente de Ventas</div>
-                        </div>
-
-                        <ul class="service-benefits">
-                            <li>Predicciones de demanda y ventas</li>
-                            <li>Detección temprana de anomalías</li>
-                            <li>Optimización automática de precios</li>
-                            <li>Segmentación inteligente de clientes</li>
-                            <li>Modelos que mejoran con el tiempo</li>
-                        </ul>
-
-                        <div class="service-timeline">
-                            <div class="timeline-text">⏱️ Implementación: 4-6 semanas</div>
-                        </div>
-
-                        <div class="service-guarantee">
-                            🛡️ Modelo entrenado + Documentación técnica
-                        </div>
-                    </div>
-
-                    <div class="service-card reveal">
-                        <span class="service-icon">📝</span>
-                        <h3>CVs Profesionales Tech</h3>
-                        <p class="service-description">Currículums optimizados para ATS y reclutadores tech, diseñados para maximizar tu tasa de respuesta en el sector tecnológico.</p>
-                        
-                        <div class="service-tech-stack">
-                            <span class="tech-badge">ATS Optimized</span>
-                            <span class="tech-badge">Keywords</span>
-                            <span class="tech-badge">Tech Format</span>
-                            <span class="tech-badge">LinkedIn</span>
-                            <span class="tech-badge">Portfolio</span>
-                        </div>
-
-                        <div class="service-problem">
-                            <div class="service-problem-title">Tu Problema:</div>
-                            <div class="service-problem-text">"Envío mi CV a 100 empresas y solo recibo 2 respuestas. No entiendo por qué no paso los filtros automáticos."</div>
-                        </div>
-
-                        <div class="service-solution">
-                            <div class="service-solution-title">Nuestra Solución:</div>
-                            <div class="service-solution-text">Diseñamos CVs optimizados para ATS con keywords estratégicas y formato que destaca tus fortalezas tech. Aumentamos tu tasa de respuesta.</div>
-                        </div>
-
-                        <div class="service-testimonial">
-                            "Con el nuevo CV conseguí 3 entrevistas en la primera semana. El formato tech realmente marca la diferencia."
-                            <div class="testimonial-author">- Desarrollador Python</div>
-                        </div>
-
-                        <ul class="service-benefits">
-                            <li>Optimización para sistemas ATS</li>
-                            <li>Keywords específicas por tecnología</li>
-                            <li>Formato moderno y profesional</li>
-                            <li>Perfil de LinkedIn optimizado</li>
-                            <li>Múltiples versiones por rol</li>
-                        </ul>
-
-                        <div class="service-timeline">
-                            <div class="timeline-text">⏱️ Entrega: 3-5 días hábiles</div>
-                        </div>
-
-                        <div class="service-guarantee">
-                            🛡️ Revisiones ilimitadas por 30 días
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Mega -->
-        <section class="cta-section-mega">
-            <div class="container">
-                <div class="cta-mega-content">
-                    <h2 class="cta-mega-title">¿Listo para la <span class="highlight">Transformación Digital</span>?</h2>
-                    <p class="cta-mega-subtitle">
-                        Basta de perder tiempo con procesos manuales y sistemas que no hablan entre sí. 
-                        Hablemos de tu proyecto específico y desarrollemos la solución tech que tu negocio realmente necesita.
-                    </p>
-                    <a href="https://wa.me/5493812002041?text=Hola%21%20Quiero%20desarrollar%20una%20soluci%C3%B3n%20tech%20personalizada%20para%20automatizar%20mi%20negocio" class="mega-cta">
-                        <span class="icon">🚀</span>
-                        Automaticemos Tu Negocio
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Estadísticas -->
-        <section class="stats" id="nosotros">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-badge">Por Qué Elegirnos</div>
-                    <h2 class="section-title">Ventajas del <span class="highlight">Desarrollo Personalizado</span></h2>
-                    <p class="section-subtitle">
-                        Como desarrollador Python independiente, me enfoco 100% en crear la solución exacta que tu negocio necesita. 
-                        Sin intermediarios, sin plantillas genéricas, sin limitaciones.
-                    </p>
-                </div>
-
-                <div class="stats-grid">
-                    <div class="stat-card reveal">
-                        <span class="stat-number">∞</span>
-                        <div class="stat-label">Posibilidades de Customización</div>
-                        <div class="stat-description">Con código personalizado en Python, no hay límites. Si lo puedes imaginar, lo podemos programar específicamente para tu negocio.</div>
-                    </div>
-                    <div class="stat-card reveal">
-                        <span class="stat-number">24/7</span>
-                        <div class="stat-label">Automatización Activa</div>
-                        <div class="stat-description">Tus procesos automatizados trabajando sin parar, procesando datos y generando valor mientras duermes.</div>
-                    </div>
-                    <div class="stat-card reveal">
-                        <span class="stat-number">100%</span>
-                        <div class="stat-label">Versatilidad</div>
-                        <div class="stat-description">No dependes de licencias mensuales ni actualizaciones forzadas de terceros.</div>
-                    </div>
-                    <div class="stat-card reveal">
-                        <span class="stat-number">100%</span>
-                        <div class="stat-label">Enfoque en Tu Proyecto</div>
-                        <div class="stat-description">Como desarrollador independiente, tu proyecto recibe atención completa y personalizada durante todo el proceso.</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contacto -->
-        <section class="contact" id="contacto">
-            <div class="container">
-                <div class="contact-content">
-                    <div class="section-badge">Empecemos</div>
-                    <h2 class="section-title">¿Listo para <span class="highlight">Revolucionar</span> tu Operación?</h2>
-                    <p class="section-subtitle">
-                        Agenda una consulta gratuita de 30 minutos. Analizaremos tus procesos actuales, 
-                        identificaremos oportunidades de automatización y te mostraré exactamente cómo 
-                        podemos optimizar tu negocio con soluciones tech personalizadas.
-                    </p>
-                    
-                    <div class="contact-buttons">
-                        <a href="mailto:kairosflow.soluciones@gmail.com" class="btn btn-primary">
-                            📧 Consulta Gratuita
-                        </a>
-                        <a href="https://wa.me/5493812002041?text=Hola%21%20Me%20interesa%20una%20consulta%20gratuita%20sobre%20automatización%20y%20desarrollo%20de%20soluciones%20tech%20personalizadas" class="mega-cta">
-                            <span class="icon">💬</span>
-                            WhatsApp Directo
-                        </a>
-                    </div>
-
-                    <div class="contact-info">
-                        <h3 style="color: var(--neon-cyan); font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: 2rem; margin-bottom: 2rem; text-align: center; text-transform: uppercase; letter-spacing: 2px;">Información de Contacto</h3>
-                        <div class="contact-grid">
-                            <div class="contact-item">
-                                <h4>📧 Email Profesional</h4>
-                                <p>kairosflow.soluciones@gmail.com</p>
-                                <p style="font-size: 0.9rem; opacity: 0.7;">Propuesta detallada en 24 horas</p>
-                            </div>
-                            <div class="contact-item">
-                                <h4>📱 WhatsApp Business</h4>
-                                <p>+54 381 200 2041</p>
-                                <p style="font-size: 0.9rem; opacity: 0.7;">Respuesta inmediata en horario laboral</p>
-                            </div>
-                            <div class="contact-item">
-                                <h4>📍 Ubicación</h4>
-                                <p>Tucumán, Argentina</p>
-                                <p style="font-size: 0.9rem; opacity: 0.7;">Servicios remotos a nivel global</p>
-                            </div>
-                            <div class="contact-item">
-                                <h4>⏰ Horarios</h4>
-                                <p>Lunes a Viernes: 9:00 - 18:00 ART</p>
-                                <p style="font-size: 0.9rem; opacity: 0.7;">Soporte técnico 24/7 post-entrega</p>
-                            </div>
-                        </div>
-
-                        <div class="guarantee-section">
-                            <h4 class="guarantee-title">🛡️ Garantía Tech Total</h4>
-                            <p class="guarantee-text">
-                                <strong>Consulta inicial gratuita</strong> • <strong>Análisis completo de procesos</strong> • <strong>Propuesta técnica detallada sin costo</strong> • <strong>Manual incluido</strong> • <strong>Documentación técnica completa</strong> • <strong>Capacitación del equipo</strong> • <strong>Soporte post-implementación</strong>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
-                <p>&copy; 2025 <span class="footer-highlight">Kairos Flow</span>. Todos los derechos reservados.</p>
-                <p style="margin-top: 0.5rem; font-size: 1rem;">
-                    Desarrollo Python • Automatización Inteligente • Soluciones Tech a Medida
-                </p>
-                <p class="footer-motto" style="margin-top: 1.5rem; font-size: 1.2rem;">
-                    "Tu tiempo vale oro. La tecnología debería multiplicarlo, no complicarlo." ⚡
-                </p>
-            </div>
-        </footer>
+  <!-- LOS 3 PROBLEMAS QUE VEMOS -->
+  <div class="ia-problems">
+    <div class="iap r">
+      <div class="iap-n">01</div>
+      <h4>Quieren usar IA pero no saben por dónde empezar</h4>
+      <p>El 77% de las empresas está explorando IA sin una hoja de ruta clara. Sin un diagnóstico previo, cada intento se convierte en gasto sin retorno.</p>
+      <span class="iap-tag">Lo resolvemos con diagnóstico de madurez</span>
     </div>
+    <div class="iap r d1">
+      <div class="iap-n">02</div>
+      <h4>Implementan IA sobre datos sucios y procesos rotos</h4>
+      <p>Un modelo de IA entrenado con datos incorrectos produce decisiones incorrectas con mucha más velocidad y confianza. El problema se amplifica, no se resuelve.</p>
+      <span class="iap-tag">Lo resolvemos con relevamiento previo</span>
+    </div>
+    <div class="iap r d2">
+      <div class="iap-n">03</div>
+      <h4>El equipo no adopta las herramientas implementadas</h4>
+      <p>La tecnología más avanzada falla si las personas que la usan no entienden para qué sirve. La resistencia al cambio mata más proyectos que cualquier bug técnico.</p>
+      <span class="iap-tag">Lo resolvemos con coaching + capacitación</span>
+    </div>
+  </div>
 
-    <script>
-        // Sistema de efectos tech futuristas
-        function createTechParticles() {
-            const container = document.getElementById('techParticles');
-            const particleCount = window.innerWidth < 768 ? 15 : 30;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 20 + 's';
-                particle.style.animationDuration = (20 + Math.random() * 15) + 's';
-                container.appendChild(particle);
-            }
-        }
+  <!-- LO QUE HACEMOS CON IA -->
+  <div class="ia-how">
+    <div class="iahow r">
+      <span class="iahow-ico">🔬</span>
+      <div class="iahow-t">DIAGNÓSTICO DE MADUREZ</div>
+      <p class="iahow-d">Evaluamos si tu empresa está lista para incorporar IA. Datos, procesos, equipo y cultura. Un informe honesto antes de invertir un peso.</p>
+    </div>
+    <div class="iahow r d1">
+      <span class="iahow-ico">🧹</span>
+      <div class="iahow-t">PREPARACIÓN DE DATOS</div>
+      <p class="iahow-d">Limpiamos, estructuramos e integramos tus datos para que cualquier herramienta de IA pueda trabajar con ellos. Sin datos limpios, no hay IA que funcione.</p>
+    </div>
+    <div class="iahow r d2">
+      <span class="iahow-ico">⚡</span>
+      <div class="iahow-t">IMPLEMENTACIÓN APLICADA</div>
+      <p class="iahow-d">Automatización con LLMs, clasificación inteligente, predicción de demanda, generación de reportes y asistentes internos entrenados con tus propios datos.</p>
+    </div>
+    <div class="iahow r d3">
+      <span class="iahow-ico">🎯</span>
+      <div class="iahow-t">ADOPCIÓN & CAPACITACIÓN</div>
+      <p class="iahow-d">Acompañamos al equipo en el cambio. La herramienta más potente es inútil si nadie la usa. Garantizamos que la tecnología se integre a la operación real.</p>
+    </div>
+  </div>
+</section>
 
-        // Sistema de preloader avanzado
-        window.addEventListener('load', function() {
-            const preloader = document.getElementById('preloader');
-            
-            setTimeout(() => {
-                preloader.classList.add('hidden');
-                
-                setTimeout(() => {
-                    initTechEffects();
-                    initRevealAnimations();
-                    initCounterAnimations();
-                    initAdvancedTracking();
-                }, 500);
-            }, 2000);
-        });
+<!-- ══ DOLOR ══ -->
+<section class="S" id="dolor">
+  <div class="sh r">
+    <div><div class="slbl">El diagnóstico</div><div class="stit">LO QUE FRENA<br>TU <em>OPERACIÓN</em></div></div>
+    <div class="sh-r"><p>La IA resuelve problemas operativos — pero primero hay que identificarlos con precisión. Estos son los patrones más costosos que encontramos en las organizaciones que nos consultan.</p></div>
+  </div>
+  <div class="pain-g">
+    <div class="pain r">
+      <div class="pain-n">01</div>
+      <div><h4>Automatizar el caos no lo resuelve</h4><p>Implementar tecnología — incluyendo IA — sobre procesos mal definidos solo hace que los errores sucedan más rápido. El problema no es la herramienta, es el proceso detrás.</p><div class="pain-q">"Digitalizamos todo y los problemas siguieron. Nadie nos dijo que el flujo estaba roto desde adentro."</div></div>
+    </div>
+    <div class="pain r d1">
+      <div class="pain-n">02</div>
+      <div><h4>Información dispersa, decisiones ciegas</h4><p>Cuando los datos viven en planillas, emails y sistemas desconectados, tomar decisiones estratégicas se vuelve una adivinanza. La IA necesita datos centralizados para funcionar.</p><div class="pain-q">"Tardaba tres días en saber cómo cerró el mes. Para entonces ya era tarde para corregir."</div></div>
+    </div>
+    <div class="pain r d2">
+      <div class="pain-n">03</div>
+      <div><h4>Fugas de dinero invisibles al ojo humano</h4><p>Errores en facturas, duplicados y diferencias acumuladas por años. Exactamente el tipo de problema que un modelo de auditoría con Python e IA detecta en horas, no en meses.</p><div class="pain-q">"Años de errores fiscales que ningún sistema había detectado. La multa hubiera sido millonaria."</div></div>
+    </div>
+    <div class="pain r d3">
+      <div class="pain-n">04</div>
+      <div><h4>La organización depende de personas, no de sistemas</h4><p>Cuando los procesos no están documentados ni automatizados, el conocimiento queda atrapado en individuos. La IA no puede aprender de lo que no está registrado.</p><div class="pain-q">"Si se va alguien clave, nos lleva semanas entender cómo hacía su trabajo."</div></div>
+    </div>
+  </div>
+</section>
 
-        // Sistema de navegación tech
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.style.background = 'rgba(0, 0, 0, 0.95)';
-                navbar.style.boxShadow = '0 0 30px rgba(0, 255, 255, 0.5)';
-            } else {
-                navbar.style.background = 'rgba(0, 0, 0, 0.9)';
-                navbar.style.boxShadow = '0 0 20px rgba(0, 255, 255, 0.3)';
-            }
-        });
+<!-- ══ MÉTODO ══ -->
+<section class="S" id="metodo">
+  <div class="sh r">
+    <div><div class="slbl">Nuestra metodología</div><div class="stit">PRIMERO<br><em>ENTENDEMOS.</em><br>DESPUÉS<br>CONSTRUIMOS.</div></div>
+    <div class="sh-r"><p>No llegamos con soluciones prefabricadas. Llegamos con preguntas. La IA, Python, los dashboards — todo eso viene después de entender profundamente tu negocio. El código y los modelos son la consecuencia, no el punto de partida.</p></div>
+  </div>
+  <div class="mth-g">
+    <div class="mth r">
+      <div class="mth-top"><div class="mth-n">01</div><div class="mth-lbl">Consultoría<br>organizacional</div></div>
+      <div class="mth-body">
+        <div class="mth-t">CONSULTORÍA & DIAGNÓSTICO</div>
+        <p class="mth-d">Analizamos tu organización como sistema: roles, flujos, conflictos y fugas económicas. Con más de 20 años gestionando equipos en operaciones reales, sabemos leer lo que los números no dicen — y evaluamos si estás listo para incorporar IA.</p>
+        <ul class="mth-list">
+          <li>Diagnóstico de madurez digital e IA</li>
+          <li>Análisis de conflictos y fricciones organizacionales</li>
+          <li>Detección de fugas de dinero y eficiencia</li>
+          <li>Mapa de riesgos operativos y fiscales</li>
+          <li>Informe con prioridades y hoja de ruta</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mth r d1">
+      <div class="mth-top"><div class="mth-n">02</div><div class="mth-lbl">Relevamiento<br>de procesos</div></div>
+      <div class="mth-body">
+        <div class="mth-t">RELEVAMIENTO & DISEÑO</div>
+        <p class="mth-d">Documentamos cómo funciona tu operación hoy — no cómo debería funcionar. Mapeamos procesos, datos y puntos de fricción. Identificamos qué puede automatizarse con IA y qué necesita ordenarse primero.</p>
+        <ul class="mth-list">
+          <li>Mapeo completo de flujos operativos reales</li>
+          <li>Auditoría de calidad de datos para IA</li>
+          <li>Análisis de sistemas existentes: ERP, Excel, legacy</li>
+          <li>Diseño del flujo futuro inteligente</li>
+          <li>Propuesta con alcance y presupuesto claro</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mth r d2">
+      <div class="mth-top"><div class="mth-n">03</div><div class="mth-lbl">Desarrollo<br>de solución</div></div>
+      <div class="mth-body">
+        <div class="mth-t">SOLUCIÓN & ENTREGA</div>
+        <p class="mth-d">Con el diagnóstico en mano, construimos la solución exacta: automatización con IA, modelos predictivos, sistemas Python, dashboards. Código 100% propio, documentado. El sistema queda en tu organización — no en nuestros servidores.</p>
+        <ul class="mth-list">
+          <li>Implementación IA y Python desde cero</li>
+          <li>Integración con sistemas existentes</li>
+          <li>Pruebas en ambiente real</li>
+          <li>Documentación técnica y manual de usuario</li>
+          <li>Capacitación del equipo y soporte post-entrega</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-        // Sistema de animaciones reveal mejorado
-        function initRevealAnimations() {
-            const revealElements = document.querySelectorAll('.reveal');
-            
-            const revealObserver = new IntersectionObserver((entries) => {
-                entries.forEach((entry, index) => {
-                    if (entry.isIntersecting) {
-                        setTimeout(() => {
-                            entry.target.classList.add('revealed');
-                        }, index * 150);
-                        revealObserver.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.1,
-                rootMargin: '0px 0px -100px 0px'
-            });
+<!-- ══ SERVICIOS ══ -->
+<section class="S" id="servicios">
+  <div class="sh r">
+    <div><div class="slbl">Soluciones</div><div class="stit">LO QUE<br><em>CONSTRUIMOS</em></div></div>
+    <div class="sh-r"><p>Cada solución nace de un relevamiento previo. El punto de partida siempre es entender tu negocio — no el catálogo de herramientas disponibles.</p></div>
+  </div>
+  <div class="svc-g">
+    <div class="svc r"><div class="svc-line"></div><div class="svc-in">
+      <div class="svc-ix">01 — Plataforma</div><div class="svc-ico">🖥️</div>
+      <div class="svc-t">APPS WEB EMPRESARIALES</div>
+      <p class="svc-d">Sistemas web a medida que unifican información dispersa. Un solo sistema reemplaza múltiples planillas y plataformas. Dashboards en tiempo real, control de usuarios, acceso desde cualquier dispositivo.</p>
+      <div class="svc-tags"><span class="stag">Python</span><span class="stag">Streamlit</span><span class="stag">Flask</span><span class="stag">PostgreSQL</span></div>
+      <div class="svc-ft"><span class="svc-go">Consultá este servicio →</span></div>
+    </div></div>
 
-            revealElements.forEach(element => {
-                revealObserver.observe(element);
-            });
-        }
+    <div class="svc r d1"><div class="svc-line"></div><div class="svc-in">
+      <div class="svc-ix">02 — Automatización</div><div class="svc-ico">⚙️</div>
+      <div class="svc-t">AUTOMATIZACIÓN INTELIGENTE</div>
+      <p class="svc-d">Bots y scripts que ejecutan procesos repetitivos con precisión. Reportes automáticos, alertas inteligentes y procesamiento masivo de datos. Lo que hoy lleva horas, mañana sucede solo.</p>
+      <div class="svc-tags"><span class="stag">Python</span><span class="stag">Selenium</span><span class="stag">APIs REST</span><span class="stag">Schedulers</span></div>
+      <div class="svc-ft"><span class="svc-go">Consultá este servicio →</span></div>
+    </div></div>
 
-        // Sistema de contadores tech avanzado
-        function initCounterAnimations() {
-            const counterObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const counters = entry.target.querySelectorAll('.stat-number, .hero-stat-number');
-                        counters.forEach(counter => {
-                            animateTechCounter(counter);
-                        });
-                        counterObserver.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
+    <div class="svc r d2"><div class="svc-line"></div><div class="svc-in">
+      <div class="svc-ix">03 — Analytics</div><div class="svc-ico">📊</div>
+      <div class="svc-t">DASHBOARDS & ANALYTICS</div>
+      <p class="svc-d">Visualizaciones interactivas con las métricas que realmente importan. KPIs específicos para tu industria, predicciones con ML y reportes gerenciales que se generan automáticamente.</p>
+      <div class="svc-tags"><span class="stag">Plotly</span><span class="stag">Pandas</span><span class="stag">Streamlit</span><span class="stag">SQL</span></div>
+      <div class="svc-ft"><span class="svc-go">Consultá este servicio →</span></div>
+    </div></div>
 
-            const statsSection = document.querySelector('.stats');
-            const heroSection = document.querySelector('.hero');
-            if (statsSection) counterObserver.observe(statsSection);
-            if (heroSection) counterObserver.observe(heroSection);
-        }
+    <div class="svc r"><div class="svc-line"></div><div class="svc-in">
+      <div class="svc-ix">04 — Auditoría</div><div class="svc-ico">🔍</div>
+      <div class="svc-t">AUDITORÍA FISCAL & COMPLIANCE</div>
+      <p class="svc-d">Cruce masivo de datos para detectar errores en facturación, CUIT y montos antes de que se conviertan en multas. Sistemas de control preventivo con historial de 100% de cumplimiento AFIP.</p>
+      <div class="svc-tags"><span class="stag">Python</span><span class="stag">SQL</span><span class="stag">Pandas</span><span class="stag">AFIP</span></div>
+      <div class="svc-ft"><span class="svc-go">Consultá este servicio →</span></div>
+    </div></div>
 
-        function animateTechCounter(element) {
-            const text = element.textContent;
-            const isInfinity = text.includes('∞');
-            const isPercentage = text.includes('%');
-            const hasPlus = text.includes('+');
-            const hasSlash = text.includes('/');
-            
-            if (isInfinity) {
-                element.style.animation = 'numberGlow 2s ease-in-out infinite';
-                return;
-            }
+    <div class="svc r d1"><div class="svc-line"></div><div class="svc-in">
+      <div class="svc-ix">05 — Integración</div><div class="svc-ico">🔗</div>
+      <div class="svc-t">INTEGRACIÓN DE SISTEMAS</div>
+      <p class="svc-d">Conectamos plataformas que no se hablan. También trabajamos con sistemas heredados que nadie más quiere tocar: Fox Pro, Delphi, COBOL, Visual Basic. Si tiene datos adentro, podemos trabajar con él.</p>
+      <div class="svc-tags"><span class="stag">APIs REST</span><span class="stag">Webhooks</span><span class="stag">ERP Tango</span><span class="stag">Legacy</span></div>
+      <div class="svc-ft"><span class="svc-go">Consultá este servicio →</span></div>
+    </div></div>
 
-            if (hasSlash) {
-                element.style.animation = 'numberGlow 2s ease-in-out infinite';
-                return;
-            }
-            
-            const target = parseInt(text.replace(/\D/g, ''));
-            if (isNaN(target)) return;
-            
-            let current = 0;
-            const increment = target / 50;
-            const duration = 2000;
-            const stepTime = duration / 50;
+    <div class="svc svc-sp r d2"><div class="svc-in">
+      <div><div class="svc-ix" style="color:var(--gold2)">¿Caso distinto?</div>
+      <div class="svc-t">TU OPERACIÓN TIENE SU PROPIA REALIDAD</div>
+      <p class="svc-d">Si tu problema no encaja en ninguna categoría, es exactamente el tipo de desafío donde más valor agregamos. Contanos qué está pasando.</p></div>
+      <a href="https://wa.me/5493812002041?text=Hola! Tengo un desafio operativo que me gustaria discutir" class="btn-g" style="margin-top:2rem;align-self:flex-start">Contanos el caso →</a>
+    </div></div>
+  </div>
+</section>
 
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(timer);
-                }
-                
-                let displayText = Math.floor(current).toString();
-                if (isPercentage) displayText += '%';
-                if (hasPlus) displayText += '+';
-                
-                element.textContent = displayText;
-                
-                if (Math.random() > 0.95) {
-                    element.style.textShadow = '0 0 20px var(--neon-cyan), 2px 0 0 var(--neon-purple), -2px 0 0 var(--cyber-green)';
-                    setTimeout(() => {
-                        element.style.textShadow = '0 0 15px currentColor';
-                    }, 100);
-                }
-            }, stepTime);
-        }
+<!-- ══ CASOS ══ -->
+<section class="S" id="casos">
+  <div class="sh r">
+    <div><div class="slbl">Resultados reales</div><div class="stit">NÚMEROS QUE<br><em>RESPALDAMOS</em></div></div>
+    <div class="sh-r"><p>No son estimaciones. Son resultados documentados de intervenciones en operaciones reales — con equipos de hasta 200 personas y consecuencias fiscales concretas.</p></div>
+  </div>
+  <div class="casos-g">
+    <div class="caso r">
+      <div class="caso-tag">Logística · 90+ personas</div>
+      <div class="caso-num">90<span>%</span></div>
+      <div class="caso-tit">Reducción de errores operativos</div>
+      <p class="caso-b">Sistema de control en logística de frío con equipo de más de 90 colaboradores. Los errores operativos cayeron un 90% en el primer trimestre post-implementación.</p>
+      <div class="caso-detail">Primero relevamos los flujos reales entre turnos e identificamos dónde se perdía información. El sistema vino después — no antes.</div>
+    </div>
+    <div class="caso r d1">
+      <div class="caso-tag">Cobranzas · 200+ unidades</div>
+      <div class="caso-num">30<span>%</span></div>
+      <div class="caso-tit">Reducción del ciclo de cobro</div>
+      <p class="caso-b">Digitalización de cobranzas con flota de más de 200 unidades. Tableros en tiempo real que acortaron el ciclo un 30% y eliminaron la carga manual de reportes.</p>
+      <div class="caso-detail">El relevamiento reveló que el problema no era la cobranza — era la visibilidad. El dashboard resolvió la causa raíz, no el síntoma.</div>
+    </div>
+    <div class="caso r d2">
+      <div class="caso-tag">Auditoría fiscal · AFIP</div>
+      <div class="caso-num">8<span>hs</span></div>
+      <div class="caso-tit">5 años de Libros IVA corregidos</div>
+      <p class="caso-b">Miles de facturas con errores acumulados durante años. Python cruzó todo. Una app Streamlit validó contra AFIP antes de la presentación oficial.</p>
+      <div class="caso-detail">5 años de Libros IVA correctos ante AFIP en 8 horas. Multas millonarias evitadas. 15 años de historial con 100% de cumplimiento. Cero multas.</div>
+    </div>
+  </div>
+</section>
 
-        // Efectos tech diversos
-        function initTechEffects() {
-            createTechParticles();
-            initHoverEffects();
-        }
+<!-- ══ NOSOTROS ══ -->
+<section class="S" id="nosotros">
+  <div class="about-g">
+    <div class="about-l r">
+      <div class="av">
+        <div class="av-hex"><div class="av-init">GS</div></div>
+        <div><div class="av-name">GUSTAVO SÁNCHEZ</div><div class="av-role">Fundador · Kairos Flow</div></div>
+      </div>
+      <p class="about-bio">
+        Más de <strong>20 años transformando operaciones caóticas en sistemas rentables.</strong> Gestión de equipos de hasta 200 personas en administración, logística y finanzas.<br><br>
+        El diferencial es concreto: <strong>entiendo el negocio antes de tocar el código o activar un modelo de IA.</strong> Hablo el idioma de la administración y el de la tecnología — y eso es lo que separa una solución que transforma de una que se abandona.<br><br>
+        Soy además <strong>Coach Ontológico certificado</strong> — porque implementar IA sin considerar a las personas que la van a usar es el error más frecuente y más caro que cometen las organizaciones hoy.
+      </p>
+      <div class="dif-g">
+        <div class="dif"><div class="dif-dot"></div><div class="dif-t">Puente entre negocio y tecnología</div></div>
+        <div class="dif"><div class="dif-dot"></div><div class="dif-t">20+ años en operaciones reales</div></div>
+        <div class="dif"><div class="dif-dot"></div><div class="dif-t">IA aplicada con criterio empresarial</div></div>
+        <div class="dif"><div class="dif-dot"></div><div class="dif-t">Coach Ontológico certificado</div></div>
+        <div class="dif"><div class="dif-dot"></div><div class="dif-t">Compliance AFIP 100% verificable</div></div>
+        <div class="dif"><div class="dif-dot"></div><div class="dif-t">Diagnóstico siempre antes del desarrollo</div></div>
+      </div>
+    </div>
+    <div class="about-r r">
+      <div class="slbl">Stack técnico</div>
+      <div class="stit" style="font-size:clamp(2rem,3.5vw,3.5rem);margin-bottom:1.5rem">HERRAMIENTAS<br><em>VERIFICADAS</em><br>EN PRODUCCIÓN</div>
+      <p style="font-size:.85rem;color:var(--gray);line-height:1.8;margin-bottom:2rem;font-weight:300">No son tecnologías de curso. Son herramientas usadas en operaciones reales, con datos reales y consecuencias reales.</p>
+      <div class="stack-pills">
+        <span class="sp ai-pill">LLMs · APIs IA</span>
+        <span class="sp ai-pill">Automatización IA</span>
+        <span class="sp ai-pill">Prompt Engineering</span>
+        <span class="sp ai-pill">Machine Learning</span>
+        <span class="sp">Python · Pandas · Streamlit</span>
+        <span class="sp">SQL · PostgreSQL</span>
+        <span class="sp">ERP Tango</span>
+        <span class="sp">Fox Pro · Delphi · COBOL</span>
+        <span class="sp">Excel VBA · Power Query</span>
+        <span class="sp">APIs REST · Webhooks</span>
+        <span class="sp">Azure Cloud</span>
+        <span class="sp">AFIP · Libros IVA</span>
+        <span class="sp">Scrum · OKRs · Six Sigma</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-        // Efectos hover avanzados
-        function initHoverEffects() {
-            const cards = document.querySelectorAll('.service-card, .stat-card');
-            
-            cards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-15px) scale(1.02)';
-                    this.style.boxShadow = '0 0 40px rgba(0, 255, 255, 0.4), 0 0 80px rgba(139, 92, 246, 0.2)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0) scale(1)';
-                    this.style.boxShadow = 'none';
-                });
-            });
-        }
+<!-- ══ WHY ══ -->
+<div class="why">
+  <div class="why-c r"><div class="why-big">20<b>+</b></div><div class="why-lbl">Años en producción real</div><p class="why-desc">Gestión de operaciones con equipos de hasta 200 personas. No es teoría.</p></div>
+  <div class="why-c r d1"><div class="why-big">∞<b></b></div><div class="why-lbl">Customización sin límites</div><p class="why-desc">Código propio en Python e IA. Sin restricciones de plataformas ni licencias.</p></div>
+  <div class="why-c r d2"><div class="why-big">0<b></b></div><div class="why-lbl">Multas en 15 años</div><p class="why-desc">100% de cumplimiento AFIP liderando áreas administrativo-contables.</p></div>
+  <div class="why-c r d3"><div class="why-big">★<b></b></div><div class="why-lbl">El código es tuyo</div><p class="why-desc">Sin dependencias. Sin licencias. Documentado y capacitado. Tuyo para siempre.</p></div>
+</div>
 
-        // Navegación suave mejorada
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const navHeight = document.querySelector('.navbar').offsetHeight;
-                    const targetPosition = target.offsetTop - navHeight - 20;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                    
-                    this.style.textShadow = '0 0 20px var(--neon-cyan)';
-                    setTimeout(() => {
-                        this.style.textShadow = '0 0 10px var(--neon-cyan)';
-                    }, 300);
-                }
-            });
-        });
+<!-- ══ CTA ══ -->
+<div class="cta r">
+  <div>
+    <h2>TU EMPRESA<br>¿ESTÁ LISTA<br>PARA LA <em>IA?</em></h2>
+    <p>En 30 minutos analizamos tu operación y te decimos con honestidad si estás preparado para implementar IA — y qué hay que ordenar primero si no lo estás. Sin vender soluciones antes de entender el problema.</p>
+  </div>
+  <div class="cta-btns">
+    <a href="https://wa.me/5493812002041?text=Hola! Quiero el diagnóstico gratuito de madurez IA de Kairos Flow" class="btn-ai" style="font-size:.72rem;padding:1rem 2.5rem">Diagnóstico gratuito de madurez IA →</a>
+    <a href="mailto:kairosflow.soluciones@gmail.com" class="btn-o" style="font-size:.72rem;padding:1rem 2.5rem">Enviar un email</a>
+  </div>
+</div>
 
-        // Sistema de tracking avanzado
-        function initAdvancedTracking() {
-            // Aquí puedes agregar Google Analytics o tu sistema de tracking preferido
-            console.log('🚀 Kairos Flow Tracking System Initialized');
-        }
+<!-- ══ CONTACTO ══ -->
+<section class="S" id="contacto">
+  <div class="ct-g">
+    <div class="ct-l r">
+      <div class="slbl">Contacto</div>
+      <div class="ct-tit">HABLEMOS<br>DE TU<br><em>OPERACIÓN</em></div>
+      <div class="ct-rows">
+        <div class="ct-row"><span class="ct-k">Email</span><div><div class="ct-v">kairosflow.soluciones@gmail.com</div><div class="ct-n">Propuesta técnica en 24 horas</div></div></div>
+        <div class="ct-row"><span class="ct-k">WhatsApp</span><div><div class="ct-v">+54 381 200 2041</div><div class="ct-n">Respuesta rápida en horario laboral</div></div></div>
+        <div class="ct-row"><span class="ct-k">Base</span><div><div class="ct-v">Tucumán, Argentina</div><div class="ct-n">Trabajo remoto · Clientes en todo el mundo</div></div></div>
+        <div class="ct-row"><span class="ct-k">Horario</span><div><div class="ct-v">Lun–Vie · 9:00–18:00 ART</div><div class="ct-n">Soporte técnico 24/7 post-entrega</div></div></div>
+      </div>
+    </div>
+    <div class="ct-r r">
+      <div class="ct-rt">INICIEMOS EL DIAGNÓSTICO</div>
+      <p class="ct-rs">La primera consulta es gratuita y sin compromiso. Analizamos tu operación, evaluamos tu madurez para IA y te damos una recomendación honesta — aunque eso signifique que todavía no estás listo.</p>
+      <a href="https://wa.me/5493812002041?text=Hola Gustavo! Me interesa el diagnóstico gratuito de Kairos Flow" class="ch">
+        <div class="ch-ico wa">💬</div>
+        <div><div class="ch-nm">WhatsApp — respuesta inmediata</div><div class="ch-nt">+54 381 200 2041</div></div>
+        <svg class="ch-ar" width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="mailto:kairosflow.soluciones@gmail.com" class="ch">
+        <div class="ch-ico em">✉️</div>
+        <div><div class="ch-nm">Email — propuesta técnica en 24 horas</div><div class="ch-nt">kairosflow.soluciones@gmail.com</div></div>
+        <svg class="ch-ar" width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <div class="promise">
+        <div class="promise-t">Qué incluye el diagnóstico gratuito</div>
+        <p class="promise-b">Análisis de tu operación actual · Diagnóstico de madurez para IA · Identificación de los 3 problemas más costosos · Recomendación técnica honesta · Sin costo y sin compromiso.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-        // Inicialización del sistema tech
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('⚡ Kairos Flow Tech System Initializing...');
-            
-            setTimeout(() => {
-                console.log('🚀 Kairos Flow Tech System Online!');
-                console.log('💻 Ready for Digital Transformation');
-                console.log('⚡ Python | Automation | Custom Solutions');
-            }, 1000);
-        });
+<footer>
+  <div class="f-lg">KAIROS<span>FLOW</span></div>
+  <div class="f-cp">© 2025 Kairos Flow · Gustavo Sánchez · Tucumán, Argentina</div>
+  <div class="f-mo">"Automatizar un proceso roto solo acelera el caos."</div>
+</footer>
 
-        // Easter egg tech para desarrolladores
-        console.log(`
-        ⚡ KAIROS FLOW TECH STACK ⚡
-        ════════════════════════════════
-        🐍 Backend: Python | Flask | Django
-        📊 Data: Pandas | NumPy | Scikit-learn  
-        🖥️ Frontend: Streamlit | HTML5 | CSS3
-        🤖 Automation: Selenium | APIs | Bots
-        📈 Analytics: Plotly | Matplotlib
-        🔗 Integration: REST APIs | Webhooks
-        ☁️ Deploy: AWS | Heroku | DigitalOcean
-        ════════════════════════════════
-        💡 Custom Solutions | No Templates
-        🚀 Built for Performance & Scale
-        ⚙️ Automated Everything
-        `);
-    </script>
+<script>
+const cur=document.getElementById('cur'),curR=document.getElementById('curR');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+(function loop(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;curR.style.left=rx+'px';curR.style.top=ry+'px';requestAnimationFrame(loop)})();
+document.querySelectorAll('a,button,.svc,.caso,.pain,.iap,.iahow').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.style.width='14px';cur.style.height='14px';curR.style.width='50px';curR.style.height='50px'});
+  el.addEventListener('mouseleave',()=>{cur.style.width='8px';cur.style.height='8px';curR.style.width='36px';curR.style.height='36px'});
+});
+
+window.addEventListener('load',()=>{
+  document.getElementById('plf').style.width='100%';
+  setTimeout(()=>document.getElementById('pl').classList.add('out'),1350);
+});
+
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('lit',window.scrollY>60));
+
+const words=[
+  {t:'IA Aplicada a tu Operación',ai:true},{t:'Diagnóstico de Madurez IA',ai:true},
+  {t:'LLMs · Automatización IA',ai:true},{t:'Consultoría Organizacional',ai:false},
+  {t:'Relevamiento de Procesos',ai:false},{t:'Automatización Python',ai:false},
+  {t:'Auditoría Fiscal AFIP',ai:false},{t:'Integración de Sistemas',ai:false},
+  {t:'Dashboards Interactivos',ai:false},{t:'20 Años de Experiencia',ai:false},
+  {t:'Cash Flow & Rentabilidad',ai:false},{t:'Coach Ontológico',ai:false},
+];
+const tt=document.getElementById('tt');
+const all=[...words,...words].map(w=>`<span class="ti${w.ai?' ai-tick':''}"><b>◆</b>${w.t}</span>`).join('');
+tt.innerHTML=all+all;
+
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target)}});
+},{threshold:0.06,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+
+const cObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.caso-num').forEach(el=>{
+        const raw=el.textContent,num=parseFloat(raw),suf=raw.replace(/[\d.]/g,'').trim();
+        if(isNaN(num))return;
+        let c=0;const step=num/50;
+        const t=setInterval(()=>{c=Math.min(c+step,num);el.innerHTML=Math.round(c)+'<span>'+suf+'</span>';if(c>=num)clearInterval(t)},28);
+      });
+      cObs.unobserve(e.target);
+    }
+  });
+},{threshold:.35});
+document.querySelectorAll('.casos-g').forEach(el=>cObs.observe(el));
+
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();window.scrollTo({top:t.offsetTop-60,behavior:'smooth'})}
+  });
+});
+</script>
 </body>
 </html>
