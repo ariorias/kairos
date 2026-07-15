@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Kairos Flow — Consultoría en IA aplicada a empresas. Transformo operaciones en sistemas inteligentes. Tucumán, Argentina.">
-<title>Kairos Flow — Inteligencia Aplicada a tu Negocio</title>
+<meta name="description" content="Gustavo Sánchez — Administración & Gestión Operativa con Python e IA aplicada. 20+ años en el NOA. Tucumán, Argentina.">
+<title>Gustavo Sánchez — Administración & Tecnología Aplicada</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
@@ -35,11 +35,9 @@
 html{scroll-behavior:smooth}
 body{font-family:var(--B);background:var(--bg);color:var(--snow);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 
-/* CURSOR */
 .cur{position:fixed;width:8px;height:8px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);mix-blend-mode:difference;transition:width .15s,height .15s}
 .cur-r{position:fixed;width:36px;height:36px;border:1px solid rgba(201,168,76,.3);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:all .1s ease}
 
-/* PRELOADER */
 #pl{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1.5rem;transition:opacity .6s,visibility .6s}
 #pl.out{opacity:0;visibility:hidden}
 .pl-mark{animation:plb 1.2s ease-in-out infinite}
@@ -48,7 +46,6 @@ body{font-family:var(--B);background:var(--bg);color:var(--snow);line-height:1.6
 .pl-fill{height:100%;width:0;background:var(--gold);transition:width 1.1s cubic-bezier(.4,0,.2,1)}
 .pl-txt{font-family:var(--M);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
 
-/* NAV */
 nav{position:fixed;top:0;left:0;width:100%;z-index:1000;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;background:rgba(7,7,7,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);transition:border-color .3s}
 nav.lit{border-bottom-color:var(--gold2)}
 .nav-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none}
@@ -60,9 +57,6 @@ nav.lit{border-bottom-color:var(--gold2)}
 .nav-cta{font-family:var(--M);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--gold2);color:var(--gold);padding:.48rem 1.3rem;text-decoration:none;transition:background .2s}
 .nav-cta:hover{background:var(--goldfog)}
 
-/* ══════════════════════════════
-   HERO — split logo / mensaje
-══════════════════════════════ */
 .hero{min-height:100vh;padding-top:60px;display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}
 .hl{border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:4rem 3rem 7rem;position:relative;overflow:hidden;background:var(--bg1)}
 .hl::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,var(--line2) 1px,transparent 1px);background-size:26px 26px;opacity:.5}
@@ -77,7 +71,7 @@ nav.lit{border-bottom-color:var(--gold2)}
 .mkf{font-family:var(--D);font-size:4rem;letter-spacing:.1em;line-height:1;background:linear-gradient(135deg,#7a5c1e,#c9a84c,#e8c46a,#c9a84c,#7a5c1e);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shine 3s linear infinite}
 @keyframes shine{to{background-position:200% center}}
 .ml{position:relative;z-index:2;margin-top:2rem;text-align:center}
-.ml-n{font-family:var(--D);font-size:2.6rem;letter-spacing:.22em;color:var(--snow)}
+.ml-n{font-family:var(--D);font-size:2.6rem;letter-spacing:.14em;color:var(--snow)}
 .ml-n span{color:var(--gold)}
 .ml-s{font-family:var(--M);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gray);margin-top:.4rem}
 .hl-stats{position:absolute;bottom:0;left:0;right:0;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);z-index:2}
@@ -88,10 +82,10 @@ nav.lit{border-bottom-color:var(--gold2)}
 .hr{display:flex;flex-direction:column;justify-content:center;padding:4rem 3.5rem 7rem;position:relative}
 .hr-tag{font-family:var(--M);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.75rem;margin-bottom:2.5rem}
 .hr-tag::before{content:'';width:18px;height:1px;background:var(--gold)}
-.hr-h{font-family:var(--D);font-size:clamp(2.8rem,4.2vw,5rem);line-height:.95;letter-spacing:.04em;color:var(--snow);margin-bottom:1.75rem}
+.hr-h{font-family:var(--D);font-size:clamp(2.6rem,4vw,4.6rem);line-height:.97;letter-spacing:.03em;color:var(--snow);margin-bottom:1.75rem}
 .hr-h .g{color:var(--gold)}
 .hr-h .d{color:var(--muted)}
-.hr-claim{font-size:.92rem;color:var(--gray);line-height:1.85;max-width:440px;margin-bottom:2.5rem;font-weight:300;border-left:2px solid var(--gold2);padding-left:1.25rem}
+.hr-claim{font-size:.92rem;color:var(--gray);line-height:1.85;max-width:460px;margin-bottom:2.5rem;font-weight:300;border-left:2px solid var(--gold2);padding-left:1.25rem}
 .hr-claim strong{color:var(--fog);font-weight:500}
 .phases{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:2.5rem}
 .ph{background:var(--bg1);padding:1.2rem 1rem;text-align:center;position:relative;overflow:hidden;transition:background .3s}
@@ -101,7 +95,7 @@ nav.lit{border-bottom-color:var(--gold2)}
 .ph-n{font-family:var(--M);font-size:.58rem;color:var(--gold);letter-spacing:.1em;margin-bottom:.25rem}
 .ph-t{font-family:var(--D);font-size:1.05rem;letter-spacing:.08em;color:var(--snow)}
 .ph-d{font-size:.7rem;color:var(--gray);margin-top:.2rem;line-height:1.35}
-.btns{display:flex;gap:1rem;align-items:center}
+.btns{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
 .btn-g{display:inline-flex;align-items:center;gap:.6rem;background:var(--gold);color:var(--bg);padding:.85rem 2rem;text-decoration:none;font-family:var(--M);font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;transition:opacity .2s,transform .15s}
 .btn-g:hover{opacity:.88;transform:translateY(-1px)}
 .btn-o{display:inline-flex;align-items:center;gap:.6rem;border:1px solid var(--line2);color:var(--silver);padding:.85rem 2rem;text-decoration:none;font-family:var(--M);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;transition:border-color .2s,color .2s}
@@ -110,7 +104,6 @@ nav.lit{border-bottom-color:var(--gold2)}
 .scroll-ind::before{content:'';width:1px;height:30px;background:linear-gradient(var(--gold),transparent)}
 @keyframes spulse{0%,100%{opacity:.25}50%{opacity:.7}}
 
-/* TICKER */
 .ticker{height:40px;overflow:hidden;white-space:nowrap;border-bottom:1px solid var(--line);background:var(--bg1);display:flex;align-items:center}
 .tick-t{display:inline-flex;animation:tick 32s linear infinite}
 .tick-t:hover{animation-play-state:paused}
@@ -120,96 +113,39 @@ nav.lit{border-bottom-color:var(--gold2)}
 .ti.ai-tick{color:#818cf8}
 .ti.ai-tick b{color:#6366f1}
 
-/* ══════════════════════════════
-   SECCIÓN IA — EL CABALLO DE BATALLA
-   Ocupa todo el ancho, impacto total
-══════════════════════════════ */
-.ia-section{
-  border-bottom:1px solid var(--line);
-  position:relative;overflow:hidden;
-}
-/* fondo animado exclusivo para esta sección */
-.ia-bg{
-  position:absolute;inset:0;
-  background:
-    radial-gradient(ellipse at 20% 50%,rgba(99,102,241,.12) 0%,transparent 55%),
-    radial-gradient(ellipse at 80% 50%,rgba(139,92,246,.08) 0%,transparent 55%);
-  animation:iabg 8s ease-in-out infinite;
-}
+.ia-section{border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.ia-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(99,102,241,.12) 0%,transparent 55%),radial-gradient(ellipse at 80% 50%,rgba(139,92,246,.08) 0%,transparent 55%);animation:iabg 8s ease-in-out infinite}
 @keyframes iabg{0%,100%{opacity:.6}50%{opacity:1}}
-.ia-grid-bg{
-  position:absolute;inset:0;
-  background-image:
-    linear-gradient(rgba(99,102,241,.06) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(99,102,241,.06) 1px,transparent 1px);
-  background-size:48px 48px;
-}
+.ia-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(99,102,241,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(99,102,241,.06) 1px,transparent 1px);background-size:48px 48px}
 
-.ia-top{
-  padding:6rem 3rem 4rem;
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:5rem;align-items:center;
-  position:relative;z-index:2;
-  border-bottom:1px solid rgba(99,102,241,.15);
-}
-.ia-badge{
-  display:inline-flex;align-items:center;gap:.6rem;
-  font-family:var(--M);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;
-  color:#a5b4fc;margin-bottom:1.5rem;
-  border:1px solid rgba(99,102,241,.3);padding:.4rem 1rem;
-  width:fit-content;
-}
+.ia-top{padding:6rem 3rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;position:relative;z-index:2;border-bottom:1px solid rgba(99,102,241,.15)}
+.ia-badge{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--M);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:#a5b4fc;margin-bottom:1.5rem;border:1px solid rgba(99,102,241,.3);padding:.4rem 1rem;width:fit-content}
 .ia-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:#6366f1;animation:iapulse 1.5s ease-in-out infinite}
 @keyframes iapulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.6)}}
 
-.ia-title{
-  font-family:var(--D);
-  font-size:clamp(3.5rem,6vw,7rem);
-  line-height:.88;letter-spacing:.03em;
-  color:var(--snow);margin-bottom:1.5rem;
-}
-.ia-title .purple{
-  background:linear-gradient(135deg,#6366f1,#a855f7,#ec4899);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-}
+.ia-title{font-family:var(--D);font-size:clamp(3rem,5.4vw,6rem);line-height:.9;letter-spacing:.03em;color:var(--snow);margin-bottom:1.5rem}
+.ia-title .purple{background:linear-gradient(135deg,#6366f1,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .ia-title .dim{color:var(--muted)}
 
-.ia-claim{
-  font-size:1.1rem;color:var(--gray);line-height:1.85;font-weight:300;
-  border-left:2px solid #6366f1;padding-left:1.5rem;
-  margin-bottom:2rem;
-}
+.ia-claim{font-size:1.05rem;color:var(--gray);line-height:1.85;font-weight:300;border-left:2px solid #6366f1;padding-left:1.5rem;margin-bottom:2rem}
 .ia-claim strong{color:var(--fog);font-weight:500}
 
-.ia-cta-row{display:flex;gap:1rem;align-items:center}
-.btn-ai{
-  display:inline-flex;align-items:center;gap:.6rem;
-  background:linear-gradient(135deg,#6366f1,#8b5cf6);
-  color:#fff;padding:.9rem 2.2rem;
-  font-family:var(--M);font-size:.72rem;font-weight:500;
-  letter-spacing:.1em;text-transform:uppercase;
-  text-decoration:none;transition:opacity .2s,transform .15s;
-  border:none;
-}
+.ia-cta-row{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+.btn-ai{display:inline-flex;align-items:center;gap:.6rem;background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;padding:.9rem 2.2rem;font-family:var(--M);font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:opacity .2s,transform .15s;border:none}
 .btn-ai:hover{opacity:.88;transform:translateY(-1px)}
 
-/* lado derecho IA — el argumento */
 .ia-right{}
 .ia-stat-row{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(99,102,241,.15);border:1px solid rgba(99,102,241,.2);margin-bottom:2rem}
 .ia-stat{background:var(--bg1);padding:1.5rem;text-align:center;transition:background .3s}
 .ia-stat:hover{background:var(--bg2)}
-.ia-stat-n{font-family:var(--D);font-size:3rem;line-height:1;margin-bottom:.25rem}
+.ia-stat-n{font-family:var(--D);font-size:2.7rem;line-height:1;margin-bottom:.25rem}
 .ia-stat-n.purple{background:linear-gradient(135deg,#6366f1,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .ia-stat-l{font-family:var(--M);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gray)}
-.ia-warning{
-  background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.2);
-  border-left:3px solid var(--gold);padding:1.25rem 1.5rem;
-}
+.ia-warning{background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.2);border-left:3px solid var(--gold);padding:1.25rem 1.5rem}
 .ia-warning-t{font-family:var(--M);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
 .ia-warning-b{font-size:.85rem;color:var(--gray);line-height:1.7}
 .ia-warning-b strong{color:var(--fog);font-weight:500}
 
-/* los 3 problemas de IA en empresas */
 .ia-problems{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(99,102,241,.15);position:relative;z-index:2}
 .iap{padding:2.5rem;border-right:1px solid rgba(99,102,241,.12);transition:background .3s;position:relative;overflow:hidden}
 .iap:last-child{border-right:none}
@@ -222,7 +158,6 @@ nav.lit{border-bottom-color:var(--gold2)}
 .iap p{font-size:.82rem;color:var(--gray);line-height:1.7}
 .iap-tag{display:inline-block;font-family:var(--M);font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;color:#818cf8;border:1px solid rgba(99,102,241,.3);padding:.2rem .6rem;margin-top:.75rem}
 
-/* lo que hago con IA */
 .ia-how{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(99,102,241,.15);position:relative;z-index:2}
 .iahow{padding:2.5rem 2rem;border-right:1px solid rgba(99,102,241,.12);transition:background .3s}
 .iahow:last-child{border-right:none}
@@ -231,30 +166,27 @@ nav.lit{border-bottom-color:var(--gold2)}
 .iahow-t{font-family:var(--D);font-size:1.2rem;letter-spacing:.04em;color:var(--snow);margin-bottom:.5rem}
 .iahow-d{font-size:.8rem;color:var(--gray);line-height:1.7}
 
-/* ══ SECTION BASE ══ */
 .S{border-bottom:1px solid var(--line)}
 .sh{padding:5rem 3rem 3rem;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end}
 .slbl{font-family:var(--M);font-size:.63rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.6rem;margin-bottom:1.1rem}
 .slbl::before{content:'';width:14px;height:1px;background:var(--gold)}
-.stit{font-family:var(--D);font-size:clamp(3rem,5vw,6rem);line-height:.9;letter-spacing:.04em;color:var(--snow)}
+.stit{font-family:var(--D);font-size:clamp(2.6rem,4.6vw,5.4rem);line-height:.92;letter-spacing:.03em;color:var(--snow)}
 .stit em{color:var(--gold);font-style:normal}
 .sh-r p{font-size:.88rem;color:var(--gray);line-height:1.85;font-weight:300;max-width:420px}
 
-/* ══ DOLOR ══ */
 .pain-g{display:grid;grid-template-columns:1fr 1fr}
 .pain{padding:2.5rem;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;gap:1.5rem;transition:background .3s;position:relative;overflow:hidden}
-.pain::after{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--red);transform:scaleY(0);transform-origin:top;transition:transform .4s}
+.pain::after{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold);transform:scaleY(0);transform-origin:top;transition:transform .4s}
 .pain:hover::after{transform:scaleY(1)}
 .pain:hover{background:var(--bg2)}
 .pain:nth-child(2n){border-right:none}
 .pain:nth-child(3),.pain:nth-child(4){border-bottom:none}
 .pain-n{font-family:var(--D);font-size:3.5rem;color:var(--line2);line-height:1;flex-shrink:0;width:3.5rem;transition:color .3s}
-.pain:hover .pain-n{color:var(--red)}
+.pain:hover .pain-n{color:var(--gold)}
 .pain h4{font-size:.88rem;font-weight:600;color:var(--fog);margin-bottom:.4rem}
 .pain p{font-size:.82rem;color:var(--gray);line-height:1.7}
 .pain-q{font-style:italic;color:var(--silver);margin-top:.75rem;padding-left:.75rem;border-left:1px solid var(--muted);font-size:.8rem}
 
-/* ══ MÉTODO ══ */
 .mth-g{display:grid;grid-template-columns:repeat(3,1fr)}
 .mth{border-right:1px solid var(--line)}
 .mth:last-child{border-right:none}
@@ -269,7 +201,6 @@ nav.lit{border-bottom-color:var(--gold2)}
 .mth-list li{font-size:.8rem;color:var(--silver);padding:.32rem 0;border-top:1px solid var(--line);display:flex;align-items:center;gap:.5rem}
 .mth-list li::before{content:'→';color:var(--gold);font-size:.65rem;flex-shrink:0}
 
-/* ══ SERVICIOS ══ */
 .svc-g{display:grid;grid-template-columns:repeat(3,1fr)}
 .svc{border-right:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
 .svc:nth-child(3n){border-right:none}
@@ -292,7 +223,26 @@ nav.lit{border-bottom-color:var(--gold2)}
 .svc-sp .svc-in{background:var(--goldfog)}
 .svc-sp .svc-t{color:var(--gold)}
 
-/* ══ CASOS ══ */
+.proj-g{display:grid;grid-template-columns:1fr 1fr}
+.proj{border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:background .3s}
+.proj:nth-child(2n){border-right:none}
+.proj:hover{background:var(--bg2)}
+.proj-banner{height:120px;display:flex;align-items:center;justify-content:center;gap:.9rem;background:linear-gradient(135deg,var(--bg2),var(--bg1));border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.proj-banner::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,var(--line2) 1px,transparent 1px);background-size:20px 20px;opacity:.4}
+.proj-ico{font-size:2.2rem;position:relative;z-index:1}
+.proj-banner-t{font-family:var(--D);font-size:1.5rem;letter-spacing:.05em;color:var(--gold);position:relative;z-index:1}
+.proj-in{padding:2rem 2.2rem 2.2rem}
+.proj-tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:1.1rem}
+.proj-t{font-family:var(--D);font-size:1.35rem;letter-spacing:.03em;color:var(--snow);margin-bottom:.9rem}
+.proj-row{margin-bottom:.85rem}
+.proj-lbl{font-family:var(--M);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.25rem}
+.proj-txt{font-size:.82rem;color:var(--gray);line-height:1.65}
+.proj-result{background:var(--goldfog);border-left:2px solid var(--gold);padding:.7rem 1rem;margin-bottom:1.3rem}
+.proj-result .proj-lbl{color:var(--gold)}
+.proj-result .proj-txt{color:var(--fog)}
+.proj-ft{display:flex;gap:.75rem;border-top:1px solid var(--line);padding-top:1.1rem}
+.proj-btn{font-family:var(--M);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);text-decoration:none;border:1px solid var(--gold2);padding:.5rem 1rem;transition:background .2s}
+.proj-btn:hover{background:var(--goldfog)}
 .casos-g{display:grid;grid-template-columns:repeat(3,1fr)}
 .caso{border-right:1px solid var(--line);padding:3rem 2.5rem;position:relative;overflow:hidden;transition:background .3s}
 .caso:last-child{border-right:none}
@@ -305,7 +255,6 @@ nav.lit{border-bottom-color:var(--gold2)}
 .caso-b{font-size:.82rem;color:var(--gray);line-height:1.75}
 .caso-detail{margin-top:1.2rem;padding:1rem;border-left:2px solid var(--gold2);background:rgba(201,168,76,.04);font-size:.77rem;color:var(--silver);line-height:1.65;font-style:italic}
 
-/* ══ SOBRE MÍ ══ */
 .about-g{display:grid;grid-template-columns:1fr 1fr}
 .about-l{border-right:1px solid var(--line);padding:5rem 3rem;display:flex;flex-direction:column;justify-content:center}
 .about-r{padding:5rem 3rem}
@@ -327,7 +276,6 @@ nav.lit{border-bottom-color:var(--gold2)}
 .sp.ai-pill{border-color:rgba(99,102,241,.3);color:#818cf8}
 .sp.ai-pill:hover{border-color:#6366f1;color:#a5b4fc}
 
-/* ══ WHY ══ */
 .why{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line)}
 .why-c{padding:3rem 2.5rem;border-right:1px solid var(--line);transition:background .3s}
 .why-c:last-child{border-right:none}
@@ -337,18 +285,16 @@ nav.lit{border-bottom-color:var(--gold2)}
 .why-lbl{font-size:.8rem;font-weight:600;color:var(--fog);margin-bottom:.3rem}
 .why-desc{font-size:.77rem;color:var(--gray);line-height:1.6}
 
-/* ══ CTA ══ */
 .cta{padding:7rem 3rem;background:var(--bg1);border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr auto;gap:5rem;align-items:center}
-.cta h2{font-family:var(--D);font-size:clamp(3rem,5vw,5.5rem);letter-spacing:.04em;color:var(--snow);line-height:.95;margin-bottom:1rem}
+.cta h2{font-family:var(--D);font-size:clamp(2.6rem,4.6vw,5rem);letter-spacing:.03em;color:var(--snow);line-height:.97;margin-bottom:1rem}
 .cta h2 em{color:var(--gold);font-style:normal}
 .cta p{font-size:.9rem;color:var(--gray);line-height:1.85;font-weight:300;max-width:500px}
 .cta-btns{display:flex;flex-direction:column;gap:.75rem;flex-shrink:0}
 
-/* ══ CONTACTO ══ */
 .ct-g{display:grid;grid-template-columns:5fr 7fr}
 .ct-l{border-right:1px solid var(--line);padding:5rem 3rem}
 .ct-r{padding:5rem 3rem}
-.ct-tit{font-family:var(--D);font-size:clamp(2.5rem,4vw,4.5rem);letter-spacing:.04em;color:var(--snow);line-height:.95;margin-bottom:3rem}
+.ct-tit{font-family:var(--D);font-size:clamp(2.3rem,3.8vw,4.2rem);letter-spacing:.03em;color:var(--snow);line-height:.97;margin-bottom:3rem}
 .ct-tit em{color:var(--gold);font-style:normal}
 .ct-rows{display:flex;flex-direction:column}
 .ct-row{display:grid;grid-template-columns:88px 1fr;border-top:1px solid var(--line);padding:1.2rem 0}
@@ -363,6 +309,8 @@ nav.lit{border-bottom-color:var(--gold2)}
 .ch-ico{width:38px;height:38px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
 .ch-ico.wa{background:#25d366}
 .ch-ico.em{background:var(--line2)}
+.ch-ico.li{background:#0a66c2}
+.ch-ico.cv{background:var(--gold)}
 .ch-nm{font-size:.88rem;font-weight:500}
 .ch-nt{font-size:.7rem;color:var(--gray);margin-top:.1rem}
 .ch-ar{margin-left:auto;color:var(--gold);opacity:0;transform:translateX(-4px);transition:opacity .2s,transform .2s}
@@ -371,19 +319,16 @@ nav.lit{border-bottom-color:var(--gold2)}
 .promise-t{font-family:var(--M);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
 .promise-b{font-size:.8rem;color:var(--gray);line-height:1.75}
 
-/* FOOTER */
 footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-top:1px solid var(--line)}
-.f-lg{font-family:var(--D);font-size:1.3rem;letter-spacing:.15em;color:var(--snow)}
+.f-lg{font-family:var(--D);font-size:1.3rem;letter-spacing:.1em;color:var(--snow)}
 .f-lg span{color:var(--gold)}
 .f-cp{font-family:var(--M);font-size:.6rem;color:var(--muted);letter-spacing:.06em}
 .f-mo{font-size:.76rem;color:var(--muted);font-style:italic}
 
-/* REVEAL */
 .r{opacity:0;transform:translateY(20px);transition:opacity .75s ease,transform .75s ease}
 .r.on{opacity:1;transform:translateY(0)}
 .d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}.d4{transition-delay:.28s}
 
-/* RESPONSIVE */
 @media(max-width:1100px){
   .ia-top{grid-template-columns:1fr;gap:3rem}
   .ia-how{grid-template-columns:1fr 1fr}
@@ -421,8 +366,8 @@ footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-b
   .pain-g{grid-template-columns:1fr}
   .pain{border-right:none!important}
   .pain:nth-child(3){border-bottom:1px solid var(--line)!important}
-  .svc-g,.casos-g{grid-template-columns:1fr}
-  .svc,.caso{border-right:none!important}
+  .svc-g,.casos-g,.proj-g{grid-template-columns:1fr}
+  .svc,.caso,.proj{border-right:none!important}
   .cta{grid-template-columns:1fr;gap:2.5rem;padding:4rem 1.5rem}
   .about-l,.about-r,.ct-l,.ct-r{padding:3rem 1.5rem}
   .dif-g{grid-template-columns:1fr}
@@ -436,452 +381,521 @@ footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-b
 <div class="cur" id="cur"></div>
 <div class="cur-r" id="curR"></div>
 
-<!-- PRELOADER -->
 <div id="pl">
   <svg class="pl-mark" width="72" height="72" viewBox="0 0 80 80" fill="none">
     <polygon points="40,3 77,21.5 77,58.5 40,77 3,58.5 3,21.5" fill="none" stroke="#252525" stroke-width="1.5"/>
     <polygon points="40,14 66,27.5 66,52.5 40,66 14,52.5 14,27.5" fill="none" stroke="#333" stroke-width="1"/>
-    <text x="40" y="53" text-anchor="middle" font-family="Bebas Neue" font-size="28" letter-spacing="3" fill="url(#gPL)">KF</text>
+    <text x="40" y="53" text-anchor="middle" font-family="Bebas Neue" font-size="28" letter-spacing="3" fill="url(#gPL)">GS</text>
     <defs><linearGradient id="gPL" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8a6a28"/><stop offset="50%" stop-color="#c9a84c"/><stop offset="100%" stop-color="#e8c46a"/></linearGradient></defs>
   </svg>
   <div class="pl-bar"><div class="pl-fill" id="plf"></div></div>
-  <div class="pl-txt">Iniciando sistema</div>
+  <div class="pl-txt">Cargando perfil</div>
 </div>
 
-<!-- NAV -->
 <nav id="nav">
   <a href="#" class="nav-logo">
     <svg width="30" height="30" viewBox="0 0 80 80" fill="none">
       <polygon points="40,3 77,21.5 77,58.5 40,77 3,58.5 3,21.5" fill="none" stroke="#252525" stroke-width="1.5"/>
-      <text x="40" y="53" text-anchor="middle" font-family="Bebas Neue" font-size="28" letter-spacing="3" fill="url(#gN)">KF</text>
+      <text x="40" y="53" text-anchor="middle" font-family="Bebas Neue" font-size="28" letter-spacing="3" fill="url(#gN)">GS</text>
       <defs><linearGradient id="gN" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8a6a28"/><stop offset="50%" stop-color="#c9a84c"/><stop offset="100%" stop-color="#e8c46a"/></linearGradient></defs>
     </svg>
-    <span class="nav-wm">KAIROS<span>FLOW</span></span>
+    <span class="nav-wm">GUSTAVO<span>SÁNCHEZ</span></span>
   </a>
   <div style="display:flex;align-items:center;gap:2.5rem">
     <ul class="nav-links">
-      <li><a href="#ia">Inteligencia Artificial</a></li>
+      <li><a href="#ia">IA Aplicada</a></li>
       <li><a href="#metodo">Método</a></li>
-      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
       <li><a href="#casos">Resultados</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
-    <a href="https://wa.me/5493812002041?text=Hola! Me interesa el diagnóstico gratuito de Kairos Flow" class="nav-cta">Diagnóstico gratuito</a>
+    <a href="CV_Gustavo_Sanchez.pdf" class="nav-cta" download>Descargar CV</a>
   </div>
 </nav>
 
-<!-- ══ HERO ══ -->
 <section class="hero">
   <div class="hl">
     <div class="mark">
       <div class="mr1"><div class="md"></div></div>
       <div class="mr2"></div>
-      <div class="mc"><span class="mkf">KF</span></div>
+      <div class="mc"><span class="mkf">GS</span></div>
     </div>
     <div class="ml">
-      <div class="ml-n">KAIROS<span>FLOW</span></div>
-      <div class="ml-s">Consultoría Tech · Tucumán · Argentina</div>
+      <div class="ml-n">GUSTAVO<span> SÁNCHEZ</span></div>
+      <div class="ml-s">Administración · Operaciones · Automatización · Python · IA</div>
     </div>
     <div class="hl-stats">
       <div class="hls"><div class="hls-v">20<span style="font-size:1rem;color:var(--gold2)">+</span></div><div class="hls-l">Años de experiencia</div></div>
-      <div class="hls"><div class="hls-v">100%</div><div class="hls-l">Código propio</div></div>
-      <div class="hls"><div class="hls-v">0</div><div class="hls-l">Plantillas</div></div>
+      <div class="hls"><div class="hls-v">100%</div><div class="hls-l">Compliance AFIP</div></div>
+      <div class="hls"><div class="hls-v">200+</div><div class="hls-l">Personas coordinadas</div></div>
     </div>
   </div>
   <div class="hr">
-    <div class="hr-tag">Consultoría · Relevamiento · Solución</div>
+    <div class="hr-tag">Operaciones de Negocio · Desarrollo Python · Soluciones con IA</div>
     <div class="hr-h">
-      AUTOMATIZAR<br>UN PROCESO<br>
-      <span class="d">ROTO SOLO</span><br>
-      <span class="g">ACELERA EL CAOS.</span>
+      TRANSFORMO<br>PROCESOS DE<br>
+      <span class="g">NEGOCIO</span> EN<br>
+      <span class="d">SOLUCIONES TECH.</span>
     </div>
     <p class="hr-claim">
-      La mayoría llega con soluciones antes de entender el problema.<br><br>
-      Yo hago lo contrario: <strong>primero relevo, diagnostico y reorganizo.</strong> La tecnología — incluida la IA — es la consecuencia. No el punto de partida.
+      Combino más de <strong>20 años de experiencia en administración, logística, operaciones y finanzas</strong> con Python, Inteligencia Artificial y automatización para crear herramientas que optimizan procesos y mejoran la toma de decisiones.<br><br>
+      No es software por el software — es tecnología que resuelve problemas reales de negocio.
     </p>
     <div class="phases">
-      <div class="ph"><div class="ph-n">FASE 01</div><div class="ph-t">CONSULTORÍA</div><div class="ph-d">Entiendo tu operación y sus conflictos</div></div>
-      <div class="ph"><div class="ph-n">FASE 02</div><div class="ph-t">RELEVAMIENTO</div><div class="ph-d">Mapeo procesos, datos y fricciones</div></div>
-      <div class="ph"><div class="ph-n">FASE 03</div><div class="ph-t">SOLUCIÓN</div><div class="ph-d">Construyo tecnología que perdura</div></div>
+      <div class="ph"><div class="ph-n">20 AÑOS</div><div class="ph-t">OPERACIÓN</div><div class="ph-d">Gestión administrativa real, de punta a punta</div></div>
+      <div class="ph"><div class="ph-n">2024</div><div class="ph-t">RECONVERSIÓN</div><div class="ph-d">Python, Data Science y Tecnicatura en UTN</div></div>
+      <div class="ph"><div class="ph-n">HOY</div><div class="ph-t">HÍBRIDO</div><div class="ph-d">Administración + tecnología en una sola persona</div></div>
     </div>
     <div class="btns">
-      <a href="#ia" class="btn-g">Ver cómo uso la IA <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <a href="#casos" class="btn-o">Ver resultados reales</a>
+      <a href="#proyectos" class="btn-g">Explorar proyectos <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="CV_Gustavo_Sanchez.pdf" class="btn-o" download>Descargar CV</a>
+      <a href="#contacto" class="btn-o">Contactarme</a>
     </div>
     <div class="scroll-ind">scroll</div>
   </div>
 </section>
 
-<!-- TICKER -->
 <div class="ticker"><div class="tick-t" id="tt"></div></div>
 
-<!-- ══════════════════════════════════════
-   SECCIÓN IA — PROTAGONISTA ABSOLUTA
-══════════════════════════════════════ -->
 <section class="ia-section" id="ia">
   <div class="ia-bg"></div>
   <div class="ia-grid-bg"></div>
 
-  <!-- IMPACTO SUPERIOR -->
   <div class="ia-top r">
     <div>
       <div class="ia-badge">Inteligencia Artificial Aplicada</div>
       <div class="ia-title">
-        EL MUNDO<br>
-        <span class="purple">CAMBIÓ.</span><br>
-        TU EMPRESA<br>
-        <span class="dim">¿LO SABE?</span>
+        NO SOY<br>
+        <span class="purple">PROGRAMADOR.</span><br>
+        SOY QUIEN<br>
+        <span class="dim">SABE QUÉ PEDIR.</span>
       </div>
       <p class="ia-claim">
-        La IA ya no es una tendencia ni una promesa futura. <strong>Es el nuevo estándar operativo.</strong> Las empresas que no la incorporan hoy están cediendo terreno, eficiencia y clientes a las que sí lo hacen.<br><br>
-        Pero implementar IA sobre procesos rotos o datos desordenados es el error más caro que puede cometer una organización. <strong>Primero hay que estar listo. Yo te digo si lo estás — y si no, te preparo.</strong>
+        No escribo código línea por línea. <strong>Dirijo la construcción:</strong> defino el problema, diseño la solución y superviso la ejecución con herramientas de IA (Claude, ChatGPT, Gemini) como mi equipo de desarrollo.<br><br>
+        Es la combinación que la mayoría no tiene: <strong>20 años entendiendo cómo funciona realmente una operación, más la capacidad de traducir eso en un sistema que funciona.</strong>
       </p>
       <div class="ia-cta-row">
-        <a href="#contacto" class="btn-ai">Diagnóstico de madurez IA →</a>
-        <a href="#contacto" class="btn-o">Consulta gratuita</a>
+        <a href="#casos" class="btn-ai">Ver el caso del IVA en 8 horas →</a>
+        <a href="#contacto" class="btn-o">Hablemos</a>
       </div>
     </div>
     <div class="ia-right">
       <div class="ia-stat-row">
         <div class="ia-stat">
-          <div class="ia-stat-n purple">77%</div>
-          <div class="ia-stat-l">de empresas están explorando IA pero no saben cómo implementarla</div>
+          <div class="ia-stat-n purple">5 años</div>
+          <div class="ia-stat-l">de Libros IVA corregidos con Python en un solo proceso</div>
         </div>
         <div class="ia-stat">
-          <div class="ia-stat-n purple">3x</div>
-          <div class="ia-stat-l">más rentables son las empresas con procesos inteligentes automatizados</div>
+          <div class="ia-stat-n purple">8 hs</div>
+          <div class="ia-stat-l">lo que tomó resolver ese caso, con cero multas ante AFIP</div>
         </div>
         <div class="ia-stat">
-          <div class="ia-stat-n purple">40%</div>
-          <div class="ia-stat-l">de las tareas repetitivas en una empresa pueden ser automatizadas hoy</div>
+          <div class="ia-stat-n purple">90%</div>
+          <div class="ia-stat-l">de reducción de errores operativos con un sistema de control automatizado</div>
         </div>
         <div class="ia-stat">
-          <div class="ia-stat-n purple">2025</div>
-          <div class="ia-stat-l">el año en que la IA deja de ser ventaja competitiva y se vuelve requisito mínimo</div>
+          <div class="ia-stat-n purple">3</div>
+          <div class="ia-stat-l">herramientas de IA que uso a diario: Claude, ChatGPT y Gemini</div>
         </div>
       </div>
       <div class="ia-warning">
-        <div class="ia-warning-t">⚠ El riesgo real</div>
-        <p class="ia-warning-b">No es implementar IA demasiado pronto. Es <strong>quedarse mirando mientras tu competencia opera con la mitad del costo y el doble de velocidad.</strong> Eso ya está pasando.</p>
+        <div class="ia-warning-t">⚠ Lo que aprendí en el camino</div>
+        <p class="ia-warning-b">La IA no reemplaza el criterio de negocio — lo potencia. <strong>Sin entender el proceso real, cualquier automatización solo amplifica el error más rápido.</strong> Por eso primero ordeno, después automatizo.</p>
       </div>
     </div>
   </div>
 
-  <!-- LOS 3 PROBLEMAS QUE VEO -->
   <div class="ia-problems">
     <div class="iap r">
       <div class="iap-n">01</div>
-      <h4>Quieren usar IA pero no saben por dónde empezar</h4>
-      <p>El 77% de las empresas está explorando IA sin una hoja de ruta clara. Sin un diagnóstico previo, cada intento se convierte en gasto sin retorno.</p>
-      <span class="iap-tag">Lo resuelvo con diagnóstico de madurez</span>
+      <h4>Cinco años de Libros IVA mal registrados, sin que nadie los detectara</h4>
+      <p>Un grupo empresarial con múltiples CUIT tenía numeración duplicada y montos incorrectos acumulados durante años. Ningún contador lo había resuelto.</p>
+      <span class="iap-tag">Resuelto con Python + validación simulada de ARCA</span>
     </div>
     <div class="iap r d1">
       <div class="iap-n">02</div>
-      <h4>Implementan IA sobre datos sucios y procesos rotos</h4>
-      <p>Un modelo de IA entrenado con datos incorrectos produce decisiones incorrectas con mucha más velocidad y confianza. El problema se amplifica, no se resuelve.</p>
-      <span class="iap-tag">Lo resuelvo con relevamiento previo</span>
+      <h4>Control de flota y stock que dependía 100% de planillas manuales</h4>
+      <p>Más de 200 vehículos y decenas de rutas sin visibilidad en tiempo real. Cada reporte gerencial llevaba días de carga manual.</p>
+      <span class="iap-tag">Resuelto con dashboards Streamlit en tiempo real</span>
     </div>
     <div class="iap r d2">
       <div class="iap-n">03</div>
-      <h4>El equipo no adopta las herramientas implementadas</h4>
-      <p>La tecnología más avanzada falla si las personas que la usan no entienden para qué sirve. La resistencia al cambio mata más proyectos que cualquier bug técnico.</p>
-      <span class="iap-tag">Lo resuelvo con coaching + capacitación</span>
+      <h4>Errores operativos invisibles que se repetían turno tras turno</h4>
+      <p>En logística de frío, pequeños errores de control se acumulaban sin que nadie los viera venir hasta que ya eran costosos.</p>
+      <span class="iap-tag">Resuelto con sistema de control automatizado</span>
     </div>
   </div>
 
-  <!-- LO QUE HAGO CON IA -->
   <div class="ia-how">
     <div class="iahow r">
       <span class="iahow-ico">🔬</span>
-      <div class="iahow-t">DIAGNÓSTICO DE MADUREZ</div>
-      <p class="iahow-d">Evalúo si tu empresa está lista para incorporar IA. Datos, procesos, equipo y cultura. Un informe honesto antes de invertir un peso.</p>
+      <div class="iahow-t">DIAGNÓSTICO PRIMERO</div>
+      <p class="iahow-d">Antes de tocar una línea de código, entiendo el proceso real — no el que figura en el manual. Ahí está el 80% del problema.</p>
     </div>
     <div class="iahow r d1">
       <span class="iahow-ico">🧹</span>
-      <div class="iahow-t">PREPARACIÓN DE DATOS</div>
-      <p class="iahow-d">Limpio, estructuro e integro tus datos para que cualquier herramienta de IA pueda trabajar con ellos. Sin datos limpios, no hay IA que funcione.</p>
+      <div class="iahow-t">LIMPIEZA Y CRUCE DE DATOS</div>
+      <p class="iahow-d">Python y SQL para cruzar miles de registros, detectar anomalías y validar información antes de que llegue a un organismo fiscal o a dirección.</p>
     </div>
     <div class="iahow r d2">
       <span class="iahow-ico">⚡</span>
-      <div class="iahow-t">IMPLEMENTACIÓN APLICADA</div>
-      <p class="iahow-d">Automatización con LLMs, clasificación inteligente, predicción de demanda, generación de reportes y asistentes internos entrenados con tus propios datos.</p>
+      <div class="iahow-t">AUTOMATIZACIÓN APLICADA</div>
+      <p class="iahow-d">Reportes que se generan solos, alertas que avisan antes del problema, dashboards que reemplazan reuniones de tres días por un vistazo de tres minutos.</p>
     </div>
     <div class="iahow r d3">
       <span class="iahow-ico">🎯</span>
-      <div class="iahow-t">ADOPCIÓN & CAPACITACIÓN</div>
-      <p class="iahow-d">Acompaño al equipo en el cambio. La herramienta más potente es inútil si nadie la usa. Garantizo que la tecnología se integre a la operación real.</p>
+      <div class="iahow-t">ARQUITECTO, NO EJECUTOR MANUAL</div>
+      <p class="iahow-d">Trabajo con IA como mi equipo de construcción: yo defino qué hay que construir y por qué, la IA ejecuta bajo mi dirección y supervisión.</p>
     </div>
   </div>
 </section>
 
-<!-- ══ DOLOR ══ -->
 <section class="S" id="dolor">
   <div class="sh r">
-    <div><div class="slbl">El diagnóstico</div><div class="stit">LO QUE FRENA<br>TU <em>OPERACIÓN</em></div></div>
-    <div class="sh-r"><p>La IA resuelve problemas operativos — pero primero hay que identificarlos con precisión. Estos son los patrones más costosos que encuentro en las organizaciones que me consultan.</p></div>
+    <div><div class="slbl">Lo que resuelvo</div><div class="stit">PROBLEMAS QUE<br>YA <em>ENFRENTÉ</em></div></div>
+    <div class="sh-r"><p>No son casos hipotéticos. Son situaciones reales que resolví en operaciones de hasta 200 personas, con consecuencias fiscales y económicas concretas.</p></div>
   </div>
   <div class="pain-g">
     <div class="pain r">
       <div class="pain-n">01</div>
-      <div><h4>Automatizar el caos no lo resuelve</h4><p>Implementar tecnología — incluyendo IA — sobre procesos mal definidos solo hace que los errores sucedan más rápido. El problema no es la herramienta, es el proceso detrás.</p><div class="pain-q">"Digitalizamos todo y los problemas siguieron. Nadie nos dijo que el flujo estaba roto desde adentro."</div></div>
+      <div><h4>Procesos rotos que ninguna herramienta arregla sola</h4><p>Vi automatizaciones fallar porque se montaron sobre un proceso mal definido. Mi primer paso siempre es entender el flujo real, no digitalizar el caos.</p><div class="pain-q">"Digitalizamos todo y los problemas siguieron ahí. El flujo estaba roto desde adentro."</div></div>
     </div>
     <div class="pain r d1">
       <div class="pain-n">02</div>
-      <div><h4>Información dispersa, decisiones ciegas</h4><p>Cuando los datos viven en planillas, emails y sistemas desconectados, tomar decisiones estratégicas se vuelve una adivinanza. La IA necesita datos centralizados para funcionar.</p><div class="pain-q">"Tardaba tres días en saber cómo cerró el mes. Para entonces ya era tarde para corregir."</div></div>
+      <div><h4>Información dispersa que impedía decidir a tiempo</h4><p>Cuando los datos viven en planillas, emails y sistemas desconectados, cada decisión estratégica se vuelve una adivinanza. Centralicé esa información en tableros que sí se pueden leer en minutos.</p><div class="pain-q">"Tardábamos tres días en saber cómo había cerrado el mes."</div></div>
     </div>
     <div class="pain r d2">
       <div class="pain-n">03</div>
-      <div><h4>Fugas de dinero invisibles al ojo humano</h4><p>Errores en facturas, duplicados y diferencias acumuladas por años. Exactamente el tipo de problema que un modelo de auditoría con Python e IA detecta en horas, no en meses.</p><div class="pain-q">"Años de errores fiscales que ningún sistema había detectado. La multa hubiera sido millonaria."</div></div>
+      <div><h4>Fugas de dinero invisibles al ojo humano</h4><p>Errores en facturación, duplicados y diferencias acumuladas por años. Con Python y cruces de datos, ese tipo de error se detecta en horas, no en meses.</p><div class="pain-q">"Cinco años de errores fiscales que nadie había detectado. La multa hubiera sido millonaria."</div></div>
     </div>
     <div class="pain r d3">
       <div class="pain-n">04</div>
-      <div><h4>La organización depende de personas, no de sistemas</h4><p>Cuando los procesos no están documentados ni automatizados, el conocimiento queda atrapado en individuos. La IA no puede aprender de lo que no está registrado.</p><div class="pain-q">"Si se va alguien clave, nos lleva semanas entender cómo hacía su trabajo."</div></div>
+      <div><h4>Operaciones que dependían de una sola persona</h4><p>Cuando el conocimiento vive solo en la cabeza de alguien, la empresa queda expuesta. Documenté y sistematicé procesos para que el negocio no dependa de mi memoria — ni de la de nadie más.</p><div class="pain-q">"Quince años en el mismo puesto, y el sistema que diseñé sigue funcionando sin mí."</div></div>
     </div>
   </div>
 </section>
 
-<!-- ══ MÉTODO ══ -->
 <section class="S" id="metodo">
   <div class="sh r">
-    <div><div class="slbl">Mi metodología</div><div class="stit">PRIMERO<br><em>ENTIENDO.</em><br>DESPUÉS<br>CONSTRUYO.</div></div>
-    <div class="sh-r"><p>No llego con soluciones prefabricadas. Llego con preguntas. La IA, Python, los dashboards — todo eso viene después de entender profundamente tu negocio. El código y los modelos son la consecuencia, no el punto de partida.</p></div>
+    <div><div class="slbl">Cómo trabajo</div><div class="stit">PRIMERO<br><em>ENTIENDO.</em><br>DESPUÉS<br>CONSTRUYO.</div></div>
+    <div class="sh-r"><p>No llego con soluciones prefabricadas. Llego con preguntas. La IA, Python, los dashboards — todo eso viene después de entender profundamente el negocio. Busco el error, no a la persona que lo cometió.</p></div>
   </div>
   <div class="mth-g">
     <div class="mth r">
-      <div class="mth-top"><div class="mth-n">01</div><div class="mth-lbl">Consultoría<br>organizacional</div></div>
+      <div class="mth-top"><div class="mth-n">01</div><div class="mth-lbl">Diagnóstico<br>operativo</div></div>
       <div class="mth-body">
-        <div class="mth-t">CONSULTORÍA & DIAGNÓSTICO</div>
-        <p class="mth-d">Analizo tu organización como sistema: roles, flujos, conflictos y fugas económicas. Con más de 20 años gestionando equipos en operaciones reales, sé leer lo que los números no dicen — y evalúo si estás listo para incorporar IA.</p>
+        <div class="mth-t">ENTENDER LA OPERACIÓN</div>
+        <p class="mth-d">Analizo la organización como sistema: roles, flujos, conflictos y fugas económicas. Con más de 20 años gestionando áreas administrativas reales, sé leer lo que los números no dicen.</p>
         <ul class="mth-list">
-          <li>Diagnóstico de madurez digital e IA</li>
-          <li>Análisis de conflictos y fricciones organizacionales</li>
+          <li>Mapeo de procesos administrativos y operativos</li>
           <li>Detección de fugas de dinero y eficiencia</li>
-          <li>Mapa de riesgos operativos y fiscales</li>
-          <li>Informe con prioridades y hoja de ruta</li>
+          <li>Análisis de riesgos fiscales y de compliance</li>
+          <li>Identificación de qué se puede automatizar y qué no</li>
         </ul>
       </div>
     </div>
     <div class="mth r d1">
-      <div class="mth-top"><div class="mth-n">02</div><div class="mth-lbl">Relevamiento<br>de procesos</div></div>
+      <div class="mth-top"><div class="mth-n">02</div><div class="mth-lbl">Diseño de<br>la solución</div></div>
       <div class="mth-body">
-        <div class="mth-t">RELEVAMIENTO & DISEÑO</div>
-        <p class="mth-d">Documento cómo funciona tu operación hoy — no cómo debería funcionar. Mapeo procesos, datos y puntos de fricción. Identifico qué puede automatizarse con IA y qué necesita ordenarse primero.</p>
+        <div class="mth-t">DEFINIR QUÉ CONSTRUIR</div>
+        <p class="mth-d">Documento cómo funciona la operación hoy — no cómo debería funcionar. Diseño el flujo futuro y especifico exactamente qué necesita el sistema para resolver el problema real.</p>
         <ul class="mth-list">
-          <li>Mapeo completo de flujos operativos reales</li>
-          <li>Auditoría de calidad de datos para IA</li>
-          <li>Análisis de sistemas existentes: ERP, Excel, legacy</li>
-          <li>Diseño del flujo futuro inteligente</li>
-          <li>Propuesta con alcance y presupuesto claro</li>
+          <li>Diseño de flujo de datos y de procesos</li>
+          <li>Especificación técnica de la solución</li>
+          <li>Evaluación de sistemas existentes: ERP, Excel, legacy</li>
+          <li>Priorización por impacto y urgencia</li>
         </ul>
       </div>
     </div>
     <div class="mth r d2">
-      <div class="mth-top"><div class="mth-n">03</div><div class="mth-lbl">Desarrollo<br>de solución</div></div>
+      <div class="mth-top"><div class="mth-n">03</div><div class="mth-lbl">Construcción<br>dirigida</div></div>
       <div class="mth-body">
-        <div class="mth-t">SOLUCIÓN & ENTREGA</div>
-        <p class="mth-d">Con el diagnóstico en mano, construyo la solución exacta: automatización con IA, modelos predictivos, sistemas Python, dashboards. Código 100% propio, documentado. El sistema queda en tu organización — no en mis servidores.</p>
+        <div class="mth-t">EJECUTAR CON IA</div>
+        <p class="mth-d">Con el diagnóstico en mano, dirijo la construcción: Python, dashboards, automatización con IA. Yo defino la arquitectura y reviso cada resultado — la IA ejecuta bajo mi supervisión.</p>
         <ul class="mth-list">
-          <li>Implementación IA y Python desde cero</li>
-          <li>Integración con sistemas existentes</li>
-          <li>Pruebas en ambiente real</li>
-          <li>Documentación técnica y manual de usuario</li>
-          <li>Capacitación del equipo y soporte post-entrega</li>
+          <li>Desarrollo con Python, SQL y Streamlit</li>
+          <li>Automatización con herramientas de IA</li>
+          <li>Pruebas y validación contra datos reales</li>
+          <li>Documentación clara para quien lo use después</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ SERVICIOS ══ -->
-<section class="S" id="servicios">
+<section class="S" id="habilidades">
   <div class="sh r">
-    <div><div class="slbl">Soluciones</div><div class="stit">LO QUE<br><em>CONSTRUYO</em></div></div>
-    <div class="sh-r"><p>Cada solución nace de un relevamiento previo. El punto de partida siempre es entender tu negocio — no el catálogo de herramientas disponibles.</p></div>
+    <div><div class="slbl">Lo que sé hacer</div><div class="stit">HABILIDADES<br><em>APLICADAS</em></div></div>
+    <div class="sh-r"><p>No son cursos que hice. Son herramientas que usé en operaciones reales, con datos reales y consecuencias reales — fiscales, económicas y de gestión de equipos.</p></div>
   </div>
   <div class="svc-g">
     <div class="svc r"><div class="svc-line"></div><div class="svc-in">
-      <div class="svc-ix">01 — Plataforma</div><div class="svc-ico">🖥️</div>
-      <div class="svc-t">APPS WEB EMPRESARIALES</div>
-      <p class="svc-d">Sistemas web a medida que unifican información dispersa. Un solo sistema reemplaza múltiples planillas y plataformas. Dashboards en tiempo real, control de usuarios, acceso desde cualquier dispositivo.</p>
-      <div class="svc-tags"><span class="stag">Python</span><span class="stag">Streamlit</span><span class="stag">Flask</span><span class="stag">PostgreSQL</span></div>
-      <div class="svc-ft"><span class="svc-go">Consultá este servicio →</span></div>
+      <div class="svc-ix">01 — Gestión</div><div class="svc-ico">🖥️</div>
+      <div class="svc-t">ADMINISTRACIÓN & GESTIÓN OPERATIVA</div>
+      <p class="svc-d">Manejo integral de áreas administrativas: stock, facturación, cuentas corrientes, cobranzas y arqueos. Coordinación de equipos y procesos en operaciones con más de 200 personas.</p>
+      <div class="svc-tags"><span class="stag">ERP Tango</span><span class="stag">AFIP/ARCA</span><span class="stag">DGR Tucumán</span><span class="stag">Excel Avanzado</span></div>
+      <div class="svc-ft"><span class="svc-go">Ver experiencia →</span></div>
     </div></div>
 
     <div class="svc r d1"><div class="svc-line"></div><div class="svc-in">
       <div class="svc-ix">02 — Automatización</div><div class="svc-ico">⚙️</div>
-      <div class="svc-t">AUTOMATIZACIÓN INTELIGENTE</div>
-      <p class="svc-d">Bots y scripts que ejecutan procesos repetitivos con precisión. Reportes automáticos, alertas inteligentes y procesamiento masivo de datos. Lo que hoy lleva horas, mañana sucede solo.</p>
-      <div class="svc-tags"><span class="stag">Python</span><span class="stag">Selenium</span><span class="stag">APIs REST</span><span class="stag">Schedulers</span></div>
-      <div class="svc-ft"><span class="svc-go">Consultá este servicio →</span></div>
+      <div class="svc-t">AUTOMATIZACIÓN CON PYTHON E IA</div>
+      <p class="svc-d">Scripts y sistemas que ejecutan procesos repetitivos con precisión: reportes automáticos, alertas y procesamiento masivo de datos. Lo que antes llevaba días, ahora sucede solo.</p>
+      <div class="svc-tags"><span class="stag">Python</span><span class="stag">Pandas</span><span class="stag">APIs</span><span class="stag">LLMs</span></div>
+      <div class="svc-ft"><span class="svc-go">Ver experiencia →</span></div>
     </div></div>
 
     <div class="svc r d2"><div class="svc-line"></div><div class="svc-in">
       <div class="svc-ix">03 — Analytics</div><div class="svc-ico">📊</div>
       <div class="svc-t">DASHBOARDS & ANALYTICS</div>
-      <p class="svc-d">Visualizaciones interactivas con las métricas que realmente importan. KPIs específicos para tu industria, predicciones con ML y reportes gerenciales que se generan automáticamente.</p>
-      <div class="svc-tags"><span class="stag">Plotly</span><span class="stag">Pandas</span><span class="stag">Streamlit</span><span class="stag">SQL</span></div>
-      <div class="svc-ft"><span class="svc-go">Consultá este servicio →</span></div>
+      <p class="svc-d">Visualizaciones interactivas con las métricas que realmente importan para dirección. KPIs de flota, cobranza y costos, actualizados en tiempo real.</p>
+      <div class="svc-tags"><span class="stag">Streamlit</span><span class="stag">Plotly</span><span class="stag">SQL</span><span class="stag">Pandas</span></div>
+      <div class="svc-ft"><span class="svc-go">Ver experiencia →</span></div>
     </div></div>
 
     <div class="svc r"><div class="svc-line"></div><div class="svc-in">
-      <div class="svc-ix">04 — Auditoría</div><div class="svc-ico">🔍</div>
+      <div class="svc-ix">04 — Compliance</div><div class="svc-ico">🔍</div>
       <div class="svc-t">AUDITORÍA FISCAL & COMPLIANCE</div>
-      <p class="svc-d">Cruce masivo de datos para detectar errores en facturación, CUIT y montos antes de que se conviertan en multas. Sistemas de control preventivo con historial de 100% de cumplimiento AFIP.</p>
-      <div class="svc-tags"><span class="stag">Python</span><span class="stag">SQL</span><span class="stag">Pandas</span><span class="stag">AFIP</span></div>
-      <div class="svc-ft"><span class="svc-go">Consultá este servicio →</span></div>
+      <p class="svc-d">Cruce masivo de datos para detectar errores en facturación, CUIT y montos antes de que se conviertan en multas. 15 años de historial con 100% de cumplimiento AFIP.</p>
+      <div class="svc-tags"><span class="stag">Python</span><span class="stag">Libros IVA</span><span class="stag">AFIP/ARCA</span><span class="stag">SQL</span></div>
+      <div class="svc-ft"><span class="svc-go">Ver experiencia →</span></div>
     </div></div>
 
     <div class="svc r d1"><div class="svc-line"></div><div class="svc-in">
-      <div class="svc-ix">05 — Integración</div><div class="svc-ico">🔗</div>
-      <div class="svc-t">INTEGRACIÓN DE SISTEMAS</div>
-      <p class="svc-d">Conecto plataformas que no se hablan. También trabajo con sistemas heredados que nadie más quiere tocar: Fox Pro, Delphi, COBOL, Visual Basic. Si tiene datos adentro, puedo trabajar con él.</p>
-      <div class="svc-tags"><span class="stag">APIs REST</span><span class="stag">Webhooks</span><span class="stag">ERP Tango</span><span class="stag">Legacy</span></div>
-      <div class="svc-ft"><span class="svc-go">Consultá este servicio →</span></div>
+      <div class="svc-ix">05 — Sistemas</div><div class="svc-ico">🔗</div>
+      <div class="svc-t">SISTEMAS LEGACY & INTEGRACIÓN</div>
+      <p class="svc-d">Trabajo con sistemas heredados que nadie más quiere tocar: Fox Pro, Delphi, COBOL. Diseñé y evolucioné un sistema administrativo integral durante 15 años, desde cero.</p>
+      <div class="svc-tags"><span class="stag">Fox Pro</span><span class="stag">Delphi</span><span class="stag">COBOL</span><span class="stag">ERP Tango</span></div>
+      <div class="svc-ft"><span class="svc-go">Ver experiencia →</span></div>
     </div></div>
 
     <div class="svc svc-sp r d2"><div class="svc-in">
-      <div><div class="svc-ix" style="color:var(--gold2)">¿Caso distinto?</div>
-      <div class="svc-t">TU OPERACIÓN TIENE SU PROPIA REALIDAD</div>
-      <p class="svc-d">Si tu problema no encaja en ninguna categoría, es exactamente el tipo de desafío donde más valor agrego. Contame qué está pasando.</p></div>
-      <a href="https://wa.me/5493812002041?text=Hola! Tengo un desafio operativo que me gustaria discutir" class="btn-g" style="margin-top:2rem;align-self:flex-start">Contame el caso →</a>
+      <div><div class="svc-ix" style="color:var(--gold2)">¿Buscás este perfil?</div>
+      <div class="svc-t">ADMINISTRACIÓN + TECNOLOGÍA EN UNA SOLA PERSONA</div>
+      <p class="svc-d">Si tu equipo necesita a alguien que entienda la operación de negocio y sepa traducirla en sistemas, hablemos.</p></div>
+      <a href="#contacto" class="btn-g" style="margin-top:2rem;align-self:flex-start">Contactame →</a>
     </div></div>
   </div>
 </section>
 
-<!-- ══ CASOS ══ -->
+<section class="S" id="proyectos">
+  <div class="sh r">
+    <div><div class="slbl">Proyectos</div><div class="stit">LO QUE<br><em>CONSTRUÍ</em></div></div>
+    <div class="sh-r"><p>Cada proyecto nace de un problema operativo real, no de un tutorial. Así es como dirijo la construcción, de punta a punta.</p></div>
+  </div>
+  <div class="proj-g">
+    <div class="proj r">
+      <div class="proj-banner"><span class="proj-ico">🧾</span><span class="proj-banner-t">Auditoría Fiscal IVA</span></div>
+      <div class="proj-in">
+        <div class="proj-t">Corrección de 5 años de Libros IVA</div>
+        <div class="proj-tags"><span class="stag">Python</span><span class="stag">Pandas</span><span class="stag">Streamlit</span><span class="stag">AFIP/ARCA</span></div>
+        <div class="proj-row"><div class="proj-lbl">Problema</div><div class="proj-txt">Un grupo empresarial con múltiples CUIT acumuló 5 años de Libros IVA mal registrados: numeración duplicada y montos incorrectos que ningún contador había detectado.</div></div>
+        <div class="proj-row"><div class="proj-lbl">Solución</div><div class="proj-txt">Script en Python que cruzó y validó miles de registros, más una app que simulaba la validación de ARCA antes de la presentación oficial.</div></div>
+        <div class="proj-result"><div class="proj-lbl">Resultado</div><div class="proj-txt">Cero multas ante AFIP. Resuelto en 8 horas.</div></div>
+        <div class="proj-ft"><a href="#contacto" class="proj-btn">Consultar el caso →</a></div>
+      </div>
+    </div>
+
+    <div class="proj r d1">
+      <div class="proj-banner"><span class="proj-ico">🚚</span><span class="proj-banner-t">Dashboard de Flota</span></div>
+      <div class="proj-in">
+        <div class="proj-t">Control de flota en tiempo real</div>
+        <div class="proj-tags"><span class="stag">Python</span><span class="stag">Streamlit</span><span class="stag">SQL</span><span class="stag">Plotly</span></div>
+        <div class="proj-row"><div class="proj-lbl">Problema</div><div class="proj-txt">Una distribuidora con más de 200 vehículos no tenía visibilidad en tiempo real: cada reporte gerencial llevaba días de carga manual sobre el ERP.</div></div>
+        <div class="proj-row"><div class="proj-lbl">Solución</div><div class="proj-txt">Dashboard interactivo conectado al ERP con KPIs de flota, cobranza y costos actualizados automáticamente.</div></div>
+        <div class="proj-result"><div class="proj-lbl">Resultado</div><div class="proj-txt">Reportes que tomaban 3 días ahora se leen en minutos. Ciclo de cobranza -30%.</div></div>
+        <div class="proj-ft"><a href="#contacto" class="proj-btn">Solicitar demo →</a></div>
+      </div>
+    </div>
+
+    <div class="proj r d2">
+      <div class="proj-banner"><span class="proj-ico">🧠</span><span class="proj-banner-t">Intelligence Hub</span></div>
+      <div class="proj-in">
+        <div class="proj-t">Análisis de datos con IA integrada</div>
+        <div class="proj-tags"><span class="stag">Python</span><span class="stag">Streamlit</span><span class="stag">API Anthropic</span><span class="stag">Plotly</span></div>
+        <div class="proj-row"><div class="proj-lbl">Problema</div><div class="proj-txt">Información operativa dispersa en múltiples formatos, sin una forma rápida de detectar anomalías o patrones relevantes para dirección.</div></div>
+        <div class="proj-row"><div class="proj-lbl">Solución</div><div class="proj-txt">Aplicación agnóstica al formato de datos, con integración a la API de Claude para detección de anomalías y generación de visualizaciones automáticas.</div></div>
+        <div class="proj-result"><div class="proj-lbl">Resultado</div><div class="proj-txt">Análisis que antes tomaba días de trabajo manual, resuelto en minutos.</div></div>
+        <div class="proj-ft"><a href="#contacto" class="proj-btn">Solicitar demo →</a></div>
+      </div>
+    </div>
+
+    <div class="proj r d3">
+      <div class="proj-banner"><span class="proj-ico">📍</span><span class="proj-banner-t">FamiliaSegura</span></div>
+      <div class="proj-in">
+        <div class="proj-t">App de seguridad familiar (Android)</div>
+        <div class="proj-tags"><span class="stag">Flutter</span><span class="stag">Firebase</span><span class="stag">OSRM</span><span class="stag">FCM</span></div>
+        <div class="proj-row"><div class="proj-lbl">Problema</div><div class="proj-txt">Necesidad de acompañamiento y alertas de seguridad en tiempo real para el grupo familiar, con mapeo de zonas de riesgo.</div></div>
+        <div class="proj-row"><div class="proj-lbl">Solución</div><div class="proj-txt">App Android completa: ubicación en tiempo real, mapa de riesgo, alertas SOS, chat familiar y acompañamiento de rutas.</div></div>
+        <div class="proj-result"><div class="proj-lbl">Resultado</div><div class="proj-txt">Proyecto full-stack de punta a punta: research, arquitectura, desarrollo y despliegue.</div></div>
+        <div class="proj-ft"><a href="#contacto" class="proj-btn">Ver detalles →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="S" id="por-que">
+  <div style="padding:5.5rem 3rem;max-width:880px;margin:0 auto;text-align:center">
+    <div class="slbl" style="justify-content:center">Mi diferencial</div>
+    <div class="stit" style="margin-bottom:2rem">¿POR QUÉ TRABAJAR<br><em>CONMIGO?</em></div>
+    <p style="font-size:1.02rem;color:var(--gray);line-height:2;font-weight:300">
+      No soy únicamente un desarrollador ni únicamente un administrador. <strong style="color:var(--fog);font-weight:500">Entiendo cómo funciona una empresa desde adentro</strong> y desarrollo soluciones tecnológicas orientadas a resolver problemas reales de operación, administración y gestión.
+    </p>
+  </div>
+</section>
+
 <section class="S" id="casos">
   <div class="sh r">
     <div><div class="slbl">Resultados reales</div><div class="stit">NÚMEROS QUE<br><em>RESPALDO</em></div></div>
-    <div class="sh-r"><p>No son estimaciones. Son resultados documentados de intervenciones en operaciones reales — con equipos de hasta 200 personas y consecuencias fiscales concretas.</p></div>
+    <div class="sh-r"><p>No son estimaciones. Son resultados documentados de mi trabajo en operaciones reales — con equipos de hasta 200 personas y consecuencias fiscales concretas.</p></div>
   </div>
   <div class="casos-g">
     <div class="caso r">
-      <div class="caso-tag">Logística · 90+ personas</div>
+      <div class="caso-tag">Logística · Fríos del Norte</div>
       <div class="caso-num">90<span>%</span></div>
       <div class="caso-tit">Reducción de errores operativos</div>
-      <p class="caso-b">Sistema de control en logística de frío con equipo de más de 90 colaboradores. Los errores operativos cayeron un 90% en el primer trimestre post-implementación.</p>
+      <p class="caso-b">Diseñé e implementé un sistema de control en logística de frío. Los errores operativos cayeron un 90% en el primer trimestre post-implementación.</p>
       <div class="caso-detail">Primero relevé los flujos reales entre turnos e identifiqué dónde se perdía información. El sistema vino después — no antes.</div>
     </div>
     <div class="caso r d1">
-      <div class="caso-tag">Cobranzas · 200+ unidades</div>
+      <div class="caso-tag">Cobranzas · ANJOR S.A.</div>
       <div class="caso-num">30<span>%</span></div>
       <div class="caso-tit">Reducción del ciclo de cobro</div>
-      <p class="caso-b">Digitalización de cobranzas con flota de más de 200 unidades. Tableros en tiempo real que acortaron el ciclo un 30% y eliminaron la carga manual de reportes.</p>
+      <p class="caso-b">Digitalicé la cobranza en una flota de más de 200 unidades. Los tableros en tiempo real acortaron el ciclo un 30% y eliminaron la carga manual de reportes.</p>
       <div class="caso-detail">El relevamiento reveló que el problema no era la cobranza — era la visibilidad. El dashboard resolvió la causa raíz, no el síntoma.</div>
     </div>
     <div class="caso r d2">
       <div class="caso-tag">Auditoría fiscal · AFIP</div>
       <div class="caso-num">8<span>hs</span></div>
       <div class="caso-tit">5 años de Libros IVA corregidos</div>
-      <p class="caso-b">Miles de facturas con errores acumulados durante años. Python cruzó todo. Una app Streamlit validó contra AFIP antes de la presentación oficial.</p>
+      <p class="caso-b">Miles de facturas con errores acumulados durante años. Usé Python para cruzarlas todas y construí una app que validaba contra AFIP antes de la presentación oficial.</p>
       <div class="caso-detail">5 años de Libros IVA correctos ante AFIP en 8 horas. Multas millonarias evitadas. 15 años de historial con 100% de cumplimiento. Cero multas.</div>
     </div>
   </div>
 </section>
 
-<!-- ══ SOBRE MÍ ══ -->
 <section class="S" id="sobre-mi">
+  <div class="sh r">
+    <div><div class="slbl">Trayectoria</div><div class="stit">EXPERIENCIA QUE<br>GENERA <em>RESULTADOS</em></div></div>
+    <div class="sh-r">
+      <div class="dif-g">
+        <div class="dif"><div class="dif-dot"></div><div class="dif-t"><strong style="color:var(--fog)">20+ años</strong> en empresas de administración y operaciones</div></div>
+        <div class="dif"><div class="dif-dot"></div><div class="dif-t">Equipos de hasta <strong style="color:var(--fog)">90 personas</strong> coordinados directamente</div></div>
+        <div class="dif"><div class="dif-dot"></div><div class="dif-t">Logística de más de <strong style="color:var(--fog)">200 vehículos</strong> bajo control administrativo</div></div>
+        <div class="dif"><div class="dif-dot"></div><div class="dif-t">Automatización de <strong style="color:var(--fog)">miles de registros</strong> fiscales ante AFIP</div></div>
+        <div class="dif"><div class="dif-dot"></div><div class="dif-t">Desarrollo de aplicaciones en <strong style="color:var(--fog)">Python y Streamlit</strong></div></div>
+        <div class="dif"><div class="dif-dot"></div><div class="dif-t">Dashboards con <strong style="color:var(--fog)">Power BI y SQL</strong> para toma de decisiones</div></div>
+      </div>
+    </div>
+  </div>
   <div class="about-g">
     <div class="about-l r">
       <div class="av">
         <div class="av-hex"><div class="av-init">GS</div></div>
-        <div><div class="av-name">GUSTAVO SÁNCHEZ</div><div class="av-role">Fundador · Kairos Flow</div></div>
+        <div><div class="av-name">GUSTAVO SÁNCHEZ</div><div class="av-role">Administración & Gestión Operativa</div></div>
       </div>
       <p class="about-bio">
-        Más de <strong>20 años transformando operaciones caóticas en sistemas rentables.</strong> Gestión de equipos de hasta 200 personas en administración, logística y finanzas.<br><br>
-        El diferencial es concreto: <strong>entiendo el negocio antes de tocar el código o activar un modelo de IA.</strong> Hablo el idioma de la administración y el de la tecnología — y eso es lo que separa una solución que transforma de una que se abandona.<br><br>
-        Soy además <strong>Coach Ontológico certificado</strong> — porque implementar IA sin considerar a las personas que la van a usar es el error más frecuente y más caro que cometen las organizaciones hoy.
+        Más de <strong>20 años transformando operaciones caóticas en sistemas ordenados.</strong> Gestión de áreas administrativas completas en empresas del NOA, con equipos y flotas de hasta 200 unidades.<br><br>
+        Hace tres años empecé a sumar <strong>Python, SQL e Inteligencia Artificial</strong> a esa base operativa — hoy curso la Tecnicatura Universitaria en Administración en UTN FRBA y completé la Diplomatura en Python y Data Science. El diferencial es concreto: <strong>entiendo el negocio antes de tocar el código o activar un modelo de IA.</strong><br><br>
+        Mi filosofía de trabajo, después de 20 años liderando equipos: <strong>busco el error, no a la persona que lo cometió.</strong> Esa mirada es la que sostiene el clima de trabajo en cada lugar donde estuve.
       </p>
       <div class="dif-g">
         <div class="dif"><div class="dif-dot"></div><div class="dif-t">Puente entre negocio y tecnología</div></div>
-        <div class="dif"><div class="dif-dot"></div><div class="dif-t">20+ años en operaciones reales</div></div>
-        <div class="dif"><div class="dif-dot"></div><div class="dif-t">IA aplicada con criterio empresarial</div></div>
-        <div class="dif"><div class="dif-dot"></div><div class="dif-t">Coach Ontológico certificado</div></div>
+        <div class="dif"><div class="dif-dot"></div><div class="dif-t">20+ años en operaciones reales del NOA</div></div>
+        <div class="dif"><div class="dif-dot"></div><div class="dif-t">IA aplicada con criterio operativo</div></div>
+        <div class="dif"><div class="dif-dot"></div><div class="dif-t">Tecnicatura en Administración · UTN FRBA</div></div>
         <div class="dif"><div class="dif-dot"></div><div class="dif-t">Compliance AFIP 100% verificable</div></div>
-        <div class="dif"><div class="dif-dot"></div><div class="dif-t">Diagnóstico siempre antes del desarrollo</div></div>
+        <div class="dif"><div class="dif-dot"></div><div class="dif-t">Diagnóstico siempre antes de construir</div></div>
       </div>
     </div>
     <div class="about-r r">
       <div class="slbl">Stack técnico</div>
       <div class="stit" style="font-size:clamp(2rem,3.5vw,3.5rem);margin-bottom:1.5rem">HERRAMIENTAS<br><em>VERIFICADAS</em><br>EN PRODUCCIÓN</div>
-      <p style="font-size:.85rem;color:var(--gray);line-height:1.8;margin-bottom:2rem;font-weight:300">No son tecnologías de curso. Son herramientas usadas en operaciones reales, con datos reales y consecuencias reales.</p>
+      <p style="font-size:.85rem;color:var(--gray);line-height:1.8;margin-bottom:2rem;font-weight:300">No son tecnologías de curso. Son herramientas que usé en operaciones reales, con datos reales y consecuencias reales.</p>
       <div class="stack-pills">
-        <span class="sp ai-pill">LLMs · APIs IA</span>
-        <span class="sp ai-pill">Automatización IA</span>
+        <span class="sp ai-pill">LLMs · Claude, ChatGPT, Gemini</span>
+        <span class="sp ai-pill">Automatización con IA</span>
         <span class="sp ai-pill">Prompt Engineering</span>
-        <span class="sp ai-pill">Machine Learning</span>
         <span class="sp">Python · Pandas · Streamlit</span>
         <span class="sp">SQL · PostgreSQL</span>
-        <span class="sp">ERP Tango</span>
+        <span class="sp">ERP Tango Gestión</span>
         <span class="sp">Fox Pro · Delphi · COBOL</span>
-        <span class="sp">Excel VBA · Power Query</span>
-        <span class="sp">APIs REST · Webhooks</span>
-        <span class="sp">Azure Cloud</span>
-        <span class="sp">AFIP · Libros IVA</span>
-        <span class="sp">Scrum · OKRs · Six Sigma</span>
+        <span class="sp">Excel Avanzado · VBA · Power Query</span>
+        <span class="sp">AFIP · ARCA · Libros IVA</span>
+        <span class="sp">DGR Tucumán</span>
+        <span class="sp">Six Sigma Green Belt</span>
+        <span class="sp">Google Workspace · Office 365</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ WHY ══ -->
 <div class="why">
-  <div class="why-c r"><div class="why-big">20<b>+</b></div><div class="why-lbl">Años en producción real</div><p class="why-desc">Gestión de operaciones con equipos de hasta 200 personas. No es teoría.</p></div>
-  <div class="why-c r d1"><div class="why-big">∞<b></b></div><div class="why-lbl">Customización sin límites</div><p class="why-desc">Código propio en Python e IA. Sin restricciones de plataformas ni licencias.</p></div>
+  <div class="why-c r"><div class="why-big">20<b>+</b></div><div class="why-lbl">Años en producción real</div><p class="why-desc">Gestión de áreas administrativas con equipos de hasta 200 personas. No es teoría.</p></div>
+  <div class="why-c r d1"><div class="why-big">5.000<b>+</b></div><div class="why-lbl">Clientes gestionados</div><p class="why-desc">Cuentas corrientes activas administradas de forma directa durante 15 años.</p></div>
   <div class="why-c r d2"><div class="why-big">0<b></b></div><div class="why-lbl">Multas en 15 años</div><p class="why-desc">100% de cumplimiento AFIP liderando áreas administrativo-contables.</p></div>
-  <div class="why-c r d3"><div class="why-big">★<b></b></div><div class="why-lbl">El código es tuyo</div><p class="why-desc">Sin dependencias. Sin licencias. Documentado y capacitado. Tuyo para siempre.</p></div>
+  <div class="why-c r d3"><div class="why-big">✓<b></b></div><div class="why-lbl">Disponibilidad inmediata</div><p class="why-desc">Movilidad propia. Listo para sumarme a un equipo desde ya.</p></div>
 </div>
 
-<!-- ══ CTA ══ -->
 <div class="cta r">
   <div>
-    <h2>TU EMPRESA<br>¿ESTÁ LISTA<br>PARA LA <em>IA?</em></h2>
-    <p>En 30 minutos analizo tu operación y te digo con honestidad si estás preparado para implementar IA — y qué hay que ordenar primero si no lo estás. Sin vender soluciones antes de entender el problema.</p>
+    <h2>¿SUMAMOS ESTE<br>PERFIL A TU<br><em>EQUIPO?</em></h2>
+    <p>Busco un rol donde la gestión operativa y la tecnología se crucen — administración, control de gestión, análisis de procesos o áreas donde la automatización con IA sea un plus, no un requisito excluyente.</p>
   </div>
   <div class="cta-btns">
-    <a href="https://wa.me/5493812002041?text=Hola! Quiero el diagnóstico gratuito de madurez IA de Kairos Flow" class="btn-ai" style="font-size:.72rem;padding:1rem 2.5rem">Diagnóstico gratuito de madurez IA →</a>
-    <a href="mailto:kairosflow.soluciones@gmail.com" class="btn-o" style="font-size:.72rem;padding:1rem 2.5rem">Enviar un email</a>
+    <a href="https://wa.me/5493812002041?text=Hola Gustavo! Vi tu portfolio y me gustaría conversar" class="btn-ai" style="font-size:.72rem;padding:1rem 2.5rem">Escribime por WhatsApp →</a>
+    <a href="CV_Gustavo_Sanchez.pdf" class="btn-o" style="font-size:.72rem;padding:1rem 2.5rem" download>Descargar CV completo</a>
   </div>
 </div>
 
-<!-- ══ CONTACTO ══ -->
 <section class="S" id="contacto">
   <div class="ct-g">
     <div class="ct-l r">
       <div class="slbl">Contacto</div>
-      <div class="ct-tit">HABLEMOS<br>DE TU<br><em>OPERACIÓN</em></div>
+      <div class="ct-tit">HABLEMOS<br>DE TU<br><em>EQUIPO</em></div>
       <div class="ct-rows">
-        <div class="ct-row"><span class="ct-k">Email</span><div><div class="ct-v">kairosflow.soluciones@gmail.com</div><div class="ct-n">Propuesta técnica en 24 horas</div></div></div>
+        <div class="ct-row"><span class="ct-k">Email</span><div><div class="ct-v">gsanchezsalhuana@gmail.com</div><div class="ct-n">Respondo en 24 horas</div></div></div>
         <div class="ct-row"><span class="ct-k">WhatsApp</span><div><div class="ct-v">+54 381 200 2041</div><div class="ct-n">Respuesta rápida en horario laboral</div></div></div>
-        <div class="ct-row"><span class="ct-k">Base</span><div><div class="ct-v">Tucumán, Argentina</div><div class="ct-n">Trabajo remoto · Clientes en todo el mundo</div></div></div>
-        <div class="ct-row"><span class="ct-k">Horario</span><div><div class="ct-v">Lun–Vie · 9:00–18:00 ART</div><div class="ct-n">Soporte técnico 24/7 post-entrega</div></div></div>
+        <div class="ct-row"><span class="ct-k">Base</span><div><div class="ct-v">Alderetes, Tucumán</div><div class="ct-n">Disponibilidad inmediata · Movilidad propia</div></div></div>
+        <div class="ct-row"><span class="ct-k">LinkedIn</span><div><div class="ct-v">/in/gsanchezsalhuana</div><div class="ct-n">Perfil profesional completo</div></div></div>
       </div>
     </div>
     <div class="ct-r r">
-      <div class="ct-rt">INICIEMOS EL DIAGNÓSTICO</div>
-      <p class="ct-rs">La primera consulta es gratuita y sin compromiso. Analizo tu operación, evalúo tu madurez para IA y te doy una recomendación honesta — aunque eso signifique que todavía no estás listo.</p>
-      <a href="https://wa.me/5493812002041?text=Hola Gustavo! Me interesa el diagnóstico gratuito de Kairos Flow" class="ch">
+      <div class="ct-rt">CONVERSEMOS</div>
+      <p class="ct-rs">Si tu empresa busca a alguien que combine gestión operativa real con capacidad técnica aplicada, este es un buen punto de partida. Sin vueltas.</p>
+      <a href="https://wa.me/5493812002041?text=Hola Gustavo! Vi tu portfolio y me gustaría conversar" class="ch">
         <div class="ch-ico wa">💬</div>
-        <div><div class="ch-nm">WhatsApp — respuesta inmediata</div><div class="ch-nt">+54 381 200 2041</div></div>
+        <div><div class="ch-nm">WhatsApp — respuesta rápida</div><div class="ch-nt">+54 381 200 2041</div></div>
         <svg class="ch-ar" width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <a href="mailto:kairosflow.soluciones@gmail.com" class="ch">
+      <a href="mailto:gsanchezsalhuana@gmail.com" class="ch">
         <div class="ch-ico em">✉️</div>
-        <div><div class="ch-nm">Email — propuesta técnica en 24 horas</div><div class="ch-nt">kairosflow.soluciones@gmail.com</div></div>
+        <div><div class="ch-nm">Email</div><div class="ch-nt">gsanchezsalhuana@gmail.com</div></div>
+        <svg class="ch-ar" width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="https://linkedin.com/in/gsanchezsalhuana" class="ch" target="_blank">
+        <div class="ch-ico li">in</div>
+        <div><div class="ch-nm">LinkedIn</div><div class="ch-nt">linkedin.com/in/gsanchezsalhuana</div></div>
+        <svg class="ch-ar" width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="CV_Gustavo_Sanchez.pdf" class="ch" download>
+        <div class="ch-ico cv">📄</div>
+        <div><div class="ch-nm">Descargar CV en PDF</div><div class="ch-nt">Versión completa para adjuntar a postulaciones</div></div>
         <svg class="ch-ar" width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
       <div class="promise">
-        <div class="promise-t">Qué incluye el diagnóstico gratuito</div>
-        <p class="promise-b">Análisis de tu operación actual · Diagnóstico de madurez para IA · Identificación de los 3 problemas más costosos · Recomendación técnica honesta · Sin costo y sin compromiso.</p>
+        <div class="promise-t">Lo que te aporto desde el día uno</div>
+        <p class="promise-b">20+ años de criterio operativo real · Capacidad de automatizar y ordenar procesos · IA aplicada con sentido de negocio · Compliance fiscal impecable · Disponibilidad inmediata.</p>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="f-lg">KAIROS<span>FLOW</span></div>
-  <div class="f-cp">© 2025 Kairos Flow · Gustavo Sánchez · Tucumán, Argentina</div>
-  <div class="f-mo">"Automatizar un proceso roto solo acelera el caos."</div>
+  <div class="f-lg">GUSTAVO<span>SÁNCHEZ</span></div>
+  <div class="f-cp">© 2026 Gustavo Sánchez · Alderetes, Tucumán, Argentina</div>
+  <div class="f-mo">"Busco el error, no a la persona que lo cometió."</div>
 </footer>
 
 <script>
@@ -902,12 +916,12 @@ window.addEventListener('load',()=>{
 window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('lit',window.scrollY>60));
 
 const words=[
-  {t:'IA Aplicada a tu Operación',ai:true},{t:'Diagnóstico de Madurez IA',ai:true},
-  {t:'LLMs · Automatización IA',ai:true},{t:'Consultoría Organizacional',ai:false},
-  {t:'Relevamiento de Procesos',ai:false},{t:'Automatización Python',ai:false},
-  {t:'Auditoría Fiscal AFIP',ai:false},{t:'Integración de Sistemas',ai:false},
-  {t:'Dashboards Interactivos',ai:false},{t:'20 Años de Experiencia',ai:false},
-  {t:'Cash Flow & Rentabilidad',ai:false},{t:'Coach Ontológico',ai:false},
+  {t:'Administración & Gestión',ai:false},{t:'IA Aplicada a Operaciones',ai:true},
+  {t:'Python · Automatización',ai:true},{t:'Control de Costos & Stock',ai:false},
+  {t:'Auditoría Fiscal AFIP',ai:false},{t:'Dashboards Interactivos',ai:false},
+  {t:'ERP Tango · 15+ años',ai:false},{t:'20 Años de Experiencia',ai:false},
+  {t:'Six Sigma Green Belt',ai:false},{t:'Tecnicatura en Administración · UTN',ai:false},
+  {t:'Gestión de Equipos',ai:false},{t:'LLMs · Claude, ChatGPT, Gemini',ai:true},
 ];
 const tt=document.getElementById('tt');
 const all=[...words,...words].map(w=>`<span class="ti${w.ai?' ai-tick':''}"><b>◆</b>${w.t}</span>`).join('');
