@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Gustavo Sánchez — Administración & Gestión Operativa con Python e IA aplicada. 20+ años en el NOA. Tucumán, Argentina.">
-<title>Gustavo Sánchez — Administración & Tecnología Aplicada</title>
+<meta name="description" content="Gustavo Alexis Sánchez Salhuana — Administración & Gestión Operativa con Python e IA aplicada. 20+ años en el NOA. Tucumán, Argentina.">
+<title>Gustavo Alexis Sánchez Salhuana — Administración & Tecnología Aplicada</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
@@ -15,8 +15,8 @@
   --bg2:#131313;
   --line:#1c1c1c;
   --line2:#252525;
-  --muted:#383838;
-  --gray:#666;
+  --muted:#6b6b6b;
+  --gray:#a0a0a0;
   --silver:#999;
   --fog:#c0c0c0;
   --snow:#efefef;
@@ -54,6 +54,7 @@ nav.lit{border-bottom-color:var(--gold2)}
 .nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
 .nav-links a{font-family:var(--M);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);text-decoration:none;transition:color .2s}
 .nav-links a:hover{color:var(--snow)}
+.nav-links a.active{color:var(--gold)}
 .nav-cta{font-family:var(--M);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--gold2);color:var(--gold);padding:.48rem 1.3rem;text-decoration:none;transition:background .2s}
 .nav-cta:hover{background:var(--goldfog)}
 
@@ -104,6 +105,11 @@ nav.lit{border-bottom-color:var(--gold2)}
 .scroll-ind::before{content:'';width:1px;height:30px;background:linear-gradient(var(--gold),transparent)}
 @keyframes spulse{0%,100%{opacity:.25}50%{opacity:.7}}
 
+.now-bar{display:flex;flex-wrap:wrap;gap:0;border-bottom:1px solid var(--line)}
+.now-lbl{font-family:var(--D);font-size:1.1rem;letter-spacing:.06em;color:var(--gold);padding:1.1rem 2rem;border-right:1px solid var(--line);display:flex;align-items:center;background:var(--bg1)}
+.now-items{display:flex;flex-wrap:wrap;flex:1}
+.now-i{font-family:var(--M);font-size:.68rem;letter-spacing:.04em;color:var(--silver);padding:1.1rem 1.5rem;border-right:1px solid var(--line);display:flex;align-items:center;gap:.5rem}
+.now-i b{color:var(--gold)}
 .ticker{height:40px;overflow:hidden;white-space:nowrap;border-bottom:1px solid var(--line);background:var(--bg1);display:flex;align-items:center}
 .tick-t{display:inline-flex;animation:tick 32s linear infinite}
 .tick-t:hover{animation-play-state:paused}
@@ -152,8 +158,8 @@ nav.lit{border-bottom-color:var(--gold2)}
 .iap:hover{background:var(--aifog)}
 .iap::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#6366f1,#8b5cf6);transform:scaleX(0);transform-origin:left;transition:transform .4s}
 .iap:hover::before{transform:scaleX(1)}
-.iap-n{font-family:var(--D);font-size:3.5rem;color:rgba(99,102,241,.2);line-height:1;margin-bottom:1rem;transition:color .3s}
-.iap:hover .iap-n{color:rgba(99,102,241,.5)}
+.iap-n{font-family:var(--D);font-size:3.5rem;color:rgba(99,102,241,.55);line-height:1;margin-bottom:1rem;transition:color .3s}
+.iap:hover .iap-n{color:rgba(99,102,241,.85)}
 .iap h4{font-size:.92rem;font-weight:600;color:var(--fog);margin-bottom:.5rem}
 .iap p{font-size:.82rem;color:var(--gray);line-height:1.7}
 .iap-tag{display:inline-block;font-family:var(--M);font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;color:#818cf8;border:1px solid rgba(99,102,241,.3);padding:.2rem .6rem;margin-top:.75rem}
@@ -215,7 +221,7 @@ nav.lit{border-bottom-color:var(--gold2)}
 .svc-t{font-family:var(--D);font-size:1.45rem;letter-spacing:.04em;color:var(--snow);margin-bottom:.7rem;line-height:1.1}
 .svc-d{font-size:.82rem;color:var(--gray);line-height:1.75;margin-bottom:1.5rem;flex:1}
 .svc-tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:1.5rem}
-.stag{font-family:var(--M);font-size:.58rem;letter-spacing:.04em;border:1px solid var(--line2);color:var(--muted);padding:.12rem .48rem;transition:border-color .2s,color .2s}
+.stag{font-family:var(--M);font-size:.58rem;letter-spacing:.04em;border:1px solid var(--line2);color:var(--silver);padding:.12rem .48rem;transition:border-color .2s,color .2s}
 .svc:hover .stag{border-color:var(--gold2);color:var(--gold)}
 .svc-ft{border-top:1px solid var(--line);padding-top:.9rem;display:flex;justify-content:flex-end}
 .svc-go{font-family:var(--M);font-size:.62rem;color:var(--gold);opacity:0;transform:translateX(-6px);transition:opacity .3s,transform .3s}
@@ -271,7 +277,7 @@ nav.lit{border-bottom-color:var(--gold2)}
 .dif-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:.45rem}
 .dif-t{font-size:.8rem;color:var(--silver);line-height:1.5}
 .stack-pills{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:2rem}
-.sp{font-family:var(--M);font-size:.65rem;border:1px solid var(--line2);color:var(--muted);padding:.2rem .6rem;transition:border-color .2s,color .2s}
+.sp{font-family:var(--M);font-size:.65rem;border:1px solid var(--line2);color:var(--silver);padding:.2rem .6rem;transition:border-color .2s,color .2s}
 .sp:hover{border-color:var(--gold2);color:var(--gold)}
 .sp.ai-pill{border-color:rgba(99,102,241,.3);color:#818cf8}
 .sp.ai-pill:hover{border-color:#6366f1;color:#a5b4fc}
@@ -319,14 +325,18 @@ nav.lit{border-bottom-color:var(--gold2)}
 .promise-t{font-family:var(--M);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
 .promise-b{font-size:.8rem;color:var(--gray);line-height:1.75}
 
+.nav-logo svg{animation:navGlow 16s ease-in-out infinite}
+@keyframes navGlow{0%,90%,100%{filter:drop-shadow(0 0 0 transparent)}95%{filter:drop-shadow(0 0 7px rgba(201,168,76,.85))}}
 footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-top:1px solid var(--line)}
 .f-lg{font-family:var(--D);font-size:1.3rem;letter-spacing:.1em;color:var(--snow)}
 .f-lg span{color:var(--gold)}
-.f-cp{font-family:var(--M);font-size:.6rem;color:var(--muted);letter-spacing:.06em}
-.f-mo{font-size:.76rem;color:var(--muted);font-style:italic}
+.f-cp{font-family:var(--M);font-size:.68rem;color:var(--muted);letter-spacing:.06em}
+.f-mo{font-size:.85rem;color:var(--gray);font-style:italic}
 
 .r{opacity:0;transform:translateY(20px);transition:opacity .75s ease,transform .75s ease}
-.r.on{opacity:1;transform:translateY(0)}
+.r-l{opacity:0;transform:translateX(-28px);transition:opacity .8s ease,transform .8s ease}
+.r-r{opacity:0;transform:translateX(28px);transition:opacity .8s ease,transform .8s ease}
+.r.on,.r-l.on,.r-r.on{opacity:1;transform:translate(0,0)}
 .d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}.d4{transition-delay:.28s}
 
 @media(max-width:1100px){
@@ -351,6 +361,9 @@ footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-b
   .ct-l{border-right:none;border-bottom:1px solid var(--line)}
 }
 @media(max-width:768px){
+  .now-bar{flex-direction:column}
+  .now-lbl{border-right:none;border-bottom:1px solid var(--line)}
+  .now-i{border-right:none;border-bottom:1px solid var(--line)}
   nav{padding:0 1.5rem}
   .nav-links li:not(:last-child){display:none}
   .hero{grid-template-columns:1fr}
@@ -385,7 +398,7 @@ footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-b
   <svg class="pl-mark" width="72" height="72" viewBox="0 0 80 80" fill="none">
     <polygon points="40,3 77,21.5 77,58.5 40,77 3,58.5 3,21.5" fill="none" stroke="#252525" stroke-width="1.5"/>
     <polygon points="40,14 66,27.5 66,52.5 40,66 14,52.5 14,27.5" fill="none" stroke="#333" stroke-width="1"/>
-    <text x="40" y="53" text-anchor="middle" font-family="Bebas Neue" font-size="28" letter-spacing="3" fill="url(#gPL)">GS</text>
+    <text x="40" y="49" text-anchor="middle" font-family="Bebas Neue" font-size="17" letter-spacing="1" fill="url(#gPL)">GASS</text>
     <defs><linearGradient id="gPL" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8a6a28"/><stop offset="50%" stop-color="#c9a84c"/><stop offset="100%" stop-color="#e8c46a"/></linearGradient></defs>
   </svg>
   <div class="pl-bar"><div class="pl-fill" id="plf"></div></div>
@@ -396,10 +409,10 @@ footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-b
   <a href="#" class="nav-logo">
     <svg width="30" height="30" viewBox="0 0 80 80" fill="none">
       <polygon points="40,3 77,21.5 77,58.5 40,77 3,58.5 3,21.5" fill="none" stroke="#252525" stroke-width="1.5"/>
-      <text x="40" y="53" text-anchor="middle" font-family="Bebas Neue" font-size="28" letter-spacing="3" fill="url(#gN)">GS</text>
+      <text x="40" y="49" text-anchor="middle" font-family="Bebas Neue" font-size="17" letter-spacing="1" fill="url(#gN)">GASS</text>
       <defs><linearGradient id="gN" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8a6a28"/><stop offset="50%" stop-color="#c9a84c"/><stop offset="100%" stop-color="#e8c46a"/></linearGradient></defs>
     </svg>
-    <span class="nav-wm">GUSTAVO<span>SÁNCHEZ</span></span>
+    <span class="nav-wm" style="font-size:1.05rem">GUSTAVO ALEXIS<span> SÁNCHEZ SALHUANA</span></span>
   </a>
   <div style="display:flex;align-items:center;gap:2.5rem">
     <ul class="nav-links">
@@ -419,10 +432,10 @@ footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-b
     <div class="mark">
       <div class="mr1"><div class="md"></div></div>
       <div class="mr2"></div>
-      <div class="mc"><span class="mkf">GS</span></div>
+      <div class="mc"><span class="mkf" style="font-size:1.9rem;letter-spacing:.04em">GASS</span></div>
     </div>
     <div class="ml">
-      <div class="ml-n">GUSTAVO<span> SÁNCHEZ</span></div>
+      <div class="ml-n" style="font-size:2rem">GUSTAVO ALEXIS<br><span>SÁNCHEZ SALHUANA</span></div>
       <div class="ml-s">Administración · Operaciones · Automatización · Python · IA</div>
     </div>
     <div class="hl-stats">
@@ -434,13 +447,12 @@ footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-b
   <div class="hr">
     <div class="hr-tag">Operaciones de Negocio · Desarrollo Python · Soluciones con IA</div>
     <div class="hr-h">
-      TRANSFORMO<br>PROCESOS DE<br>
-      <span class="g">NEGOCIO</span> EN<br>
-      <span class="d">SOLUCIONES TECH.</span>
+      20 AÑOS<br>OPTIMIZANDO<br>
+      <span class="g">EMPRESAS.</span><br>
+      <span style="color:var(--fog)">HOY, CON PYTHON E IA.</span>
     </div>
     <p class="hr-claim">
-      Combino más de <strong>20 años de experiencia en administración, logística, operaciones y finanzas</strong> con Python, Inteligencia Artificial y automatización para crear herramientas que optimizan procesos y mejoran la toma de decisiones.<br><br>
-      No es software por el software — es tecnología que resuelve problemas reales de negocio.
+      Administración, logística, operaciones y finanzas durante dos décadas en el NOA. Hoy sumo <strong>Python e Inteligencia Artificial</strong> para llevar esa misma experiencia al siguiente nivel: herramientas que resuelven problemas reales, no software por el software.
     </p>
     <div class="phases">
       <div class="ph"><div class="ph-n">20 AÑOS</div><div class="ph-t">OPERACIÓN</div><div class="ph-d">Gestión administrativa real, de punta a punta</div></div>
@@ -458,29 +470,42 @@ footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-b
 
 <div class="ticker"><div class="tick-t" id="tt"></div></div>
 
+<div class="now-bar">
+  <div class="now-lbl">ACTUALMENTE</div>
+  <div class="now-items">
+    <div class="now-i"><b>✔</b> Buscando nuevos desafíos</div>
+    <div class="now-i"><b>✔</b> Disponible remoto e híbrido</div>
+    <div class="now-i"><b>✔</b> Tucumán, Argentina</div>
+    <div class="now-i"><b>✔</b> Incorporación inmediata</div>
+  </div>
+</div>
+<div style="padding:1.3rem 2rem;border-bottom:1px solid var(--line);background:var(--goldfog);text-align:center">
+  <p style="font-size:.86rem;color:var(--fog);font-weight:300;max-width:780px;margin:0 auto">Actualmente abierto a incorporación permanente o proyectos de consultoría — donde haya procesos complejos que necesiten orden, automatización y criterio operativo.</p>
+</div>
+
 <section class="ia-section" id="ia">
   <div class="ia-bg"></div>
   <div class="ia-grid-bg"></div>
 
-  <div class="ia-top r">
-    <div>
+  <div class="ia-top">
+    <div class="r-l">
       <div class="ia-badge">Inteligencia Artificial Aplicada</div>
       <div class="ia-title">
-        NO SOY<br>
-        <span class="purple">PROGRAMADOR.</span><br>
-        SOY QUIEN<br>
-        <span class="dim">SABE QUÉ PEDIR.</span>
+        LA TECNOLOGÍA<br>
+        <span class="purple">ES MI HERRAMIENTA.</span><br>
+        EL NEGOCIO<br>
+        <span style="color:var(--fog)">ES MI ESPECIALIDAD.</span>
       </div>
       <p class="ia-claim">
-        No escribo código línea por línea. <strong>Dirijo la construcción:</strong> defino el problema, diseño la solución y superviso la ejecución con herramientas de IA (Claude, ChatGPT, Gemini) como mi equipo de desarrollo.<br><br>
-        Es la combinación que la mayoría no tiene: <strong>20 años entendiendo cómo funciona realmente una operación, más la capacidad de traducir eso en un sistema que funciona.</strong>
+        Dirijo la construcción de cada solución: defino el problema, diseño la arquitectura y superviso la ejecución con herramientas de IA (Claude, ChatGPT, Gemini) como parte de mi flujo de trabajo diario.<br><br>
+        Es la combinación que la mayoría no tiene: <strong>20 años entendiendo cómo funciona realmente una operación, más la capacidad técnica de convertir eso en un sistema que funciona.</strong>
       </p>
       <div class="ia-cta-row">
         <a href="#casos" class="btn-ai">Ver el caso del IVA en 8 horas →</a>
         <a href="#contacto" class="btn-o">Hablemos</a>
       </div>
     </div>
-    <div class="ia-right">
+    <div class="ia-right r-r d2">
       <div class="ia-stat-row">
         <div class="ia-stat">
           <div class="ia-stat-n purple">5 años</div>
@@ -495,13 +520,13 @@ footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-b
           <div class="ia-stat-l">de reducción de errores operativos con un sistema de control automatizado</div>
         </div>
         <div class="ia-stat">
-          <div class="ia-stat-n purple">3</div>
-          <div class="ia-stat-l">herramientas de IA que uso a diario: Claude, ChatGPT y Gemini</div>
+          <div class="ia-stat-n purple">30%</div>
+          <div class="ia-stat-l">más rápido el ciclo de cobranza — más liquidez disponible para crecer</div>
         </div>
       </div>
       <div class="ia-warning">
         <div class="ia-warning-t">⚠ Lo que aprendí en el camino</div>
-        <p class="ia-warning-b">La IA no reemplaza el criterio de negocio — lo potencia. <strong>Sin entender el proceso real, cualquier automatización solo amplifica el error más rápido.</strong> Por eso primero ordeno, después automatizo.</p>
+        <p class="ia-warning-b">La IA no reemplaza el criterio de negocio — lo potencia. <strong>Sin entender el proceso real, cualquier automatización solo amplifica el error más rápido.</strong></p>
       </div>
     </div>
   </div>
@@ -509,8 +534,8 @@ footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-b
   <div class="ia-problems">
     <div class="iap r">
       <div class="iap-n">01</div>
-      <h4>Cinco años de Libros IVA mal registrados, sin que nadie los detectara</h4>
-      <p>Un grupo empresarial con múltiples CUIT tenía numeración duplicada y montos incorrectos acumulados durante años. Ningún contador lo había resuelto.</p>
+      <h4>Cinco años de Libros IVA mal registrados, sin detección previa</h4>
+      <p>Un grupo empresarial con múltiples CUIT tenía numeración duplicada y montos incorrectos acumulados durante años, sin que se hubiera resuelto antes.</p>
       <span class="iap-tag">Resuelto con Python + validación simulada de ARCA</span>
     </div>
     <div class="iap r d1">
@@ -522,7 +547,7 @@ footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-b
     <div class="iap r d2">
       <div class="iap-n">03</div>
       <h4>Errores operativos invisibles que se repetían turno tras turno</h4>
-      <p>En logística de frío, pequeños errores de control se acumulaban sin que nadie los viera venir hasta que ya eran costosos.</p>
+      <p>En logística de frío, pequeños errores de control se acumulaban sin detectarse a tiempo, hasta que ya eran costosos.</p>
       <span class="iap-tag">Resuelto con sistema de control automatizado</span>
     </div>
   </div>
@@ -530,8 +555,8 @@ footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-b
   <div class="ia-how">
     <div class="iahow r">
       <span class="iahow-ico">🔬</span>
-      <div class="iahow-t">DIAGNÓSTICO PRIMERO</div>
-      <p class="iahow-d">Antes de tocar una línea de código, entiendo el proceso real — no el que figura en el manual. Ahí está el 80% del problema.</p>
+      <div class="iahow-t">LEO EL PROCESO REAL</div>
+      <p class="iahow-d">No el que figura en el manual. Ahí vive el 80% del problema — antes de escribir una sola línea.</p>
     </div>
     <div class="iahow r d1">
       <span class="iahow-ico">🧹</span>
@@ -545,33 +570,8 @@ footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-b
     </div>
     <div class="iahow r d3">
       <span class="iahow-ico">🎯</span>
-      <div class="iahow-t">ARQUITECTO, NO EJECUTOR MANUAL</div>
-      <p class="iahow-d">Trabajo con IA como mi equipo de construcción: yo defino qué hay que construir y por qué, la IA ejecuta bajo mi dirección y supervisión.</p>
-    </div>
-  </div>
-</section>
-
-<section class="S" id="dolor">
-  <div class="sh r">
-    <div><div class="slbl">Lo que resuelvo</div><div class="stit">PROBLEMAS QUE<br>YA <em>ENFRENTÉ</em></div></div>
-    <div class="sh-r"><p>No son casos hipotéticos. Son situaciones reales que resolví en operaciones de hasta 200 personas, con consecuencias fiscales y económicas concretas.</p></div>
-  </div>
-  <div class="pain-g">
-    <div class="pain r">
-      <div class="pain-n">01</div>
-      <div><h4>Procesos rotos que ninguna herramienta arregla sola</h4><p>Vi automatizaciones fallar porque se montaron sobre un proceso mal definido. Mi primer paso siempre es entender el flujo real, no digitalizar el caos.</p><div class="pain-q">"Digitalizamos todo y los problemas siguieron ahí. El flujo estaba roto desde adentro."</div></div>
-    </div>
-    <div class="pain r d1">
-      <div class="pain-n">02</div>
-      <div><h4>Información dispersa que impedía decidir a tiempo</h4><p>Cuando los datos viven en planillas, emails y sistemas desconectados, cada decisión estratégica se vuelve una adivinanza. Centralicé esa información en tableros que sí se pueden leer en minutos.</p><div class="pain-q">"Tardábamos tres días en saber cómo había cerrado el mes."</div></div>
-    </div>
-    <div class="pain r d2">
-      <div class="pain-n">03</div>
-      <div><h4>Fugas de dinero invisibles al ojo humano</h4><p>Errores en facturación, duplicados y diferencias acumuladas por años. Con Python y cruces de datos, ese tipo de error se detecta en horas, no en meses.</p><div class="pain-q">"Cinco años de errores fiscales que nadie había detectado. La multa hubiera sido millonaria."</div></div>
-    </div>
-    <div class="pain r d3">
-      <div class="pain-n">04</div>
-      <div><h4>Operaciones que dependían de una sola persona</h4><p>Cuando el conocimiento vive solo en la cabeza de alguien, la empresa queda expuesta. Documenté y sistematicé procesos para que el negocio no dependa de mi memoria — ni de la de nadie más.</p><div class="pain-q">"Quince años en el mismo puesto, y el sistema que diseñé sigue funcionando sin mí."</div></div>
+      <div class="iahow-t">RESULTADOS QUE SE VERIFICAN</div>
+      <p class="iahow-d">No entrego una demo — entrego algo probado contra la realidad: la app del caso IVA validó cada registro contra ARCA antes de la presentación oficial.</p>
     </div>
   </div>
 </section>
@@ -612,7 +612,7 @@ footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-b
       <div class="mth-top"><div class="mth-n">03</div><div class="mth-lbl">Construcción<br>dirigida</div></div>
       <div class="mth-body">
         <div class="mth-t">EJECUTAR CON IA</div>
-        <p class="mth-d">Con el diagnóstico en mano, dirijo la construcción: Python, dashboards, automatización con IA. Yo defino la arquitectura y reviso cada resultado — la IA ejecuta bajo mi supervisión.</p>
+        <p class="mth-d">Construyo con Python, SQL, Streamlit y herramientas de IA — como el script que cruzó y validó 5 años de Libros IVA contra ARCA en 8 horas. Reviso cada resultado antes de entregarlo.</p>
         <ul class="mth-list">
           <li>Desarrollo con Python, SQL y Streamlit</li>
           <li>Automatización con herramientas de IA</li>
@@ -665,7 +665,7 @@ footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-b
     <div class="svc r d1"><div class="svc-line"></div><div class="svc-in">
       <div class="svc-ix">05 — Sistemas</div><div class="svc-ico">🔗</div>
       <div class="svc-t">SISTEMAS LEGACY & INTEGRACIÓN</div>
-      <p class="svc-d">Trabajo con sistemas heredados que nadie más quiere tocar: Fox Pro, Delphi, COBOL. Diseñé y evolucioné un sistema administrativo integral durante 15 años, desde cero.</p>
+      <p class="svc-d">Trabajo con sistemas heredados que pocos quieren tocar: Fox Pro, Delphi, COBOL. Diseñé y evolucioné un sistema administrativo integral durante 15 años, desde cero.</p>
       <div class="svc-tags"><span class="stag">Fox Pro</span><span class="stag">Delphi</span><span class="stag">COBOL</span><span class="stag">ERP Tango</span></div>
       <div class="svc-ft"><span class="svc-go">Ver experiencia →</span></div>
     </div></div>
@@ -690,7 +690,7 @@ footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-b
       <div class="proj-in">
         <div class="proj-t">Corrección de 5 años de Libros IVA</div>
         <div class="proj-tags"><span class="stag">Python</span><span class="stag">Pandas</span><span class="stag">Streamlit</span><span class="stag">AFIP/ARCA</span></div>
-        <div class="proj-row"><div class="proj-lbl">Problema</div><div class="proj-txt">Un grupo empresarial con múltiples CUIT acumuló 5 años de Libros IVA mal registrados: numeración duplicada y montos incorrectos que ningún contador había detectado.</div></div>
+        <div class="proj-row"><div class="proj-lbl">Problema</div><div class="proj-txt">Un grupo empresarial con múltiples CUIT acumuló 5 años de Libros IVA mal registrados: numeración duplicada y montos incorrectos, sin resolución previa.</div></div>
         <div class="proj-row"><div class="proj-lbl">Solución</div><div class="proj-txt">Script en Python que cruzó y validó miles de registros, más una app que simulaba la validación de ARCA antes de la presentación oficial.</div></div>
         <div class="proj-result"><div class="proj-lbl">Resultado</div><div class="proj-txt">Cero multas ante AFIP. Resuelto en 8 horas.</div></div>
         <div class="proj-ft"><a href="#contacto" class="proj-btn">Consultar el caso →</a></div>
@@ -742,6 +742,12 @@ footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-b
     <p style="font-size:1.02rem;color:var(--gray);line-height:2;font-weight:300">
       No soy únicamente un desarrollador ni únicamente un administrador. <strong style="color:var(--fog);font-weight:500">Entiendo cómo funciona una empresa desde adentro</strong> y desarrollo soluciones tecnológicas orientadas a resolver problemas reales de operación, administración y gestión.
     </p>
+    <p style="font-size:1.15rem;color:var(--gold);line-height:1.8;font-weight:400;margin-top:1.5rem;font-family:var(--M);letter-spacing:.01em">
+      "Mi fortaleza está en conectar la gestión operativa con el desarrollo de herramientas que resuelven problemas reales."
+    </p>
+    <p style="font-size:.92rem;color:var(--gray);line-height:1.9;font-weight:300;margin-top:1.8rem">
+      Y no es solo para arreglar lo que no funciona: la misma mirada que detecta un error sirve para acelerar decisiones, liberar tiempo del equipo y darle a la operación margen para crecer.
+    </p>
   </div>
 </section>
 
@@ -790,14 +796,14 @@ footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-b
     </div>
   </div>
   <div class="about-g">
-    <div class="about-l r">
+    <div class="about-l r-l">
       <div class="av">
-        <div class="av-hex"><div class="av-init">GS</div></div>
-        <div><div class="av-name">GUSTAVO SÁNCHEZ</div><div class="av-role">Administración & Gestión Operativa</div></div>
+        <div class="av-hex"><div class="av-init" style="font-size:1rem;letter-spacing:.02em">GASS</div></div>
+        <div><div class="av-name">GUSTAVO ALEXIS SÁNCHEZ SALHUANA</div><div class="av-role">Administración & Gestión Operativa</div></div>
       </div>
       <p class="about-bio">
-        Más de <strong>20 años transformando operaciones caóticas en sistemas ordenados.</strong> Gestión de áreas administrativas completas en empresas del NOA, con equipos y flotas de hasta 200 unidades.<br><br>
-        Hace tres años empecé a sumar <strong>Python, SQL e Inteligencia Artificial</strong> a esa base operativa — hoy curso la Tecnicatura Universitaria en Administración en UTN FRBA y completé la Diplomatura en Python y Data Science. El diferencial es concreto: <strong>entiendo el negocio antes de tocar el código o activar un modelo de IA.</strong><br><br>
+        Más de <strong>20 años transformando operaciones caóticas en sistemas ordenados.</strong> Gestión de áreas administrativas completas en empresas del NOA, con equipos y flotas de hasta 200 unidades. <br>
+        Hace tres años empecé a sumar <strong>Python, SQL e Inteligencia Artificial</strong> a esa base operativa — hoy curso la Tecnicatura Universitaria en Administración en UTN FRBA y completé la Diplomatura en Python y Data Science. Es un perfil poco común: <strong>administración real, no de manual, combinada con capacidad técnica aplicada.</strong><br><br>
         Mi filosofía de trabajo, después de 20 años liderando equipos: <strong>busco el error, no a la persona que lo cometió.</strong> Esa mirada es la que sostiene el clima de trabajo en cada lugar donde estuve.
       </p>
       <div class="dif-g">
@@ -806,26 +812,30 @@ footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-b
         <div class="dif"><div class="dif-dot"></div><div class="dif-t">IA aplicada con criterio operativo</div></div>
         <div class="dif"><div class="dif-dot"></div><div class="dif-t">Tecnicatura en Administración · UTN FRBA</div></div>
         <div class="dif"><div class="dif-dot"></div><div class="dif-t">Compliance AFIP 100% verificable</div></div>
-        <div class="dif"><div class="dif-dot"></div><div class="dif-t">Diagnóstico siempre antes de construir</div></div>
+        <div class="dif"><div class="dif-dot"></div><div class="dif-t">Cómodo en sistemas legacy que otros evitan (Fox Pro, Delphi, COBOL)</div></div>
       </div>
     </div>
-    <div class="about-r r">
+    <div class="about-r r-r d2">
       <div class="slbl">Stack técnico</div>
       <div class="stit" style="font-size:clamp(2rem,3.5vw,3.5rem);margin-bottom:1.5rem">HERRAMIENTAS<br><em>VERIFICADAS</em><br>EN PRODUCCIÓN</div>
       <p style="font-size:.85rem;color:var(--gray);line-height:1.8;margin-bottom:2rem;font-weight:300">No son tecnologías de curso. Son herramientas que usé en operaciones reales, con datos reales y consecuencias reales.</p>
-      <div class="stack-pills">
-        <span class="sp ai-pill">LLMs · Claude, ChatGPT, Gemini</span>
-        <span class="sp ai-pill">Automatización con IA</span>
-        <span class="sp ai-pill">Prompt Engineering</span>
-        <span class="sp">Python · Pandas · Streamlit</span>
-        <span class="sp">SQL · PostgreSQL</span>
-        <span class="sp">ERP Tango Gestión</span>
-        <span class="sp">Fox Pro · Delphi · COBOL</span>
-        <span class="sp">Excel Avanzado · VBA · Power Query</span>
-        <span class="sp">AFIP · ARCA · Libros IVA</span>
-        <span class="sp">DGR Tucumán</span>
-        <span class="sp">Six Sigma Green Belt</span>
-        <span class="sp">Google Workspace · Office 365</span>
+      <div style="display:flex;flex-direction:column;gap:1.1rem">
+        <div>
+          <div style="font-family:var(--M);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem">🔧 Lenguajes & Datos</div>
+          <div class="stack-pills" style="margin-top:0"><span class="sp">Python</span><span class="sp">SQL</span><span class="sp">Pandas</span><span class="sp">Excel Avanzado · VBA</span></div>
+        </div>
+        <div>
+          <div style="font-family:var(--M);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem">📊 Herramientas & Dashboards</div>
+          <div class="stack-pills" style="margin-top:0"><span class="sp">Streamlit</span><span class="sp">Power BI</span><span class="sp">Plotly</span><span class="sp">Power Query</span></div>
+        </div>
+        <div>
+          <div style="font-family:var(--M);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem">🏢 Sistemas & Fiscal</div>
+          <div class="stack-pills" style="margin-top:0"><span class="sp">ERP Tango Gestión</span><span class="sp">Fox Pro · Delphi · COBOL</span><span class="sp">AFIP · ARCA · Libros IVA</span><span class="sp">DGR Tucumán</span></div>
+        </div>
+        <div>
+          <div style="font-family:var(--M);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#818cf8;margin-bottom:.5rem">🤖 IA Aplicada</div>
+          <div class="stack-pills" style="margin-top:0"><span class="sp ai-pill">Claude · ChatGPT · Gemini</span><span class="sp ai-pill">Automatización con IA</span><span class="sp ai-pill">Prompt Engineering</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -841,7 +851,7 @@ footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-b
 <div class="cta r">
   <div>
     <h2>¿SUMAMOS ESTE<br>PERFIL A TU<br><em>EQUIPO?</em></h2>
-    <p>Busco un rol donde la gestión operativa y la tecnología se crucen — administración, control de gestión, análisis de procesos o áreas donde la automatización con IA sea un plus, no un requisito excluyente.</p>
+    <p>Busco organizaciones donde la experiencia operativa y la tecnología puedan trabajar juntas para mejorar procesos, información y toma de decisiones.</p>
   </div>
   <div class="cta-btns">
     <a href="https://wa.me/5493812002041?text=Hola Gustavo! Vi tu portfolio y me gustaría conversar" class="btn-ai" style="font-size:.72rem;padding:1rem 2.5rem">Escribime por WhatsApp →</a>
@@ -851,7 +861,7 @@ footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-b
 
 <section class="S" id="contacto">
   <div class="ct-g">
-    <div class="ct-l r">
+    <div class="ct-l r-l">
       <div class="slbl">Contacto</div>
       <div class="ct-tit">HABLEMOS<br>DE TU<br><em>EQUIPO</em></div>
       <div class="ct-rows">
@@ -861,7 +871,7 @@ footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-b
         <div class="ct-row"><span class="ct-k">LinkedIn</span><div><div class="ct-v">/in/gsanchezsalhuana</div><div class="ct-n">Perfil profesional completo</div></div></div>
       </div>
     </div>
-    <div class="ct-r r">
+    <div class="ct-r r-r d2">
       <div class="ct-rt">CONVERSEMOS</div>
       <p class="ct-rs">Si tu empresa busca a alguien que combine gestión operativa real con capacidad técnica aplicada, este es un buen punto de partida. Sin vueltas.</p>
       <a href="https://wa.me/5493812002041?text=Hola Gustavo! Vi tu portfolio y me gustaría conversar" class="ch">
@@ -892,8 +902,14 @@ footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-b
   </div>
 </section>
 
+<div style="text-align:center;padding:3.5rem 1.5rem;border-top:1px solid var(--line);background:var(--bg1)">
+  <a href="https://github.com/TU-USUARIO/portfolio" target="_blank" class="btn-o" style="font-size:.8rem;padding:1rem 2.2rem;display:inline-flex">
+    &lt;/&gt; ¿Querés ver cómo pienso? Mirá el código de este portfolio en GitHub →
+  </a>
+</div>
+
 <footer>
-  <div class="f-lg">GUSTAVO<span>SÁNCHEZ</span></div>
+  <div class="f-lg" style="font-size:1.05rem">GUSTAVO ALEXIS<span> SÁNCHEZ SALHUANA</span></div>
   <div class="f-cp">© 2026 Gustavo Sánchez · Alderetes, Tucumán, Argentina</div>
   <div class="f-mo">"Busco el error, no a la persona que lo cometió."</div>
 </footer>
@@ -915,6 +931,18 @@ window.addEventListener('load',()=>{
 
 window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('lit',window.scrollY>60));
 
+const navSections=['ia','metodo','habilidades','proyectos','casos','contacto'];
+const navLinks=document.querySelectorAll('.nav-links a');
+const spyObs=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      const id=entry.target.getAttribute('id');
+      navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));
+    }
+  });
+},{rootMargin:'-40% 0px -55% 0px',threshold:0});
+navSections.forEach(id=>{const el=document.getElementById(id);if(el)spyObs.observe(el)});
+
 const words=[
   {t:'Administración & Gestión',ai:false},{t:'IA Aplicada a Operaciones',ai:true},
   {t:'Python · Automatización',ai:true},{t:'Control de Costos & Stock',ai:false},
@@ -930,7 +958,7 @@ tt.innerHTML=all+all;
 const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target)}});
 },{threshold:0.06,rootMargin:'0px 0px -30px 0px'});
-document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+document.querySelectorAll('.r,.r-l,.r-r').forEach(el=>obs.observe(el));
 
 const cObs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
