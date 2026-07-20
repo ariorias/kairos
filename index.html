@@ -982,5 +982,72 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   });
 });
 </script>
+
+<!-- ============================================= -->
+<!-- TRACKING DE VISITAS — KAIROS FLOW            -->
+<!-- ============================================= -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
+  import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+
+  // Configuración de tu proyecto Firebase (kairos-tracking)
+  const firebaseConfig = {
+    apiKey: "AIzaSyCL29V9We6T-S0UUd1rw4ENTEtR1xrAmBo",
+    authDomain: "kairos-tracking.firebaseapp.com",
+    projectId: "kairos-tracking",
+    storageBucket: "kairos-tracking.firebasestorage.app",
+    messagingSenderId: "752669115227",
+    appId: "1:752669115227:web:70f7d65bb5bdee624fd07e"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  async function registrarVisita() {
+    // Datos que el navegador ya conoce, sin llamar a nadie
+    const datosNavegador = {
+      timestamp: serverTimestamp(),
+      fechaLocal: new Date().toString(),
+      userAgent: navigator.userAgent,
+      idioma: navigator.language,
+      pantalla: `${window.screen.width}x${window.screen.height}`,
+      referrer: document.referrer || "directo (sin referrer)",
+      paginaVisitada: window.location.href,
+      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
+    };
+
+    // Datos de IP / geolocalización (llamada externa a ipwho.is)
+    let datosIP = {};
+    try {
+      const resp = await fetch("https://ipwho.is/");
+      const data = await resp.json();
+      if (data.success !== false) {
+        datosIP = {
+          ip: data.ip || null,
+          ciudad: data.city || null,
+          region: data.region || null,
+          pais: data.country || null,
+          codigoPais: data.country_code || null,
+          isp: data.connection?.isp || data.connection?.org || null,
+          org: data.connection?.org || null,
+          latitud: data.latitude || null,
+          longitud: data.longitude || null
+        };
+      }
+    } catch (e) {
+      // Si falla el servicio de IP, igual guardamos los datos del navegador
+      datosIP = { errorIP: "no se pudo obtener geolocalización" };
+    }
+
+    try {
+      await addDoc(collection(db, "visitas"), { ...datosNavegador, ...datosIP });
+    } catch (e) {
+      // Silencioso: si falla, no queremos que el visitante vea errores en consola
+      console.debug("tracking no disponible");
+    }
+  }
+
+  registrarVisita();
+</script>
 </body>
 </html>
