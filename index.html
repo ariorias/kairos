@@ -984,13 +984,12 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 </script>
 
 <!-- ============================================= -->
-<!-- TRACKING DE VISITAS — KAIROS FLOW            -->
+<!-- TRACKING DE VISITAS — KAIROS FLOW (v2)       -->
 <!-- ============================================= -->
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
   import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
 
-  // Configuración de tu proyecto Firebase (kairos-tracking)
   const firebaseConfig = {
     apiKey: "AIzaSyCL29V9We6T-S0UUd1rw4ENTEtR1xrAmBo",
     authDomain: "kairos-tracking.firebaseapp.com",
@@ -1003,20 +1002,100 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
 
+  // ---------- Utilidades ----------
+  function generarId() {
+    return crypto.randomUUID ? crypto.randomUUID() :
+      'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+        const r = Math.random() * 16 | 0;
+        return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+      });
+  }
+
+  function obtenerVisitorId() {
+    let id = localStorage.getItem('kairos_visitor_id');
+    if (!id) {
+      id = generarId();
+      localStorage.setItem('kairos_visitor_id', id);
+    }
+    return id;
+  }
+
+  function obtenerSessionId() {
+    let id = sessionStorage.getItem('kairos_session_id');
+    if (!id) {
+      id = generarId();
+      sessionStorage.setItem('kairos_session_id', id);
+      sessionStorage.setItem('kairos_pages_viewed', '0');
+    }
+    return id;
+  }
+
+  function incrementarPaginasVistas() {
+    const actual = parseInt(sessionStorage.getItem('kairos_pages_viewed') || '0', 10);
+    const nuevo = actual + 1;
+    sessionStorage.setItem('kairos_pages_viewed', String(nuevo));
+    return nuevo;
+  }
+
+  function detectarNavegador(ua) {
+    if (/Edg\//.test(ua)) return 'Edge';
+    if (/OPR\//.test(ua) || /Opera/.test(ua)) return 'Opera';
+    if (/Firefox\//.test(ua)) return 'Firefox';
+    if (/Chrome\//.test(ua) && !/Chromium/.test(ua)) return 'Chrome';
+    if (/Safari\//.test(ua) && !/Chrome/.test(ua)) return 'Safari';
+    return 'Otro';
+  }
+
+  function detectarSO(ua) {
+    if (/Windows NT 10/.test(ua)) return 'Windows 10/11';
+    if (/Windows/.test(ua)) return 'Windows (otra versión)';
+    if (/Android/.test(ua)) return 'Android';
+    if (/iPhone|iPad|iPod/.test(ua)) return 'iOS';
+    if (/Mac OS X/.test(ua)) return 'macOS';
+    if (/Linux/.test(ua)) return 'Linux';
+    return 'Otro';
+  }
+
+  function detectarDispositivo(ua) {
+    if (/Tablet|iPad/.test(ua)) return 'Tablet';
+    if (/Mobi|Android.*Mobile|iPhone/.test(ua)) return 'Mobile';
+    return 'Desktop';
+  }
+
+  function detectarOrientacion() {
+    if (screen.orientation && screen.orientation.type) {
+      return screen.orientation.type.startsWith('portrait') ? 'portrait' : 'landscape';
+    }
+    return window.innerHeight >= window.innerWidth ? 'portrait' : 'landscape';
+  }
+
+  // ---------- Recolección de datos ----------
   async function registrarVisita() {
-    // Datos que el navegador ya conoce, sin llamar a nadie
+    const ua = navigator.userAgent;
+    const visitorId = obtenerVisitorId();
+    const sessionId = obtenerSessionId();
+    const pagesViewed = incrementarPaginasVistas();
+    const inicio = performance.now();
+
     const datosNavegador = {
       timestamp: serverTimestamp(),
       fechaLocal: new Date().toString(),
-      userAgent: navigator.userAgent,
+      visitorId,
+      sessionId,
+      pagesViewed,
+      userAgent: ua,
+      navegador: detectarNavegador(ua),
+      sistemaOperativo: detectarSO(ua),
+      dispositivo: detectarDispositivo(ua),
+      orientacion: detectarOrientacion(),
+      width: window.screen.width,
+      height: window.screen.height,
       idioma: navigator.language,
-      pantalla: `${window.screen.width}x${window.screen.height}`,
       referrer: document.referrer || "directo (sin referrer)",
       paginaVisitada: window.location.href,
       timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
     };
 
-    // Datos de IP / geolocalización (llamada externa a ipwho.is)
     let datosIP = {};
     try {
       const resp = await fetch("https://ipwho.is/");
@@ -1035,16 +1114,36 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
         };
       }
     } catch (e) {
-      // Si falla el servicio de IP, igual guardamos los datos del navegador
       datosIP = { errorIP: "no se pudo obtener geolocalización" };
     }
 
     try {
       await addDoc(collection(db, "visitas"), { ...datosNavegador, ...datosIP });
     } catch (e) {
-      // Silencioso: si falla, no queremos que el visitante vea errores en consola
       console.debug("tracking no disponible");
     }
+
+    // ---------- Medición de duración en la página ----------
+    function registrarSalida() {
+      const segundos = Math.round((performance.now() - inicio) / 1000);
+      if (segundos < 1) return;
+      const payload = JSON.stringify({
+        fields: {
+          sessionId: { stringValue: sessionId },
+          visitorId: { stringValue: visitorId },
+          paginaVisitada: { stringValue: window.location.href },
+          duracionSegundos: { integerValue: segundos },
+          timestamp: { timestampValue: new Date().toISOString() }
+        }
+      });
+      const url = `https://firestore.googleapis.com/v1/projects/${firebaseConfig.projectId}/databases/(default)/documents/duraciones?key=${firebaseConfig.apiKey}`;
+      navigator.sendBeacon(url, new Blob([payload], { type: 'application/json' }));
+    }
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') registrarSalida();
+    });
+    window.addEventListener('pagehide', registrarSalida);
   }
 
   registrarVisita();
