@@ -1002,6 +1002,8 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
 
+  const SITIO = "kairos";
+
   // ---------- Utilidades ----------
   function generarId() {
     return crypto.randomUUID ? crypto.randomUUID() :
@@ -1078,6 +1080,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     const inicio = performance.now();
 
     const datosNavegador = {
+      sitio: SITIO,
       timestamp: serverTimestamp(),
       fechaLocal: new Date().toString(),
       visitorId,
@@ -1129,6 +1132,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
       if (segundos < 1) return;
       const payload = JSON.stringify({
         fields: {
+          sitio: { stringValue: SITIO },
           sessionId: { stringValue: sessionId },
           visitorId: { stringValue: visitorId },
           paginaVisitada: { stringValue: window.location.href },
